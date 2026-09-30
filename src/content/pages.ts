@@ -10,25 +10,16 @@ const paragraph = z.object({
 });
 const pageSchema = z.object({
   home: z.object({
-    eyebrow: z.string().min(1),
-    titleStart: z.string().min(1),
-    titleMiddle: z.string().min(1),
-    titleEmphasis: z.string().min(1),
+    title: z.string().min(1),
     intro: z.string().min(1),
     note: z.string().min(1),
-    studyTitle: z.string().min(1),
-    studyEmphasis: z.string().min(1),
-    studyCaption: z.string().min(1),
-    exploreEyebrow: z.string().min(1),
     exploreTitle: z.string().min(1),
     exploreIntro: z.string().min(1),
-    welcomeEyebrow: z.string().min(1),
     welcomeTitle: z.string().min(1),
     welcomeText: z.string().min(1),
   }),
   about: z.object({
     title: z.string(),
-    titleEmphasis: z.string(),
     intro: z.string(),
     sections: z.array(
       z.object({

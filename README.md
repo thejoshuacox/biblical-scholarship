@@ -2,6 +2,10 @@
 
 An approachable, independent educational site for exploring academic biblical scholarship. Welcoming to Christians and readers of any background, with explicit separation between primary texts, editorial observations, and scholarly interpretations.
 
+Live site: [Biblical Text & Context](https://biblical-text-and-context.onrender.com/).
+
+The [design and voice notes](docs/DESIGN.md) explain the visual direction and the research behind it.
+
 ## Included
 
 - Homepage, shared navigation, About & Methods, and three clearly marked module previews.
@@ -62,7 +66,7 @@ See [the content guide](docs/CONTENT.md). Edit structured data rather than putti
 
 For another translation/provider, implement `BibleProvider`, normalize into `Passage`, and configure the exported provider. Carry correct attribution and licensing with each translation. Extend translation validation and the UI before enabling it. **NRSVue is not enabled or assumed available**; verify rights and a suitable source first.
 
-## Render: owner completes connection
+## Render hosting
 
 Create a **Static Site**, not a Web Service. Use:
 
@@ -79,9 +83,9 @@ Create a **Static Site**, not a Web Service. Use:
 
 The rewrite is required for direct links and refreshes on client-side routes. It also means unknown paths return the app's “Page not found” screen with HTTP 200. If genuine HTTP 404 responses or pre-rendered HTML for search crawlers become a priority, add static route generation.
 
-You can alternatively connect the repository as a Blueprint using `render.yaml`; connecting a Blueprint triggers deployment. Nothing has been deployed as part of this foundation.
+You can alternatively connect the repository as a Blueprint using `render.yaml`; connecting a Blueprint triggers deployment. The owner has connected the GitHub repository to the live Render site linked above.
 
-After you connect: verify the homepage, directly open `/about` and `/compare/calming-the-storm`, and test a passage retry on your deployed domain. No database, paid dependency, or secret is needed.
+After a deployment: verify the homepage, directly open `/about` and `/compare/calming-the-storm`, and test a passage retry on your deployed domain. No database, paid dependency, or secret is needed.
 
 Settings checked against [Render Static Sites](https://render.com/docs/static-sites), [Vite's Render guide](https://vite.dev/guide/static-deploy), and [Render Blueprint reference](https://render.com/docs/blueprint-spec), 2026-09-29.
 

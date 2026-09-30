@@ -24,8 +24,8 @@ export function Annotation({
     <article className="annotation">
       <span className="eyebrow">
         {note.kind === 'editorial'
-          ? 'TEXTUAL OBSERVATION'
-          : 'SCHOLARLY INTERPRETATION'}
+          ? 'Textual observation'
+          : 'Scholarly interpretation'}
       </span>
       <h3>{note.title}</h3>
       <p>{note.text}</p>
@@ -46,7 +46,6 @@ export function Annotation({
 export function Bibliography({ ids }: { ids?: string[] }) {
   return (
     <section className="bibliography" aria-labelledby="sources-heading">
-      <span className="eyebrow">FOLLOW THE EVIDENCE</span>
       <h2 id="sources-heading">Sources & further reading</h2>
       <ol>
         {library.sources

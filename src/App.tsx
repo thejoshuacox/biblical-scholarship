@@ -1,51 +1,35 @@
 import { Fragment, useEffect, useState, useRef } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
-import {
-  BookOpen,
-  Columns3,
-  Layers3,
-  Scale,
-  Menu,
-  X,
-  Bookmark,
-  LibraryBig,
-  Sparkles,
-} from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { library, storm } from './content';
 import { pages } from './content/pages';
 import { Comparison } from './components/Comparison';
 import { Bibliography, Citation } from './components/Editorial';
 import type { Library } from './content/schema';
-const icons = {
-  'torah-law': Scale,
-  synoptic: Columns3,
-  'torah-sources': Layers3,
-};
-function ModulePreview({
-  module,
-  index,
-}: {
-  module: Library['modules'][number];
-  index: number;
-}) {
-  const Icon = icons[module.id as keyof typeof icons] || BookOpen;
+function ModulePreview({ module }: { module: Library['modules'][number] }) {
+  const available = module.id === 'synoptic';
   return (
-    <Link
-      to={'/explore/' + module.id}
-      className={'module-card module-' + module.id}
-    >
-      <div className="card-top">
-        <Icon size={27} strokeWidth={1.4} />
-        <span className="badge">PREVIEW</span>
-      </div>
-      <span className="eyebrow">{module.eyebrow}</span>
-      <h3>{module.title}</h3>
+    <article className="module-entry">
+      <h3>
+        <Link to={'/explore/' + module.id}>{module.title}</Link>
+      </h3>
       <p>{module.description}</p>
-      <div className="card-bottom">
-        <span>Explore the preview</span>
-        <span className="card-number">0{index + 1}</span>
+      <div className="module-links">
+        {available ? (
+          <>
+            <Link to="/compare/calming-the-storm">
+              Read the storm comparison
+            </Link>
+            <span>One comparison available</span>
+          </>
+        ) : (
+          <>
+            <Link to={'/explore/' + module.id}>See what’s planned</Link>
+            <span>Planned tool</span>
+          </>
+        )}
       </div>
-    </Link>
+    </article>
   );
 }
 function Layout() {
@@ -82,10 +66,8 @@ function Layout() {
             className="brand"
             aria-label="Biblical Text & Context home"
           >
-            <BookOpen size={34} strokeWidth={1.4} />
             <span>
               Biblical Text <i>&</i> Context
-              <small>EXPLORE BIBLICAL SCHOLARSHIP</small>
             </span>
           </Link>
           <button
@@ -127,130 +109,48 @@ function Layout() {
       <footer className="site-footer">
         <div>
           <Link className="footer-brand" to="/">
-            <BookOpen size={25} />
             Biblical Text & Context
           </Link>
-          <p>Ancient texts. Thoughtful questions. Room to explore.</p>
+          <p>An independent project about biblical scholarship.</p>
         </div>
         <div>
-          <Link to="/about">Our approach</Link>
+          <Link to="/about">About & methods</Link>
           <a href="https://bible.helloao.org/docs/">Bible text provider</a>
-          <span>An independent educational project</span>
         </div>
       </footer>
     </>
   );
 }
 function Home() {
+  const modules = [...library.modules].sort(
+    (a, b) => Number(b.id === 'synoptic') - Number(a.id === 'synoptic'),
+  );
   return (
-    <>
-      <section className="hero">
-        <div className="hero-copy">
-          <span className="eyebrow">
-            <span className="tiny-rule" />
-            {pages.home.eyebrow}
-          </span>
-          <h1>
-            {pages.home.titleStart}
-            <br />
-            {pages.home.titleMiddle} <em>{pages.home.titleEmphasis}</em>
-          </h1>
-          <p>{pages.home.intro}</p>
-          <div className="hero-actions">
-            <Link className="button primary" to="/compare/calming-the-storm">
-              <Columns3 size={18} />
-              Try a passage comparison
-            </Link>
-            <Link className="text-link" to="/about">
-              Meet our approach
-            </Link>
-          </div>
-          <div className="hero-note">
-            <BookOpen size={17} />
-            <span>{pages.home.note}</span>
-          </div>
-        </div>
-        <div
-          className="hero-study"
-          aria-label="A reading guide to the three Synoptic Gospels"
-        >
-          <div className="study-top">
-            <span className="eyebrow">A CLOSER LOOK</span>
-            <span className="edition">01 / THE GOSPELS</span>
-          </div>
-          <h2>
-            {pages.home.studyTitle}
-            <br />
-            <em>{pages.home.studyEmphasis}</em>
-          </h2>
-          <div className="gospel-diagram">
-            <div>
-              <span>01</span>
-              <strong>Matthew</strong>
-              <small>8:23–27</small>
-            </div>
-            <div>
-              <span>02</span>
-              <strong>Mark</strong>
-              <small>4:35–41</small>
-            </div>
-            <div>
-              <span>03</span>
-              <strong>Luke</strong>
-              <small>8:22–25</small>
-            </div>
-          </div>
-          <div className="study-bottom">
-            <Bookmark size={19} />
-            <p>
-              The calming of the storm
-              <br />
-              <span>{pages.home.studyCaption}</span>
-            </p>
-          </div>
-        </div>
+    <div className="home-shell">
+      <section className="home-intro">
+        <h1>{pages.home.title}</h1>
+        <p className="intro-copy">{pages.home.intro}</p>
+        <p className="intro-note">{pages.home.note}</p>
       </section>
-      <div className="principles-strip">
-        <span>
-          <BookOpen size={19} />
-          Begin with the text
-        </span>
-        <span>
-          <LibraryBig size={19} />
-          Follow the sources
-        </span>
-        <span>
-          <Sparkles size={19} />
-          Make room for questions
-        </span>
-      </div>
-      <section className="explore-section" aria-labelledby="explore-title">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">{pages.home.exploreEyebrow}</span>
-            <h2 id="explore-title">{pages.home.exploreTitle}</h2>
-          </div>
+      <section className="contents" aria-labelledby="explore-title">
+        <header className="contents-heading">
+          <h2 id="explore-title">{pages.home.exploreTitle}</h2>
           <p>{pages.home.exploreIntro}</p>
-        </div>
-        <div className="module-grid">
-          {library.modules.map((m, i) => (
-            <ModulePreview module={m} index={i} key={m.id} />
+        </header>
+        <div className="module-list">
+          {modules.map((module) => (
+            <ModulePreview module={module} key={module.id} />
           ))}
         </div>
       </section>
-      <section className="invitation">
-        <div>
-          <span className="eyebrow">{pages.home.welcomeEyebrow}</span>
-          <h2>{pages.home.welcomeTitle}</h2>
-        </div>
+      <section className="project-note">
+        <h2>{pages.home.welcomeTitle}</h2>
         <div>
           <p>{pages.home.welcomeText}</p>
-          <Link className="text-link" to="/about">
-            How we approach the Bible
-          </Link>
+          <Link to="/about">About the project and its methods</Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 function ModulePage() {
@@ -264,18 +164,17 @@ function ModulePage() {
         Home / Explore
       </Link>
       <section className="page-intro">
-        <span className="badge">MODULE PREVIEW</span>
+        <span className="badge">Tool preview</span>
         <h1>{module.title}</h1>
         <p className="lead">{module.description}</p>
       </section>
       <div className="preview-layout">
         <section className="question-panel">
-          <span className="eyebrow">THE GUIDING QUESTION</span>
+          <span className="eyebrow">This section will ask</span>
           <h2>{module.question}</h2>
-          <BookOpen size={48} strokeWidth={1} />
         </section>
         <section>
-          <h2>What this space will offer</h2>
+          <h2>What’s planned</h2>
           <ul className="planned-list">
             {module.planned.map((p) => (
               <li key={p}>{p}</li>
@@ -284,8 +183,8 @@ function ModulePage() {
           <p className="muted">
             This is a preview.{' '}
             {isSynoptic
-              ? 'One small comparison is ready to explore; the wider passage library is still ahead.'
-              : 'The full interactive tool and scholarly dataset are not yet available.'}
+              ? 'One comparison is available. More passages will be added later.'
+              : 'The interactive tool and its dataset haven’t been built yet.'}
           </p>
           {isSynoptic ? (
             <Link className="button primary" to="/compare/calming-the-storm">
@@ -301,7 +200,7 @@ function ModulePage() {
       <section className="method-callout">
         <h3>{pages.preview[isSynoptic ? 'synoptic' : 'other'].title}</h3>
         <p>{pages.preview[isSynoptic ? 'synoptic' : 'other'].text}</p>
-        <Link to="/about">Read our methods</Link>
+        <Link to="/about">Read about the methods</Link>
       </section>
     </div>
   );
@@ -313,17 +212,12 @@ function About() {
         Home / About
       </Link>
       <section className="page-intro">
-        <span className="eyebrow">ABOUT & METHODS</span>
-        <h1>
-          {pages.about.title}
-          <br />
-          <em>{pages.about.titleEmphasis}</em>
-        </h1>
+        <h1>{pages.about.title}</h1>
         <p className="lead">{pages.about.intro}</p>
       </section>
       <div className="about-layout">
         <aside>
-          <span className="eyebrow">OUR COMMITMENTS</span>
+          <span className="eyebrow">On this page</span>
           {pages.about.sections.map((s) => (
             <a href={'#' + s.id} key={s.id}>
               {s.nav}
@@ -372,8 +266,7 @@ function About() {
 function NotFound() {
   return (
     <div className="page-shell not-found">
-      <span className="eyebrow">PAGE NOT FOUND</span>
-      <h1>A different path.</h1>
+      <h1>Page not found</h1>
       <p>
         We couldn’t find that page. Return to the homepage to explore the
         available modules.

@@ -19,9 +19,7 @@ export function Comparison({
         Explore / Synoptic Gospels
       </Link>
       <section className="page-intro">
-        <span className="eyebrow">
-          A WORKING COMPARISON · {comparison.subtitle.toUpperCase()}
-        </span>
+        <span className="eyebrow">Synoptic Gospel comparison</span>
         <h1>{comparison.title}</h1>
         <p className="lead">{pages.comparison.intro}</p>
       </section>
@@ -130,8 +128,7 @@ export function Comparison({
         <section className="reading-notes">
           <div className="section-heading">
             <div>
-              <span className="eyebrow">READING WITH CONTEXT</span>
-              <h2>Notice first. Then interpret.</h2>
+              <h2>Reading notes</h2>
             </div>
           </div>
           <div className="annotation-grid">

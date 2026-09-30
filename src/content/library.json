@@ -31,7 +31,7 @@
       "title": "Torah Law Comparisons",
       "shortTitle": "Torah laws",
       "eyebrow": "LAW & SOCIETY",
-      "description": "Explore how biblical law collections approach shared questions about community, responsibility, and worship.",
+      "description": "Compare laws on the same subject in the Covenant, Deuteronomic, and Holiness codes.",
       "question": "How do different law collections address the same question?",
       "planned": [
         "Thematic readings across the Covenant, Deuteronomic, and Holiness codes",
@@ -45,8 +45,8 @@
       "title": "Synoptic Gospel Comparisons",
       "shortTitle": "Synoptic Gospels",
       "eyebrow": "PARALLELS & PERSPECTIVES",
-      "description": "Read Matthew, Mark, and Luke together. Notice what they share—and the distinctive shape of each account.",
-      "question": "What comes into focus when we read the Gospels side by side?",
+      "description": "Read related passages in Matthew, Mark, and Luke side by side, with notes on the differences.",
+      "question": "How does each Gospel tell the same story?",
       "planned": [
         "Aligned passages with room for unequal lengths and absent parallels",
         "Explanations of how scholars investigate the evangelists’ use of material",
@@ -59,7 +59,7 @@
       "title": "Torah Sources",
       "shortTitle": "Torah sources",
       "eyebrow": "COMPOSITION & MODELS",
-      "description": "An introduction to questions about how the Torah took shape, with space for competing scholarly explanations.",
+      "description": "Learn about the documentary hypothesis and other explanations of how the Torah was composed.",
       "question": "How do scholars investigate the composition of the Torah?",
       "planned": [
         "An approachable introduction to the documentary hypothesis",
@@ -72,7 +72,7 @@
   "comparisons": [
     {
       "id": "calming-the-storm",
-      "title": "One storm. Three tellings.",
+      "title": "Jesus calms the storm",
       "subtitle": "Jesus calms the storm",
       "translation": "BSB",
       "columns": [

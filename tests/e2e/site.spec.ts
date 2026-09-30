@@ -3,8 +3,12 @@ import AxeBuilder from '@axe-core/playwright';
 test('homepage, navigation and mobile menu', async ({ page }, info) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Read closely.',
+    'Understanding the Bible in context',
   );
+  await page.screenshot({
+    path: 'test-results/home-' + info.project.name + '.png',
+    fullPage: true,
+  });
   if (info.project.name === 'mobile')
     await page.getByRole('button', { name: 'Open menu' }).click();
   await page
@@ -14,7 +18,7 @@ test('homepage, navigation and mobile menu', async ({ page }, info) => {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Torah Sources',
   );
-  await expect(page.getByText('MODULE PREVIEW', { exact: true })).toBeVisible();
+  await expect(page.getByText('Tool preview', { exact: true })).toBeVisible();
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
@@ -39,11 +43,11 @@ test('comparison loads real passages, switches layout and hides notes', async ({
   ).toBeVisible();
   await page.getByRole('button', { name: 'Hide reading notes' }).click();
   await expect(
-    page.getByRole('heading', { name: 'Notice first. Then interpret.' }),
+    page.getByRole('heading', { name: 'Reading notes' }),
   ).toHaveCount(0);
   await page.getByRole('button', { name: 'Show reading notes' }).click();
   await expect(
-    page.getByRole('heading', { name: 'Notice first. Then interpret.' }),
+    page.getByRole('heading', { name: 'Reading notes' }),
   ).toBeVisible();
   expect(
     await page.evaluate(
