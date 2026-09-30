@@ -1,0 +1,125 @@
+{
+  "home": {
+    "eyebrow": "A PLACE FOR CURIOUS READERS",
+    "titleStart": "Read closely.",
+    "titleMiddle": "See the",
+    "titleEmphasis": "context.",
+    "intro": "Discover the questions, connections, and conversations behind the biblical text. Academic scholarship, made approachable.",
+    "note": "No background in biblical studies needed.",
+    "studyTitle": "One story.",
+    "studyEmphasis": "Three perspectives.",
+    "studyCaption": "Read. Compare. Ask a new question.",
+    "exploreEyebrow": "THREE WAYS INTO THE TEXT",
+    "exploreTitle": "Where would you like to begin?",
+    "exploreIntro": "A growing collection of tools for careful reading. Start with a preview, or try the first comparison.",
+    "welcomeEyebrow": "CURIOSITY IS A GOOD STARTING POINT",
+    "welcomeTitle": "You don’t have to leave your questions at the door.",
+    "welcomeText": "Whether the Bible is sacred to you, unfamiliar to you, or somewhere in between, you’re welcome here. We make the evidence and the reasoning visible so you can explore for yourself."
+  },
+  "about": {
+    "title": "Careful reading.",
+    "titleEmphasis": "Open conversation.",
+    "intro": "A welcoming place to explore academic biblical scholarship—without being told what you must believe.",
+    "sections": [
+      {
+        "id": "welcome",
+        "nav": "Everyone is welcome",
+        "title": "Bring your curiosity, and your background.",
+        "paragraphs": [
+          {
+            "text": "Christians, readers from other religious traditions, and people with no religious affiliation are welcome. You do not need specialist training. This project invites careful inquiry without asking you to adopt or abandon a faith commitment."
+          }
+        ]
+      },
+      {
+        "id": "method",
+        "nav": "Show the reasoning",
+        "title": "Ask historical and literary questions.",
+        "paragraphs": [
+          {
+            "text": "We ask how a passage is written, how it relates to other texts, and how scholars reason about its setting and composition. Dale B. Martin distinguishes historical, theological, and literary ways of reading. Our educational focus leaves room for readers to pursue other questions as well.",
+            "citation": {
+              "sourceId": "martin-mark",
+              "locator": "Chapter 1, approaches to reading Mark"
+            }
+          },
+          {
+            "text": "Our aim is to explain arguments fairly, not steer readers toward a religious or anti-religious conclusion. Fairness does not mean every proposal has the same evidence."
+          }
+        ]
+      },
+      {
+        "id": "evidence",
+        "nav": "Name the evidence",
+        "title": "Keep three kinds of material distinct.",
+        "definitions": [
+          {
+            "term": "Primary texts",
+            "text": "The biblical passages themselves, with their references and translation identified."
+          },
+          {
+            "term": "Editorial explanations",
+            "text": "Our reading prompts, passage groupings, and observations. Direct observations point back to the passages you can inspect."
+          },
+          {
+            "term": "Scholarly interpretations and hypotheses",
+            "text": "Attributed arguments supported by academic sources. A hypothesis is a proposed explanation, not a label we treat as an established fact."
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "We use scholarly books, peer-reviewed work, academic reference works, and official academic institutions. Citations include accessible bibliographic details and verified page numbers, sections, or timestamps. When an interpretation is contested, we identify whose view it is and leave room for alternatives."
+          },
+          {
+            "text": "Future Torah source assignments will belong to named models. No verse will simply be labeled with a hypothetical source as though that assignment were universal."
+          }
+        ]
+      },
+      {
+        "id": "translation",
+        "nav": "Be clear about the text",
+        "title": "Know which text you are reading.",
+        "paragraphs": [
+          {
+            "text": "The demonstration uses the Berean Standard Bible (BSB), supplied by AO Lab’s Free Use Bible API. The API supplies the text; it is not our authority for historical claims.",
+            "link": {
+              "label": "The publisher places the text in the public domain.",
+              "url": "https://berean.bible/licensing.htm"
+            }
+          },
+          {
+            "text": "We retain verse numbers, paragraph and poetry breaks, and translator notes when supplied. Translation headings are distinguished from our own notes. We do not infer Greek or Hebrew relationships solely from English similarities."
+          },
+          {
+            "text": "If the API cannot load, the site tells you and offers a retry. It never silently switches translations. Other translations may be added after verifying availability and licensing."
+          }
+        ]
+      },
+      {
+        "id": "foundation",
+        "nav": "A growing project",
+        "title": "A foundation that can grow.",
+        "paragraphs": [
+          {
+            "text": "Three module previews and one Gospel comparison are available in this first edition. No visitor account is required. The site does not save reading progress or run AI on your reading activity."
+          }
+        ]
+      }
+    ]
+  },
+  "comparison": {
+    "intro": "Read Matthew, Mark, and Luke together. What stays familiar? What changes when you slow down?",
+    "help": "Editorial grouping aligns themes, not individual words. Each Gospel keeps its own verse order. On small screens, read the labeled passages in sequence.",
+    "caution": "English wording helps us compare this translation. It cannot, on its own, establish relationships between the Greek texts or prove a particular source theory."
+  },
+  "preview": {
+    "synoptic": {
+      "title": "What does “Synoptic” mean?",
+      "text": "Here, “Synoptic” is a convenient label for reading Matthew, Mark, and Luke together. You can compare the accounts without first choosing a theory about their relationship."
+    },
+    "other": {
+      "title": "Evidence before certainty",
+      "text": "Future explanations will distinguish the text itself from editorial observations and attributed scholarly hypotheses. You will be able to trace substantive claims to their sources."
+    }
+  }
+}

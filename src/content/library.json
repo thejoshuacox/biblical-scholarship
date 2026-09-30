@@ -1,0 +1,334 @@
+{
+  "sources": [
+    {
+      "id": "martin-mark",
+      "author": "Dale B. Martin",
+      "title": "Lecture 6: The Gospel of Mark",
+      "publisher": "Yale University, Open Yale Courses, RLST 152",
+      "date": "Spring 2009",
+      "url": "https://oyc.yale.edu/religious-studies/rlst-152/lecture-6",
+      "type": "academic-lecture",
+      "verified": "2026-09-29",
+      "details": "Chapter 2 (13:44 onward), discussion of Mark 4:41; Chapter 1 for historical and theological reading."
+    },
+    {
+      "id": "martin-matthew",
+      "author": "Dale B. Martin",
+      "title": "Lecture 7: The Gospel of Matthew",
+      "publisher": "Yale University, Open Yale Courses, RLST 152",
+      "date": "Spring 2009",
+      "url": "https://oyc.yale.edu/religious-studies/rlst-152/lecture-7",
+      "type": "academic-lecture",
+      "verified": "2026-09-29",
+      "details": "Chapter 5 (35:44 onward), definition of redaction criticism. Its worked example concerns Matthew 14, not the passage displayed here."
+    }
+  ],
+  "hypotheses": [],
+  "assignments": [],
+  "modules": [
+    {
+      "id": "torah-law",
+      "title": "Torah Law Comparisons",
+      "shortTitle": "Torah laws",
+      "eyebrow": "LAW & SOCIETY",
+      "description": "Explore how biblical law collections approach shared questions about community, responsibility, and worship.",
+      "question": "How do different law collections address the same question?",
+      "planned": [
+        "Thematic readings across the Covenant, Deuteronomic, and Holiness codes",
+        "Cited explanations of similarities, differences, and historical proposals",
+        "An eventual “Bible or another ancient Near Eastern text?” law-identification game"
+      ],
+      "status": "preview"
+    },
+    {
+      "id": "synoptic",
+      "title": "Synoptic Gospel Comparisons",
+      "shortTitle": "Synoptic Gospels",
+      "eyebrow": "PARALLELS & PERSPECTIVES",
+      "description": "Read Matthew, Mark, and Luke together. Notice what they share—and the distinctive shape of each account.",
+      "question": "What comes into focus when we read the Gospels side by side?",
+      "planned": [
+        "Aligned passages with room for unequal lengths and absent parallels",
+        "Explanations of how scholars investigate the evangelists’ use of material",
+        "More cited comparisons beyond the first demonstration"
+      ],
+      "status": "preview"
+    },
+    {
+      "id": "torah-sources",
+      "title": "Torah Sources",
+      "shortTitle": "Torah sources",
+      "eyebrow": "COMPOSITION & MODELS",
+      "description": "An introduction to questions about how the Torah took shape, with space for competing scholarly explanations.",
+      "question": "How do scholars investigate the composition of the Torah?",
+      "planned": [
+        "An approachable introduction to the documentary hypothesis",
+        "Named scholarly models presented alongside alternatives",
+        "Passage assignments tied to a particular scholar and model, with evidence and citations"
+      ],
+      "status": "preview"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "calming-the-storm",
+      "title": "One storm. Three tellings.",
+      "subtitle": "Jesus calms the storm",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 8,
+              "verse": 23
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 27
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 4,
+              "verse": 35
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 41
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 8,
+              "verse": 22
+            },
+            "end": {
+              "chapter": 8,
+              "verse": 25
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "departure",
+          "title": "Setting out",
+          "explanation": "Each account begins with a boat journey. Read the different amounts of scene-setting.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 8,
+                "verse": 23
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 23
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 35
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 36
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 8,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 22
+              }
+            }
+          }
+        },
+        {
+          "id": "storm",
+          "title": "The storm and the appeal",
+          "explanation": "Notice how each account voices the disciples’ appeal.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 8,
+                "verse": 24
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 25
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 37
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 38
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 8,
+                "verse": 23
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 24
+              }
+            }
+          }
+        },
+        {
+          "id": "response",
+          "title": "Calm, faith, and wonder",
+          "explanation": "Luke’s calming of the storm is already in verse 24 above. These are thematic reading groups, not exact sentence alignments.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 8,
+                "verse": 26
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 27
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 39
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 41
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 8,
+                "verse": 25
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 25
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "notice-order",
+          "kind": "editorial",
+          "title": "Notice the order",
+          "text": "In Matthew, Jesus questions the disciples before calming the storm (8:26). In Mark and Luke, the question about faith follows the calming (Mark 4:39–40; Luke 8:24–25). This is an observation about these passages; it does not by itself establish how they were composed.",
+          "citations": [],
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 8,
+                "verse": 26
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 26
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 39
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 40
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 8,
+                "verse": 24
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 25
+              }
+            }
+          ]
+        },
+        {
+          "id": "reading-mark",
+          "kind": "scholarly",
+          "title": "A question about understanding",
+          "text": "Dale B. Martin reads Mark’s disciples’ question about Jesus in 4:41 within a wider narrative pattern: the disciples struggle to understand him. This is Martin’s literary interpretation, not a claim that this scene independently establishes what the historical disciples knew.",
+          "citations": [
+            {
+              "sourceId": "martin-mark",
+              "locator": "Chapter 2, “A Historical Critical Reading of Mark” (begins 13:44); transcript discussion of Mark 4:41"
+            }
+          ],
+          "references": []
+        },
+        {
+          "id": "method",
+          "kind": "scholarly",
+          "title": "From comparison to interpretation",
+          "text": "Martin describes redaction criticism as studying how an author edits source material to communicate a message. That method depends on an argued account of the sources. Here, the alignment helps you notice the texts before choosing a theory about their relationship.",
+          "citations": [
+            {
+              "sourceId": "martin-matthew",
+              "locator": "Chapter 5 (begins 35:44), explanation of redaction criticism; the lecture’s example is Matthew 14, a different sea episode"
+            }
+          ],
+          "references": []
+        }
+      ]
+    }
+  ]
+}
