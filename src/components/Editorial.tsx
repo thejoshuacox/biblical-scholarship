@@ -1,5 +1,7 @@
 import { library } from '../content';
 import { formatReference, type Library } from '../content/schema';
+import styles from './Editorial.module.css';
+
 export function Citation({
   sourceId,
   locator,
@@ -9,7 +11,7 @@ export function Citation({
 }) {
   const source = library.sources.find((s) => s.id === sourceId)!;
   return (
-    <a className="citation" href={'#source-' + sourceId} title={locator}>
+    <a className={styles.citation} href={'#source-' + sourceId} title={locator}>
       {source.author}, {source.title.replace('Lecture ', 'lecture ')}
       <span className="sr-only">, {locator}</span>
     </a>
@@ -21,7 +23,7 @@ export function Annotation({
   note: Library['comparisons'][number]['notes'][number];
 }) {
   return (
-    <article className="annotation">
+    <article className={styles.annotation}>
       <span className="eyebrow">
         {note.kind === 'editorial'
           ? 'Textual observation'
@@ -30,7 +32,7 @@ export function Annotation({
       <h3>{note.title}</h3>
       <p>{note.text}</p>
       {note.references.length > 0 && (
-        <p className="small">
+        <p className={styles.small}>
           Primary texts: {note.references.map(formatReference).join('; ')}{' '}
           (BSB).
         </p>
@@ -45,7 +47,7 @@ export function Annotation({
 }
 export function Bibliography({ ids }: { ids?: string[] }) {
   return (
-    <section className="bibliography" aria-labelledby="sources-heading">
+    <section className={styles.bibliography} aria-labelledby="sources-heading">
       <h2 id="sources-heading">Sources & further reading</h2>
       <ol>
         {library.sources
@@ -56,7 +58,7 @@ export function Bibliography({ ids }: { ids?: string[] }) {
                 <strong>{s.author}.</strong> <a href={s.url}>{s.title}</a>.{' '}
                 {s.publisher}. {s.date}.
               </p>
-              <p className="small">
+              <p className={styles.small}>
                 {s.details} Full transcript and recording available. Checked{' '}
                 {s.verified}.
               </p>

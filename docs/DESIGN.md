@@ -27,3 +27,11 @@ The owner supplied the paragraph used to request the original project prompt. It
 First-person wording describes those stated intentions. Do not invent personal experiences, qualifications, beliefs, or a team. Use contractions naturally. Prefer concrete verbs and examples over paired slogans, sweeping promises, and generic invitations to “explore.” Technical terms are useful when explained; the audience does not need to be addressed as specialists.
 
 Future edits should preserve that direction without turning these notes into another rigid template. A card, a short sentence, or an em dash is not evidence of AI authorship. Judge each choice by whether it helps a reader.
+
+## Designing a section
+
+The Synoptic Gospels, Torah Law Comparisons, and Torah Sources entry components live in their own folders under `src/pages/`. Start a redesign in that section’s folder. Replace its `ModulePreview` with the section’s own layout when the tool is ready. Existing URLs, navigation, and the saved light or dark preference come from the shared app and layout.
+
+Put the section’s styles in a colocated `.module.css` file and apply a local class to its outer element. Give that element its own layout, typography, and color variables as needed. Variables such as `--ink`, `--accent`, `--surface`, and `--serif` can be overridden on the section’s root. Add dark palette overrides with `:global(html[data-theme='dark']) .root`, where `.root` is that stylesheet’s local root class. The surrounding header and footer use the site palette. Use `background: var(--paper)` and `color: var(--ink)` on the section root if it overrides those colors.
+
+The shared `page-shell`, `page-intro`, and button styles are available for pages that use the current layout. A new section can compose its own layout and still reuse passages, citations, or bibliographies from `src/components/`. `App.tsx` gives each route’s main landmark a stable `data-page` value and connects the section entry components to their URLs. Add further routes there when a section grows.

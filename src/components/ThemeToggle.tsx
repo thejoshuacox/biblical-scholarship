@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Moon, Sun } from 'lucide-react';
 
+import styles from './ThemeToggle.module.css';
+
 export function ThemeToggle() {
   const root = document.documentElement;
   const [dark, setDark] = useState(root.dataset.theme === 'dark');
@@ -33,7 +35,7 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      className="theme-toggle"
+      className={styles.themeToggle}
       aria-label={label}
       title={label}
       onClick={toggleTheme}

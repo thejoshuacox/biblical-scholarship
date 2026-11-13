@@ -1,0 +1,54 @@
+.annotation {
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.annotation :global(.eyebrow) {
+  font-size: 0.8rem;
+}
+.annotation h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  margin: 9px 0 13px;
+}
+.annotation p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.annotation .small,
+.small {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.citation {
+  font-size: 0.88rem;
+}
+.bibliography {
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  margin-top: 35px;
+}
+.bibliography h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+.bibliography ol {
+  padding-left: 23px;
+  max-width: 950px;
+}
+.bibliography li {
+  padding-left: 8px;
+  scroll-margin-top: 25px;
+  margin-bottom: 25px;
+}
+.bibliography li:target {
+  background: var(--highlight);
+  outline: 8px solid var(--highlight);
+}
+.bibliography p {
+  font-size: 0.9rem;
+  margin: 0 0 8px;
+}
+.bibliography .small {
+  font-size: 0.82rem;
+}

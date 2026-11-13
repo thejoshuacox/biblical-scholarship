@@ -1,37 +1,44 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, RotateCcw } from 'lucide-react';
-import { pages } from '../content/pages';
 import type { Library } from '../content/schema';
 import { PassageDisplay, usePassages } from './PassageDisplay';
 import { Annotation, Bibliography } from './Editorial';
+import styles from './Comparison.module.css';
+
 export function Comparison({
   comparison,
+  copy,
 }: {
   comparison: Library['comparisons'][number];
+  copy: { intro: string; help: string; caution: string };
 }) {
   const [aligned, setAligned] = useState(true),
     [notes, setNotes] = useState(true);
   const state = usePassages(comparison.columns.map((c) => c.reference));
   return (
-    <div className="page-shell comparison-page">
+    <div className={`page-shell ${styles.comparisonPage}`}>
       <Link className="breadcrumb" to="/explore/synoptic">
         Explore / Synoptic Gospels
       </Link>
       <section className="page-intro">
         <span className="eyebrow">Synoptic Gospel comparison</span>
         <h1>{comparison.title}</h1>
-        <p className="lead">{pages.comparison.intro}</p>
+        <p className="lead">{copy.intro}</p>
       </section>
-      <div className="comparison-toolbar">
-        <div className="translation-label">
+      <div className={styles.comparisonToolbar}>
+        <div className={styles.translationLabel}>
           <BookOpen size={18} />
           <span>
             Berean Standard Bible <strong>BSB</strong>
           </span>
         </div>
-        <div className="controls">
-          <div className="segmented" role="group" aria-label="Reading layout">
+        <div className={styles.controls}>
+          <div
+            className={styles.segmented}
+            role="group"
+            aria-label="Reading layout"
+          >
             <button aria-pressed={aligned} onClick={() => setAligned(true)}>
               Aligned groups
             </button>
@@ -40,7 +47,7 @@ export function Comparison({
             </button>
           </div>
           <button
-            className="note-toggle"
+            className={styles.noteToggle}
             aria-pressed={notes}
             onClick={() => setNotes(!notes)}
           >
@@ -48,16 +55,16 @@ export function Comparison({
           </button>
         </div>
       </div>
-      <p className="comparison-help">{pages.comparison.help}</p>
+      <p className={styles.comparisonHelp}>{copy.help}</p>
       {state.status === 'loading' && (
-        <div className="load-panel" role="status">
-          <span className="loading-bar" />
+        <div className={styles.loadPanel} role="status">
+          <span className={styles.loadingBar} />
           <h2>Opening the passages…</h2>
           <p>Fetching the selected passages in the BSB translation.</p>
         </div>
       )}
       {state.status === 'error' && (
-        <div className="error-panel" role="alert">
+        <div className={styles.errorPanel} role="alert">
           <h2>The passages couldn’t be loaded</h2>
           <p>{state.error}</p>
           <p>
@@ -71,19 +78,19 @@ export function Comparison({
         </div>
       )}
       {state.status === 'ready' && (
-        <div className="comparison-content">
+        <div>
           {aligned ? (
             comparison.groups.map((g) => (
               <section
-                className="comparison-group"
+                className={styles.comparisonGroup}
                 key={g.id}
                 aria-labelledby={'group-' + g.id}
               >
-                <div className="group-heading">
+                <div className={styles.groupHeading}>
                   <h2 id={'group-' + g.id}>{g.title}</h2>
                   {notes && <p>{g.explanation}</p>}
                 </div>
-                <div className="passage-grid">
+                <div className={styles.passageGrid}>
                   {comparison.columns.map((c, j) => (
                     <PassageDisplay
                       key={c.id}
@@ -96,7 +103,7 @@ export function Comparison({
               </section>
             ))
           ) : (
-            <div className="passage-grid whole">
+            <div className={`${styles.passageGrid} ${styles.whole}`}>
               {comparison.columns.map((c, i) => (
                 <PassageDisplay
                   key={c.id}
@@ -109,7 +116,7 @@ export function Comparison({
           )}
         </div>
       )}
-      <p className="attribution">
+      <p className={styles.attribution}>
         Scripture:{' '}
         <a href="https://berean.bible/licensing.htm">
           Berean Standard Bible (BSB), public domain
@@ -122,18 +129,18 @@ export function Comparison({
         reading groups are editorial.
       </p>
       {notes && (
-        <section className="reading-notes">
-          <div className="section-heading">
+        <section className={styles.readingNotes}>
+          <div className={styles.sectionHeading}>
             <div>
               <h2>Reading notes</h2>
             </div>
           </div>
-          <div className="annotation-grid">
+          <div className={styles.annotationGrid}>
             {comparison.notes.map((note) => (
               <Annotation key={note.id} note={note} />
             ))}
           </div>
-          <p className="method-footnote">{pages.comparison.caution}</p>
+          <p className={styles.methodFootnote}>{copy.caution}</p>
         </section>
       )}
       <Bibliography

@@ -1,0 +1,54 @@
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 65px;
+  margin-top: 45px;
+}
+.aboutLayout aside {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 18px;
+  font-size: 0.9rem;
+}
+.aboutLayout aside :global(.eyebrow) {
+  margin-bottom: 3px;
+}
+.prose {
+  max-width: 720px;
+}
+.prose section {
+  margin-bottom: 43px;
+  scroll-margin-top: 30px;
+}
+.prose h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.prose p,
+.prose dd {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+.prose dt {
+  font-weight: 600;
+  margin: 24px 0 7px;
+}
+.prose dd {
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .aboutLayout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    margin-top: 30px;
+  }
+  .aboutLayout aside {
+    padding-block: 20px;
+    border-block: 1px solid var(--line);
+    gap: 15px;
+  }
+  .prose h2 {
+    font-size: 2rem;
+  }
+}

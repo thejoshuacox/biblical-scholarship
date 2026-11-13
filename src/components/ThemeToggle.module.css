@@ -1,0 +1,15 @@
+.themeToggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+}
+.themeToggle:hover {
+  border-color: var(--control-line);
+  background: var(--wash);
+}

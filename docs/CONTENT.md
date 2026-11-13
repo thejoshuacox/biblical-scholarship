@@ -2,7 +2,7 @@
 
 ## A module
 
-Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. The homepage card and `/explore/{id}` preview are generated from it. Add a main-navigation link only when appropriate. The icon map has a book fallback.
+Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. The homepage entry and `/explore/{id}` preview are generated from it. When the section needs its own layout, add an entry component under `src/pages/` and register it in `src/App.tsx`. See the [section design guide](DESIGN.md#designing-a-section).
 
 Keep “preview” visible until the tool is real. Avoid adding unverified historical claims to marketing copy.
 

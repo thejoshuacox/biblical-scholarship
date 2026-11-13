@@ -2,6 +2,8 @@ import { Fragment, useEffect, useState } from 'react';
 import { bible } from '../bible/helloao';
 import type { Inline, Passage } from '../bible/types';
 import { formatReference, type PassageReference } from '../content/schema';
+import styles from './PassageDisplay.module.css';
+
 export function InlineText({ items }: { items: Inline[] }) {
   return (
     <>
@@ -10,9 +12,9 @@ export function InlineText({ items }: { items: Inline[] }) {
           {item.kind === 'break' ? (
             <br />
           ) : item.kind === 'heading' ? (
-            <span className="text-heading">{item.text}</span>
+            <span className={styles.textHeading}>{item.text}</span>
           ) : item.kind === 'note' ? (
-            <details className="translator-note">
+            <details className={styles.translatorNote}>
               <summary aria-label={'Translator note ' + (item.id + 1)}>
                 <sup>[{item.id + 1}]</sup>
               </summary>
@@ -20,7 +22,9 @@ export function InlineText({ items }: { items: Inline[] }) {
             </details>
           ) : (
             <span
-              className={item.poem !== undefined ? 'poetry-line' : undefined}
+              className={
+                item.poem !== undefined ? styles.poetryLine : undefined
+              }
               style={
                 item.poem !== undefined
                   ? { paddingInlineStart: Math.min(item.poem, 6) * 0.6 + 'em' }
@@ -54,8 +58,8 @@ export function PassageDisplay({
 }) {
   if (!reference)
     return (
-      <div className="absent">
-        <span className="gospel-label">{title}</span>
+      <div className={styles.absent}>
+        <span className={styles.gospelLabel}>{title}</span>
         <p>No parallel assigned in this reading group.</p>
       </div>
     );
@@ -70,20 +74,20 @@ export function PassageDisplay({
   );
   return (
     <article
-      className={'passage ' + (compact ? 'compact' : '')}
+      className={compact ? `${styles.passage} compact` : styles.passage}
       aria-label={formatReference(reference)}
     >
       <header>
-        <span className="gospel-label">{title}</span>
+        <span className={styles.gospelLabel}>{title}</span>
         <span>
           {formatReference(reference)} · {passage?.translation.id ?? 'BSB'}
         </span>
       </header>
-      <div className="passage-text">
+      <div className={styles.passageText}>
         {verses?.map((v) => (
           <Fragment key={v.chapter + ':' + v.number}>
             {v.headings.map((h, i) => (
-              <p className="translation-heading" key={i}>
+              <p className={styles.translationHeading} key={i}>
                 {h}
               </p>
             ))}
@@ -93,7 +97,11 @@ export function PassageDisplay({
               </div>
             )}
             <div
-              className={v.paragraphStart ? 'verse paragraph-start' : 'verse'}
+              className={
+                v.paragraphStart
+                  ? `${styles.verse} ${styles.paragraphStart}`
+                  : styles.verse
+              }
             >
               <sup aria-label={'Verse ' + v.chapter + ':' + v.number}>
                 {reference.start.chapter !== reference.end.chapter

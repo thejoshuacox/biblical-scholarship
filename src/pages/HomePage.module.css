@@ -1,0 +1,184 @@
+.homeShell {
+  max-width: 1200px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.homeIntro {
+  margin: 28px 0 39px;
+  padding: clamp(28px, 5vw, 64px);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--intro);
+}
+.homeIntro h1 {
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+.introCopy {
+  font-family: var(--reading-font);
+  font-size: 1.2rem;
+  line-height: 1.75;
+  max-width: 65ch;
+  margin-bottom: 18px;
+}
+.introNote {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.contents {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 65px;
+}
+.contentsHeading h2 {
+  font-size: 1.75rem;
+  margin-bottom: 16px;
+}
+.contentsHeading p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 225px;
+}
+.moduleEntry {
+  padding: 0 0 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+.moduleEntry:last-child {
+  margin-bottom: 0;
+}
+.moduleEntry h3 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 11px;
+}
+.moduleEntry h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.moduleEntry h3 a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.moduleEntry p {
+  max-width: 610px;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.moduleLinks {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+.moduleLinks span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.moduleEntry.featured .moduleLinks a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+  font-weight: 600;
+}
+.moduleEntry.featured .moduleLinks a:hover {
+  background: var(--wash);
+}
+.projectNote {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 65px;
+  padding: 39px 0 55px;
+}
+.projectNote h2 {
+  font-size: 1.75rem;
+}
+.projectNote p {
+  font-size: 1rem;
+  max-width: 675px;
+  margin-bottom: 12px;
+}
+.projectNote a {
+  font-size: 0.9rem;
+}
+@media (max-width: 1150px) {
+  .contents,
+  .projectNote {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 45px;
+  }
+}
+@media (max-width: 760px) {
+  .homeShell {
+    padding-inline: 24px;
+  }
+  .homeIntro {
+    margin: 18px 0 26px;
+    padding: 24px 20px;
+  }
+  .homeIntro h1 {
+    font-size: clamp(2.35rem, 8.4vw, 3.5rem);
+    margin-bottom: 16px;
+  }
+  .introCopy {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+  .introNote {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .contents {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .contentsHeading h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .contentsHeading p {
+    max-width: 100%;
+    margin: 0;
+  }
+  .moduleEntry {
+    padding-bottom: 24px;
+    margin-bottom: 25px;
+  }
+  .moduleEntry h3 {
+    font-size: 1.85rem;
+  }
+  .moduleEntry p {
+    font-size: 0.95rem;
+  }
+  .moduleLinks {
+    flex-direction: column;
+    gap: 9px;
+    align-items: start;
+  }
+  .projectNote {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 30px 0 40px;
+  }
+  .projectNote h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  .projectNote p {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 360px) {
+  .homeShell {
+    padding-inline: 20px;
+  }
+}

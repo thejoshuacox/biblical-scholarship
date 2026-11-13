@@ -49,8 +49,10 @@ Browser tests use Microsoft Edge on Windows by default. On another platform inst
 | `src/bible/types.ts`                | Provider-independent passage, verse, and formatting models                             |
 | `src/bible/helloao.ts`              | AO Lab requests, validation, normalization, bounded chapter cache                      |
 | `src/components/`                   | Passage display, citations, bibliography, scholarly annotations                        |
-| `src/App.tsx`                       | Routes, page composition, navigation, comparison layout                                |
-| `src/styles.css`                    | Responsive design and accessible controls                                              |
+| `src/App.tsx`                       | Routes and page entry points                                                           |
+| `src/pages/`                        | Homepage, methods, and independent section entry components                            |
+| `src/layout/`                       | Shared navigation, footer, and focus handling                                          |
+| `src/styles.css`                    | Light and dark palettes, base typography, and shared controls                          |
 | `tests/`                            | Provider/content tests and browser verification                                        |
 | `render.yaml`                       | Optional Render Blueprint equivalent to the manual settings                            |
 
