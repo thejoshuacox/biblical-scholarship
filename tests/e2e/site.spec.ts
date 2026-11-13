@@ -25,6 +25,24 @@ test('homepage, navigation and mobile menu', async ({ page }, info) => {
     ),
   ).toBe(true);
 });
+test('theme follows the device until the reader chooses a mode', async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: 'dark' });
+  await page.goto('/');
+  const root = page.locator('html');
+  await expect(root).toHaveCSS('color-scheme', 'dark');
+
+  await page.getByRole('button', { name: 'Switch to light mode' }).click();
+  await expect(root).toHaveCSS('color-scheme', 'light');
+  await page.reload();
+  await expect(root).toHaveCSS('color-scheme', 'light');
+
+  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+  await expect(root).toHaveCSS('color-scheme', 'dark');
+  const results = await new AxeBuilder({ page }).analyze();
+  expect(results.violations).toEqual([]);
+});
 test('comparison loads real passages, switches layout and hides notes', async ({
   page,
 }) => {

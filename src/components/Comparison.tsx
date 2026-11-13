@@ -73,17 +73,14 @@ export function Comparison({
       {state.status === 'ready' && (
         <div className="comparison-content">
           {aligned ? (
-            comparison.groups.map((g, i) => (
+            comparison.groups.map((g) => (
               <section
                 className="comparison-group"
                 key={g.id}
                 aria-labelledby={'group-' + g.id}
               >
                 <div className="group-heading">
-                  <h2 id={'group-' + g.id}>
-                    <span>0{i + 1}</span>
-                    {g.title}
-                  </h2>
+                  <h2 id={'group-' + g.id}>{g.title}</h2>
                   {notes && <p>{g.explanation}</p>}
                 </div>
                 <div className="passage-grid">

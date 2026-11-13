@@ -5,11 +5,12 @@ import { library, storm } from './content';
 import { pages } from './content/pages';
 import { Comparison } from './components/Comparison';
 import { Bibliography, Citation } from './components/Editorial';
+import { ThemeToggle } from './components/ThemeToggle';
 import type { Library } from './content/schema';
 function ModulePreview({ module }: { module: Library['modules'][number] }) {
   const available = module.id === 'synoptic';
   return (
-    <article className="module-entry">
+    <article className={available ? 'module-entry featured' : 'module-entry'}>
       <h3>
         <Link to={'/explore/' + module.id}>{module.title}</Link>
       </h3>
@@ -92,6 +93,7 @@ function Layout() {
             <NavLink to="/explore/torah-sources">Torah sources</NavLink>
             <NavLink to="/about">About & methods</NavLink>
           </nav>
+          <ThemeToggle />
         </div>
       </header>
       <main id="main" tabIndex={-1}>
