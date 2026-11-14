@@ -1,12 +1,15 @@
 {
   "home": {
     "title": "Understanding the Bible in context",
-    "intro": "I’m building this site as a window into biblical scholarship. I want people to be able to read related passages side by side and get a better sense of what scholars are saying about them, with sources they can follow.",
+    "intro": "I’m building this site as a window into biblical scholarship. You can read related passages side by side, see what scholars make of the differences, and follow the sources for yourself.",
     "note": "You don’t need a background in biblical studies to get started.",
-    "exploreTitle": "Browse the site",
-    "exploreIntro": "The Gospel comparison is ready to read. The Torah sections describe what’s planned.",
+    "firstReading": {
+      "title": "Jesus calms the storm",
+      "references": "Matthew 8:23–27, Mark 4:35–41, Luke 8:22–25",
+      "text": "In Matthew, Jesus questions the disciples before calming the storm. In Mark and Luke, the question comes afterward. Reading the accounts side by side makes that difference easier to see. The notes point you back to the verses and explain how scholars read them."
+    },
     "welcomeTitle": "Who this is for",
-    "welcomeText": "Christians, people from other faiths, and people who aren’t religious are all welcome. I want the explanations to be useful whatever your starting point. You can read more about how I’m choosing sources and handling disagreements on the methods page."
+    "welcomeText": "Christians, people from other faiths, and people who aren’t religious are all welcome. I want the explanations to be useful whatever your starting point. When scholars disagree, I’ll explain whose view you’re reading and point you to the sources."
   },
   "about": {
     "title": "About this project",

@@ -8,7 +8,7 @@ The [design and voice notes](docs/DESIGN.md) explain the visual direction and th
 
 ## Included
 
-- Homepage, shared navigation, About & Methods, and three clearly marked module previews.
+- Homepage, Pages dropdown and directory, About & Methods, and three clearly marked module previews.
 - A working three-column comparison of **Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25**.
 - Aligned thematic groups or whole passages; reading-note controls; responsive layout; keyboard navigation.
 - Live Berean Standard Bible passages through AO Lab, with loading, failure, timeout, and retry states.
@@ -29,7 +29,7 @@ Open http://127.0.0.1:5173. No API key or environment variables are required.
 
 ```sh
 npm test                 # deterministic provider/content tests
-npm run build            # TypeScript + content validation + production assets
+npm run build            # TypeScript, content checks, assets, and static page entries
 npm run preview          # serve dist locally
 npm run verify:api       # live API smoke check, internet required
 npm run test:e2e         # desktop/mobile browser + accessibility tests
@@ -49,7 +49,8 @@ Browser tests use Microsoft Edge on Windows by default. On another platform inst
 | `src/bible/types.ts`                | Provider-independent passage, verse, and formatting models                             |
 | `src/bible/helloao.ts`              | AO Lab requests, validation, normalization, bounded chapter cache                      |
 | `src/components/`                   | Passage display, citations, bibliography, scholarly annotations                        |
-| `src/App.tsx`                       | Routes and page entry points                                                           |
+| `src/App.tsx`                       | Shared route rendering and page landmarks                                              |
+| `src/pageCatalog.ts`                | Page registration for routes, navigation, and the directory                            |
 | `src/pages/`                        | Homepage, methods, and independent section entry components                            |
 | `src/layout/`                       | Shared navigation, footer, and focus handling                                          |
 | `src/styles.css`                    | Light and dark palettes, base typography, and shared controls                          |
@@ -81,9 +82,9 @@ Create a **Static Site**, not a Web Service. Use:
 | Node version                      | `22.22.0` via `NODE_VERSION`                               |
 | Skip automatic dependency install | `SKIP_INSTALL_DEPS=true`                                   |
 | Start command                     | None                                                       |
-| Redirect/rewrite                  | Source `/*`, destination `/index.html`, action **Rewrite** |
+| Optional rewrite                  | Source `/*`, destination `/index.html`, action **Rewrite** |
 
-The rewrite is required for direct links and refreshes on client-side routes. It also means unknown paths return the app's “Page not found” screen with HTTP 200. If genuine HTTP 404 responses or pre-rendered HTML for search crawlers become a priority, add static route generation.
+The production build writes an `index.html` entry for the Pages directory and each catalog route so direct links and refreshes can load on a static host. The optional rewrite serves the app’s “Page not found” screen for unmatched paths, with HTTP 200.
 
 You can alternatively connect the repository as a Blueprint using `render.yaml`; connecting a Blueprint triggers deployment. The owner has connected the GitHub repository to the live Render site linked above.
 

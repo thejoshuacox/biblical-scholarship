@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { pages } from '../content/pages';
 import type { Library } from '../content/schema';
+import { pagesPath, stormPath } from '../pageCatalog';
 import styles from './ModulePreview.module.css';
 
 export type ModulePageProps = { module: Library['modules'][number] };
@@ -16,8 +17,8 @@ export function ModulePreview({
 }) {
   return (
     <div className="page-shell">
-      <Link className="breadcrumb" to="/">
-        Home / Explore
+      <Link className="breadcrumb" to={pagesPath}>
+        All pages
       </Link>
       <section className="page-intro">
         <span className="badge">Tool preview</span>
@@ -42,10 +43,7 @@ export function ModulePreview({
                 This is a preview. The interactive tool and its dataset haven’t
                 been built yet.
               </p>
-              <Link
-                className="button secondary"
-                to="/compare/calming-the-storm"
-              >
+              <Link className="button secondary" to={stormPath}>
                 Try the Gospel comparison
               </Link>
             </>

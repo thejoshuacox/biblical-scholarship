@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-test('homepage, navigation and mobile menu', async ({ page }, info) => {
+test('Pages link opens the directory, with custom thumbnails and logo fallbacks', async ({
+  page,
+}, info) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
     'Understanding the Bible in context',
@@ -11,10 +13,27 @@ test('homepage, navigation and mobile menu', async ({ page }, info) => {
   });
   if (info.project.name === 'mobile')
     await page.getByRole('button', { name: 'Open menu' }).click();
-  await page
-    .getByRole('navigation', { name: 'Main navigation' })
-    .getByRole('link', { name: 'Torah sources' })
-    .click();
+  const nav = page.getByRole('navigation', { name: 'Main navigation' });
+  await nav.getByRole('link', { name: 'Pages', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pages');
+  const directory = page.getByRole('main');
+  const about = directory.getByRole('link', { name: 'About & Methods' });
+  const torah = directory.getByRole('link', { name: 'Torah Sources' });
+  await expect(about.locator('img')).toHaveAttribute(
+    'src',
+    '/images/open-books.jpg',
+  );
+  await expect(torah.locator('img')).toHaveAttribute('src', '/favicon.svg');
+  await about.scrollIntoViewIfNeeded();
+  await expect(about.locator('img')).toHaveJSProperty('complete', true);
+  await expect
+    .poll(() =>
+      about
+        .locator('img')
+        .evaluate((img: HTMLImageElement) => img.naturalWidth),
+    )
+    .toBeGreaterThan(0);
+  await torah.click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Torah Sources',
   );
@@ -24,6 +43,44 @@ test('homepage, navigation and mobile menu', async ({ page }, info) => {
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
+});
+test('Pages dropdown supports hover, keyboard dismissal, and touch', async ({
+  page,
+}, info) => {
+  await page.goto('/');
+  if (info.project.name === 'mobile')
+    await page.getByRole('button', { name: 'Open menu' }).tap();
+  const nav = page.getByRole('navigation', { name: 'Main navigation' });
+  const toggle = nav.getByRole('button', { name: 'Page links' });
+  const first = nav.getByRole('link', { name: 'Jesus calms the storm' });
+  const torah = nav.getByRole('link', { name: 'Torah Law Comparisons' });
+  await expect(toggle).toHaveAttribute('aria-expanded', 'false');
+
+  if (info.project.name === 'mobile') {
+    await toggle.tap();
+  } else {
+    await nav.getByRole('link', { name: 'Pages', exact: true }).hover();
+    await torah.hover();
+    await expect(torah).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(torah).toBeHidden();
+
+    await toggle.focus();
+    await page.keyboard.press('Enter');
+    await page.keyboard.press('Tab');
+    await expect(first).toBeFocused();
+    await page.keyboard.press('Escape');
+    await expect(toggle).toBeFocused();
+    await expect(first).toBeHidden();
+    await page.keyboard.press('Space');
+  }
+
+  await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  await torah.click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Torah Law Comparisons',
+  );
+  await expect(torah).toBeHidden();
 });
 test('theme follows the device until the reader chooses a mode', async ({
   page,
@@ -93,6 +150,7 @@ test('API failure shows explicit error and retry recovers', async ({
 });
 for (const route of [
   '/',
+  '/pages',
   '/about',
   '/explore/torah-law',
   '/explore/synoptic',

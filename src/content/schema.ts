@@ -73,6 +73,7 @@ export const librarySchema = z.object({
       description: z.string(),
       question: z.string(),
       planned: z.array(z.string()),
+      thumbnail: z.string().startsWith('/').optional(),
       status: z.literal('preview'),
     }),
   ),

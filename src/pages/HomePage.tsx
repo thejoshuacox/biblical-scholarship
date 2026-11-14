@@ -1,68 +1,50 @@
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { library } from '../content';
 import { pages } from '../content/pages';
-import type { Library } from '../content/schema';
+import { pagesPath, stormPath } from '../pageCatalog';
 import styles from './HomePage.module.css';
 
-function ModuleEntry({ module }: { module: Library['modules'][number] }) {
-  const available = module.id === 'synoptic';
-  return (
-    <article
-      className={
-        available
-          ? `${styles.moduleEntry} ${styles.featured}`
-          : styles.moduleEntry
-      }
-    >
-      <h3>
-        <Link to={'/explore/' + module.id}>{module.title}</Link>
-      </h3>
-      <p>{module.description}</p>
-      <div className={styles.moduleLinks}>
-        {available ? (
-          <>
-            <Link to="/compare/calming-the-storm">
-              Read the storm comparison
-            </Link>
-            <span>One comparison available</span>
-          </>
-        ) : (
-          <>
-            <Link to={'/explore/' + module.id}>See what’s planned</Link>
-            <span>Planned tool</span>
-          </>
-        )}
-      </div>
-    </article>
-  );
-}
-
 export function HomePage() {
-  const modules = [...library.modules].sort(
-    (a, b) => Number(b.id === 'synoptic') - Number(a.id === 'synoptic'),
-  );
+  const { intro, note, title, firstReading, welcomeTitle, welcomeText } =
+    pages.home;
+
   return (
     <div className={styles.homeShell}>
       <section className={styles.homeIntro}>
-        <h1>{pages.home.title}</h1>
-        <p className={styles.introCopy}>{pages.home.intro}</p>
-        <p className={styles.introNote}>{pages.home.note}</p>
+        <div className={styles.introText}>
+          <h1>{title}</h1>
+          <p className={styles.introCopy}>{intro}</p>
+          <p className={styles.introNote}>{note}</p>
+          <Link className="button primary" to={pagesPath}>
+            Browse pages <ArrowRight size={16} aria-hidden />
+          </Link>
+        </div>
+        <img
+          className={styles.introImage}
+          src="/images/open-books.jpg"
+          width="1448"
+          height="1086"
+          alt=""
+          fetchPriority="high"
+        />
       </section>
-      <section className={styles.contents} aria-labelledby="explore-title">
-        <header className={styles.contentsHeading}>
-          <h2 id="explore-title">{pages.home.exploreTitle}</h2>
-          <p>{pages.home.exploreIntro}</p>
-        </header>
+      <section className={styles.reading} aria-labelledby="first-reading">
         <div>
-          {modules.map((module) => (
-            <ModuleEntry module={module} key={module.id} />
-          ))}
+          <h2 id="first-reading">Start with a passage</h2>
+          <p className={styles.reference}>{firstReading.references}</p>
+        </div>
+        <div>
+          <h3>{firstReading.title}</h3>
+          <p>{firstReading.text}</p>
+          <Link to={stormPath}>
+            Read the storm comparison <ArrowRight size={15} aria-hidden />
+          </Link>
         </div>
       </section>
       <section className={styles.projectNote}>
-        <h2>{pages.home.welcomeTitle}</h2>
+        <h2>{welcomeTitle}</h2>
         <div>
-          <p>{pages.home.welcomeText}</p>
+          <p>{welcomeText}</p>
           <Link to="/about">About the project and its methods</Link>
         </div>
       </section>

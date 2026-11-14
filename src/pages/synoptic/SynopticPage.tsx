@@ -6,6 +6,7 @@ import {
 } from '../../components/ModulePreview';
 import { storm } from '../../content';
 import { pages } from '../../content/pages';
+import { stormPath } from '../../pageCatalog';
 
 export function SynopticPage({ module }: ModulePageProps) {
   return (
@@ -14,7 +15,7 @@ export function SynopticPage({ module }: ModulePageProps) {
         This is a preview. One comparison is available. More passages will be
         added later.
       </p>
-      <Link className="button primary" to="/compare/calming-the-storm">
+      <Link className="button primary" to={stormPath}>
         Compare the calming of the storm
       </Link>
     </ModulePreview>

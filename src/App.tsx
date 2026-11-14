@@ -1,26 +1,44 @@
-import { useEffect, type ComponentType, type ReactNode } from 'react';
+import { Component, lazy, Suspense, useEffect, type ReactNode } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import {
-  ModulePreview,
-  type ModulePageProps,
-} from './components/ModulePreview';
-import { library } from './content';
 import { SiteLayout } from './layout/SiteLayout';
-import { AboutPage } from './pages/AboutPage';
+import { pageCatalog, pagesPath } from './pageCatalog';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import {
-  SynopticPage,
-  StormComparisonPage,
-} from './pages/synoptic/SynopticPage';
-import { TorahLawPage } from './pages/torah-law/TorahLawPage';
-import { TorahSourcesPage } from './pages/torah-sources/TorahSourcesPage';
+import { PagesDirectory } from './pages/PagesDirectory';
 
-const modulePages = new Map<string, ComponentType<ModulePageProps>>([
-  ['synoptic', SynopticPage],
-  ['torah-law', TorahLawPage],
-  ['torah-sources', TorahSourcesPage],
-]);
+const catalogRoutes = pageCatalog.map(({ load, ...entry }) => ({
+  ...entry,
+  Component: lazy(load),
+}));
+
+class PageLoadBoundary extends Component<
+  { children: ReactNode },
+  { failed: boolean }
+> {
+  state = { failed: false };
+
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+
+  render() {
+    if (!this.state.failed) return this.props.children;
+
+    return (
+      <div className="page-shell" role="alert">
+        <h1>This page couldn’t be loaded</h1>
+        <p>Reload the page to try again.</p>
+        <button
+          className="button primary"
+          type="button"
+          onClick={() => window.location.reload()}
+        >
+          Reload page
+        </button>
+      </div>
+    );
+  }
+}
 
 function Page({
   id,
@@ -37,7 +55,17 @@ function Page({
 
   return (
     <main id="main" data-page={id} tabIndex={-1}>
-      {children}
+      <PageLoadBoundary key={id}>
+        <Suspense
+          fallback={
+            <p className="page-shell" role="status">
+              Loading page…
+            </p>
+          }
+        >
+          {children}
+        </Suspense>
+      </PageLoadBoundary>
     </main>
   );
 }
@@ -55,35 +83,24 @@ export default function App() {
           }
         />
         <Route
-          path="about"
+          path={pagesPath}
           element={
-            <Page id="about" title="About & Methods">
-              <AboutPage />
+            <Page id="pages" title="Pages">
+              <PagesDirectory />
             </Page>
           }
         />
-        {library.modules.map((module) => {
-          const ModulePage = modulePages.get(module.id) ?? ModulePreview;
-          return (
-            <Route
-              key={module.id}
-              path={`explore/${module.id}`}
-              element={
-                <Page id={module.id} title={module.title}>
-                  <ModulePage module={module} />
-                </Page>
-              }
-            />
-          );
-        })}
-        <Route
-          path="compare/calming-the-storm"
-          element={
-            <Page id="calming-the-storm" title="Jesus Calms the Storm">
-              <StormComparisonPage />
-            </Page>
-          }
-        />
+        {catalogRoutes.map(({ id, title, path, Component }) => (
+          <Route
+            key={id}
+            path={path}
+            element={
+              <Page id={id} title={title}>
+                <Component />
+              </Page>
+            }
+          />
+        ))}
         <Route
           path="*"
           element={

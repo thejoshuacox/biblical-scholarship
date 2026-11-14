@@ -2,7 +2,27 @@
 
 ## A module
 
-Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. The homepage entry and `/explore/{id}` preview are generated from it. When the section needs its own layout, add an entry component under `src/pages/` and register it in `src/App.tsx`. See the [section design guide](DESIGN.md#designing-a-section).
+Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. This adds an `/explore/{id}` route and an entry in the Pages dropdown and directory. Include an optional `thumbnail` URL for an image in `public/`.
+
+When a study section needs its own layout, add a component under `src/pages/` and register its loader in `moduleLoaders` in `src/pageCatalog.ts`. See the [section design guide](DESIGN.md#designing-a-section).
+
+## Adding a standalone page
+
+Create the page component in `src/pages/` and add one entry to `pageCatalog` in `src/pageCatalog.ts`. For a component with a default export, the entry looks like this:
+
+```ts
+{
+  id: 'reading-guide',
+  path: '/guides/reading',
+  title: 'Reading guide',
+  description: 'How to read the passages and notes on this site.',
+  load: () => import('./pages/ReadingGuide'),
+},
+```
+
+Use a unique ID and URL. URL segments use lowercase letters, numbers, and hyphens. The route, dropdown link, directory card, and static entry file all come from that entry. The page’s component and CSS load when a reader opens it.
+
+For a custom thumbnail, put a square image in `public/images/` and add `thumbnail: '/images/reading-guide.webp'` to the entry. Omit `thumbnail` to use the site’s book logo. Run `npm run build` to check the registration and referenced image.
 
 Keep “preview” visible until the tool is real. Avoid adding unverified historical claims to marketing copy.
 
@@ -13,7 +33,7 @@ Keep “preview” visible until the tool is real. Avoid adding unverified histo
 3. Add a comparison with a stable ID, title, subtitle, `translation: "BSB"`, columns, reading groups, and notes.
 4. Each column has a stable ID and a full passage reference. Each reading group must explicitly include **every** column ID. A cell is a reference or `null` for an absent parallel.
 5. Label notes `editorial` or `scholarly`. Scholarly notes must include citations; textual observations should include primary passage references. Cite the source that supports the actual claim.
-6. Wire a new route to the reusable comparison component and supply its record; keep unique page descriptions with the content.
+6. Register the page in `src/pageCatalog.ts`. Use the reusable comparison component with the chosen record and description.
 7. Run `npm test`, `npm run build`, and `npm run verify:api` after updating that script to include the new passages. Check the new comparison on a narrow screen.
 
 A reference is provider-neutral except for its standard book identifier:

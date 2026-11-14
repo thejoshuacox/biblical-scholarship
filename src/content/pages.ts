@@ -13,8 +13,11 @@ const pageSchema = z.object({
     title: z.string().min(1),
     intro: z.string().min(1),
     note: z.string().min(1),
-    exploreTitle: z.string().min(1),
-    exploreIntro: z.string().min(1),
+    firstReading: z.object({
+      title: z.string().min(1),
+      references: z.string().min(1),
+      text: z.string().min(1),
+    }),
     welcomeTitle: z.string().min(1),
     welcomeText: z.string().min(1),
   }),
