@@ -186,6 +186,39 @@
       "type": "book",
       "verified": "2026-11-15",
       "details": "Chapter 6 and appendix A compare Luke’s first four verses with the prefaces of ancient technical writings."
+    },
+    {
+      "id": "goodacre-baptism",
+      "author": "Mark Goodacre",
+      "title": "The Synoptic Problem: John the Baptist and Jesus",
+      "publisher": "In Method and Meaning, Society of Biblical Literature, pp. 177–192",
+      "date": "2011",
+      "url": "https://markgoodacre.org/AttridgeFS.pdf",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Pages 182–183 compare Matthew’s dialogue at the baptism with Luke’s placement of the scene after John’s imprisonment."
+    },
+    {
+      "id": "koenig-mark-authority",
+      "author": "Judith König",
+      "title": "Exousia and Conflict in the Gospel of Mark",
+      "publisher": "Religions 14 (10), article 1318",
+      "date": "2023",
+      "url": "https://doi.org/10.3390/rel14101318",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Section 4.2 discusses the connection between Jesus’ authority to forgive sins and the visible healing in Mark 2:1–12."
+    },
+    {
+      "id": "matson-beatitudes",
+      "author": "Mark A. Matson",
+      "title": "Luke’s Rewriting of the Sermon on the Mount",
+      "publisher": "In Questioning Q, edited by Mark Goodacre and Nicholas Perrin, SPCK, pp. 43–70",
+      "date": "2004",
+      "url": "https://www.academia.edu/345010/Lukes_Rewriting_of_The_Sermon_on_The_Mount",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "The author’s manuscript is available online. See the section “A. The Beatitudes” for the connection between Luke’s blessings and Mary’s song."
     }
   ],
   "hypotheses": [],
@@ -721,6 +754,755 @@
             {
               "sourceId": "andrejevs-prayer",
               "locator": "Abstract"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baptism-of-jesus",
+      "title": "The baptism of Jesus",
+      "subtitle": "Who is the voice speaking to?",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 3,
+              "verse": 13
+            },
+            "end": {
+              "chapter": 3,
+              "verse": 17
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 1,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 11
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 3,
+              "verse": 21
+            },
+            "end": {
+              "chapter": 3,
+              "verse": 22
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "baptism",
+          "title": "Jesus is baptized",
+          "explanation": "Matthew gives John and Jesus a brief exchange. Mark names John in a single verse. Luke places Jesus among the people being baptized and tells us he was praying when heaven opened.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 3,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 15
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 1,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 9
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 3,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 21
+              }
+            }
+          }
+        },
+        {
+          "id": "spirit-and-voice",
+          "title": "The Spirit descends and a voice speaks",
+          "explanation": "Read the voice’s first words in each Gospel. Who is being addressed?",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 3,
+                "verse": 16
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 17
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 1,
+                "verse": 10
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 11
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 3,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 22
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "baptism-address",
+          "kind": "editorial",
+          "title": "“This is” and “You are”",
+          "text": "In Matthew the voice says, “This is My beloved Son.” In Mark and Luke it speaks directly to Jesus, “You are My beloved Son.” A change of pronoun shifts the announcement from speaking about Jesus to speaking to him.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 3,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 17
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 1,
+                "verse": 11
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 11
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 3,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 22
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "baptism-role-of-john",
+          "kind": "scholarly",
+          "title": "Where does John fit in the story?",
+          "text": "Mark Goodacre sees Matthew and Luke addressing a question raised by Mark’s account. Why would Jesus receive a baptism that Mark has linked with repentance? Matthew gives John a chance to object and Jesus a reply. Luke reports John’s imprisonment just before the baptism scene and leaves the person who baptizes Jesus unnamed.",
+          "references": [
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 1,
+                "verse": 4
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 4
+              }
+            },
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 3,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 15
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 3,
+                "verse": 19
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 22
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "goodacre-baptism",
+              "locator": "pp. 182–183"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healing-a-paralyzed-man",
+      "title": "Jesus heals a paralyzed man",
+      "subtitle": "From the crowded doorway to the dispute about forgiveness",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 9,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 8
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 2,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 2,
+              "verse": 12
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 5,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 26
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "arrival-and-forgiveness",
+          "title": "The man is brought to Jesus",
+          "explanation": "Start with how the man reaches Jesus. Each account then has Jesus notice the faith of the people who brought him and tell the man his sins are forgiven.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 9,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 2
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 2,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 5
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 5,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 20
+              }
+            }
+          }
+        },
+        {
+          "id": "forgiveness-questioned",
+          "title": "Forgiveness is questioned",
+          "explanation": "Jesus responds to what his critics are thinking. Compare who objects and how Jesus replies in each account.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 9,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 5
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 2,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 9
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 5,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 23
+              }
+            }
+          }
+        },
+        {
+          "id": "the-man-goes-home",
+          "title": "The man gets up and goes home",
+          "explanation": "All three crowds glorify God. Notice what Matthew says God has given to human beings.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 9,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 8
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 2,
+                "verse": 10
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 12
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 5,
+                "verse": 24
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 26
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "healing-roof",
+          "kind": "editorial",
+          "title": "Watch how the man reaches Jesus",
+          "text": "Mark says four people carry the man and make an opening in the roof. Luke describes the man being lowered through the roof tiles. Matthew moves straight from the man being brought on a mat to Jesus seeing the faith of those who brought him.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 9,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 2
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 2,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 5
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 5,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 20
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "healing-authority",
+          "kind": "scholarly",
+          "title": "What does the healing show?",
+          "text": "Judith König reads the dispute in Mark as a question about who has the authority to forgive sins. The man’s visible recovery shows what Jesus claims about his authority. Follow the order in Mark. When do the scribes object, and what does Jesus say the healing will show?",
+          "references": [
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 2,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 2,
+                "verse": 12
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "koenig-mark-authority",
+              "locator": "§4.2, “Mark 2:1–12”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beatitudes",
+      "title": "The Beatitudes",
+      "subtitle": "Blessings in Matthew and Luke, and the warnings that follow in Luke",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 5,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 5,
+              "verse": 12
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 6,
+              "verse": 17
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 26
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "setting",
+          "title": "Where Jesus teaches",
+          "explanation": "Matthew places Jesus on a mountain. Luke sets the scene on a level place where people gather to hear Jesus and to be healed.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 5,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 2
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 19
+              }
+            }
+          }
+        },
+        {
+          "id": "blessings-in-hardship",
+          "title": "Blessings in hardship",
+          "explanation": "These blessings are called the Beatitudes. Read the phrases about poverty, hunger, and grief in each Gospel and notice how their wording changes.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 5,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 6
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 20
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 21
+              }
+            }
+          }
+        },
+        {
+          "id": "mercy-and-peacemaking",
+          "title": "Mercy, purity of heart, and peacemaking",
+          "explanation": "These three blessings are part of Matthew’s list. Luke’s blessing for people who are hated and rejected follows in the next group.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 5,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 9
+              }
+            },
+            "luke": null
+          }
+        },
+        {
+          "id": "persecution",
+          "title": "Blessings for people who are mistreated",
+          "explanation": "Both accounts speak of a reward in heaven and recall what happened to the prophets. Notice how each Gospel describes the mistreatment.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 5,
+                "verse": 10
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 12
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 22
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 23
+              }
+            }
+          }
+        },
+        {
+          "id": "warnings",
+          "title": "Luke’s warnings",
+          "explanation": "Luke follows his blessings with four warnings. Try matching each warning to an earlier blessing in Luke.",
+          "cells": {
+            "matthew": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 24
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 26
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "beatitudes-wording",
+          "kind": "editorial",
+          "title": "How do the blessings address people?",
+          "text": "Matthew speaks of the “poor in spirit” and those who hunger and thirst for righteousness. In Luke, Jesus speaks to people who are poor and hungry now. Notice where Matthew shifts to addressing his listeners directly as “you.”",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 5,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 12
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 20
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 23
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "beatitudes-reversal",
+          "kind": "scholarly",
+          "title": "A change in fortunes",
+          "text": "Mark A. Matson connects Luke’s blessings and warnings with Mary’s song earlier in the Gospel. Mary sings that God fills the hungry and sends the rich away empty. Read Luke’s blessings and warnings together and see whose circumstances are expected to change.",
+          "references": [
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 1,
+                "verse": 52
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 53
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 6,
+                "verse": 20
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 26
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "matson-beatitudes",
+              "locator": "“A. The Beatitudes”"
             }
           ]
         }

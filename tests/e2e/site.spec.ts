@@ -309,6 +309,39 @@ test('comparison collection opens a two-Gospel reading in either layout', async 
   );
 });
 
+test('the comparison collection includes the classic readings and shows gaps between parallels', async ({
+  page,
+}) => {
+  await page.goto('/explore/synoptic/comparisons');
+  const main = page.getByRole('main');
+  await expect(
+    main.getByRole('link', { name: 'The baptism of Jesus', exact: true }),
+  ).toHaveAttribute('href', '/compare/baptism-of-jesus');
+  await expect(
+    main.getByRole('link', {
+      name: 'Jesus heals a paralyzed man',
+      exact: true,
+    }),
+  ).toHaveAttribute('href', '/compare/healing-a-paralyzed-man');
+  await main.getByRole('link', { name: 'The Beatitudes', exact: true }).click();
+  await expect(
+    main.getByRole('article', { name: 'Matthew 5:7–9', exact: true }),
+  ).toBeVisible({
+    timeout: 30000,
+  });
+  const absent = main.getByText('No parallel assigned in this reading group.', {
+    exact: true,
+  });
+  await expect(absent).toHaveCount(2);
+  await main
+    .getByRole('button', { name: 'Whole passages', exact: true })
+    .click();
+  await expect(
+    main.getByRole('article', { name: 'Luke 6:17–26', exact: true }),
+  ).toBeVisible();
+  await expect(absent).toHaveCount(0);
+});
+
 for (const route of [
   '/',
   '/library',

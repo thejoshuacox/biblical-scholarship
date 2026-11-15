@@ -1,6 +1,6 @@
 import { createElement, type ComponentType } from 'react';
 import type { ModulePageProps } from './components/ModulePreview';
-import { library, lordsPrayer, storm } from './content';
+import { comparisonById, library, lordsPrayer, storm } from './content';
 import type { Library } from './content/schema';
 import { synoptic } from './content/synoptic';
 import { formatReference } from './content/schema';
@@ -159,6 +159,18 @@ export const synopticComparisonEntries = [
   synopticComparisonEntry(
     lordsPrayer,
     'Read the prayer in Matthew and Luke and see how each Gospel introduces it.',
+  ),
+  synopticComparisonEntry(
+    comparisonById('baptism-of-jesus'),
+    'Hear what the voice from heaven says in Matthew, Mark, and Luke, and notice whom it addresses.',
+  ),
+  synopticComparisonEntry(
+    comparisonById('healing-a-paralyzed-man'),
+    'See how the man reaches Jesus in each telling and what happens when Jesus forgives him.',
+  ),
+  synopticComparisonEntry(
+    comparisonById('beatitudes'),
+    'Compare Jesus’ opening blessings and the warnings that follow them in Luke.',
   ),
 ];
 

@@ -3,7 +3,7 @@ import { validateLibrary } from './schema';
 
 export const library = validateLibrary(raw);
 
-function comparisonById(id: string) {
+export function comparisonById(id: string) {
   const comparison = library.comparisons.find((entry) => entry.id === id);
   if (!comparison) throw new Error('Missing comparison: ' + id);
   return comparison;
