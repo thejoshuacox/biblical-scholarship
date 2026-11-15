@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Bibliography } from '../../components/Editorial';
+import { ReadNextLink } from '../../components/ReadNextLink';
 import type { SynopticGuide } from '../../content/synoptic';
 import { SynopticLayout, SynopticText } from './SynopticLayout';
 import styles from './Synoptic.module.css';
@@ -59,6 +60,7 @@ export function SynopticGuidePage({ guide }: { guide: SynopticGuide }) {
           ))}
         </section>
       ))}
+      {guide.readNext && <ReadNextLink {...guide.readNext} />}
       <Bibliography ids={sourceIds} />
     </SynopticLayout>
   );

@@ -45,6 +45,28 @@
       "details": "Lecture handout, especially §§1–4 on shared material, Q, and Luke’s possible use of Matthew."
     },
     {
+      "id": "goodacre-fatigue",
+      "author": "Mark Goodacre",
+      "title": "Fatigue in the Synoptics",
+      "publisher": "New Testament Studies 44 (1), pp. 45–58",
+      "date": "1998",
+      "url": "https://markgoodacre.org/Q/fatigue.htm",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Pages 46–47 discuss the titles Matthew and Mark give Herod in the story of John the Baptist’s death."
+    },
+    {
+      "id": "gruenstaeudl-doublets",
+      "author": "Wolfgang Grünstäudl",
+      "title": "Luke’s Doublets and the Synoptic Problem",
+      "publisher": "New Testament Studies 68 (1), pp. 13–25",
+      "date": "2022",
+      "url": "https://doi.org/10.1017/S0028688521000278",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "The introduction describes the two hypotheses’ standing in scholarship. The article compares their explanations for repeated sayings in Luke."
+    },
+    {
       "id": "kloppenborg-synoptic-problem",
       "author": "John S. Kloppenborg",
       "title": "Synoptic Problem",
@@ -54,6 +76,17 @@
       "type": "reference",
       "verified": "2026-11-15",
       "details": "The open introduction explains the term Synoptic and the evidence of shared material, wording, and sequence."
+    },
+    {
+      "id": "kloppenborg-q",
+      "author": "John S. Kloppenborg",
+      "title": "Q",
+      "publisher": "Oxford Bibliographies in Biblical Studies, Oxford University Press",
+      "date": "2010",
+      "url": "https://doi.org/10.1093/obo/9780195393361-0101",
+      "type": "reference",
+      "verified": "2026-11-15",
+      "details": "The open introduction explains the name Q and how scholars infer the proposed source from the Gospel parallels."
     },
     {
       "id": "streeter-four-gospels",

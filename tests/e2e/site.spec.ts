@@ -217,6 +217,49 @@ test('Synoptic overview leads with the definition and offers one featured study'
   await expect(main.locator('#source-kloppenborg-relation')).toBeVisible();
 });
 
+test('guides offer a distinct keyboard-accessible link to the next reading', async ({
+  page,
+}) => {
+  await page.goto('/explore/synoptic/how-to-compare');
+  const main = page.getByRole('main');
+  await expect(
+    main.getByRole('link', { name: 'Open Jesus calms the storm' }),
+  ).toHaveAttribute('href', '/compare/calming-the-storm');
+  const next = main.getByRole('link', {
+    name: 'Read next What is the Synoptic Problem?',
+    exact: true,
+  });
+  await expect(next).toHaveAttribute(
+    'href',
+    '/explore/synoptic/synoptic-problem',
+  );
+  const sources = main.getByRole('region', {
+    name: 'Sources & further reading',
+  });
+  const sourceId = await sources.getAttribute('aria-labelledby');
+  expect(
+    await next.evaluate(
+      (link, id) =>
+        Boolean(
+          link.compareDocumentPosition(document.getElementById(id!)!) &
+          Node.DOCUMENT_POSITION_FOLLOWING,
+        ),
+      sourceId,
+    ),
+  ).toBe(true);
+  await next.focus();
+  await page.keyboard.press('Enter');
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'What is the Synoptic Problem?',
+  );
+  await expect(
+    main.getByRole('link', {
+      name: 'Read next The Lord’s Prayer',
+      exact: true,
+    }),
+  ).toHaveAttribute('href', '/compare/lords-prayer');
+});
+
 test('comparison collection opens a two-Gospel reading in either layout', async ({
   page,
 }, info) => {

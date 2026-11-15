@@ -11,6 +11,11 @@ const paragraphSchema = z.object({
     .default([]),
 });
 
+const internalLinkSchema = z.object({
+  label: z.string().min(1),
+  path: z.string().regex(/^\/[a-z\d-]+(?:\/[a-z\d-]+)*$/),
+});
+
 const guideSchema = z.object({
   id: z.string().regex(/^[a-z]+(?:-[a-z]+)*$/),
   title: z.string().min(1),
@@ -31,17 +36,11 @@ const guideSchema = z.object({
           )
           .min(1)
           .optional(),
-        links: z
-          .array(
-            z.object({
-              label: z.string().min(1),
-              path: z.string().regex(/^\/[a-z\d-]+(?:\/[a-z\d-]+)*$/),
-            }),
-          )
-          .default([]),
+        links: z.array(internalLinkSchema).default([]),
       }),
     )
     .min(1),
+  readNext: internalLinkSchema.optional(),
 });
 
 export type SynopticParagraph = z.infer<typeof paragraphSchema>;

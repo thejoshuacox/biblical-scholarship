@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { Comparison } from '../../components/Comparison';
+import { ReadNextLink } from '../../components/ReadNextLink';
 import { pages } from '../../content/pages';
 import type { Library } from '../../content/schema';
 import {
@@ -31,9 +31,7 @@ export function SynopticComparisonPage({
         }
         related={
           readingGuide && (
-            <p>
-              <Link to={readingGuide.path}>{readingGuide.title}</Link>
-            </p>
+            <ReadNextLink path={readingGuide.path} label={readingGuide.title} />
           )
         }
       />

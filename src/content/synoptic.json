@@ -85,15 +85,13 @@
                 }
               ]
             }
-          ],
-          "links": [
-            {
-              "label": "Read about the Synoptic Problem",
-              "path": "/explore/synoptic/synoptic-problem"
-            }
           ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "What is the Synoptic Problem?",
+        "path": "/explore/synoptic/synoptic-problem"
+      }
     },
     {
       "id": "synoptic-problem",
@@ -114,11 +112,39 @@
               ]
             },
             {
-              "text": "The Two-Source and Farrer hypotheses both put Mark first and treat it as a source for Matthew and Luke. That proposal is called Markan priority. The two hypotheses differ over how to explain what Matthew and Luke share beyond Mark.",
+              "text": "The Two-Source and Farrer hypotheses both propose that Mark was written before Matthew and Luke, and that both authors used Mark as a source. Many scholars accept this view, called Markan priority.",
               "citations": [
                 {
                   "sourceId": "goodacre-double-tradition",
-                  "locator": "§§1–2"
+                  "locator": "§1"
+                }
+              ]
+            },
+            {
+              "text": "In the story of John the Baptist’s death, Mark calls Herod a king. Matthew first uses Herod’s more precise title, “tetrarch,” and later calls him king too. Mark Goodacre reads the switch as a clue that Matthew revised a detail in Mark’s account and later slipped back into Mark’s wording.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-fatigue",
+                  "locator": "pp. 46–47"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Matthew 14:1–12",
+                  "url": "https://biblehub.com/bsb/matthew/14.htm"
+                },
+                {
+                  "label": "Mark 6:14–29",
+                  "url": "https://biblehub.com/bsb/mark/6.htm"
+                }
+              ]
+            },
+            {
+              "text": "The Two-Source hypothesis has the widest support among scholars, and Farrer is a leading alternative. Because both accept Markan priority, comparing them brings one question into focus. For passages shared by Matthew and Luke alone, did both use a second source, or did Luke draw directly from Matthew?",
+              "citations": [
+                {
+                  "sourceId": "gruenstaeudl-doublets",
+                  "locator": "Introduction, pp. 13–14"
                 }
               ]
             }
@@ -128,16 +154,16 @@
           "title": "The Two-Source hypothesis",
           "paragraphs": [
             {
-              "text": "On this hypothesis, Matthew and Luke both used Mark and a second written source known as Q. Each used those sources independently of the other. Scholars infer Q from Matthew and Luke and reconstruct its possible contents from those two Gospels.",
+              "text": "On this hypothesis, Matthew and Luke each drew on Mark and a second written source. Scholars call that proposed document Q, short for Quelle, the German word for “source.” They infer what it may have contained by comparing passages shared by Matthew and Luke that have no parallel in Mark.",
               "citations": [
                 {
-                  "sourceId": "goodacre-double-tradition",
-                  "locator": "§§2–3"
+                  "sourceId": "kloppenborg-q",
+                  "locator": "Introduction"
                 }
               ]
             },
             {
-              "text": "On this view, the two writers could place a saying from Q in different settings within their Gospels. In his response to Goodacre’s alternative, John S. Kloppenborg questions some of the assumptions needed to explain why Luke would rearrange material if he took it directly from Matthew.",
+              "text": "A shared source would let Matthew and Luke place the same saying in different settings while writing independently. John S. Kloppenborg questions whether Luke’s direct use of Matthew explains some of those differences in arrangement.",
               "citations": [
                 {
                   "sourceId": "streeter-four-gospels",
@@ -204,36 +230,6 @@
           ]
         },
         {
-          "title": "Try the question on a passage",
-          "paragraphs": [
-            {
-              "text": "Matthew puts the Lord’s Prayer in the Sermon on the Mount. Luke introduces it with a disciple’s request for instruction. Those settings are visible in the text. To ask where the prayer came from, scholars weigh that evidence alongside other parallels and consider how the prayer might have circulated. Olegs Andrejevs examines both transmission through Q and transmission through an independent tradition of worship.",
-              "citations": [
-                {
-                  "sourceId": "andrejevs-prayer",
-                  "locator": "Abstract"
-                }
-              ],
-              "readings": [
-                {
-                  "label": "Matthew 6:7–13",
-                  "url": "https://biblehub.com/bsb/matthew/6.htm"
-                },
-                {
-                  "label": "Luke 11:1–4",
-                  "url": "https://biblehub.com/bsb/luke/11.htm"
-                }
-              ]
-            }
-          ],
-          "links": [
-            {
-              "label": "Compare The Lord’s Prayer",
-              "path": "/compare/lords-prayer"
-            }
-          ]
-        },
-        {
           "title": "Other proposals",
           "paragraphs": [
             {
@@ -259,8 +255,36 @@
               ]
             }
           ]
+        },
+        {
+          "title": "Try the question on a passage",
+          "paragraphs": [
+            {
+              "text": "Matthew puts the Lord’s Prayer in the Sermon on the Mount. Luke introduces it with a disciple’s request for instruction. Those settings are visible in the text. To ask where the prayer came from, scholars weigh that evidence alongside other parallels and consider how the prayer might have circulated. Olegs Andrejevs examines both transmission through Q and transmission through an independent tradition of worship.",
+              "citations": [
+                {
+                  "sourceId": "andrejevs-prayer",
+                  "locator": "Abstract"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Matthew 6:7–13",
+                  "url": "https://biblehub.com/bsb/matthew/6.htm"
+                },
+                {
+                  "label": "Luke 11:1–4",
+                  "url": "https://biblehub.com/bsb/luke/11.htm"
+                }
+              ]
+            }
+          ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "The Lord’s Prayer",
+        "path": "/compare/lords-prayer"
+      }
     },
     {
       "id": "gospel-guide",
@@ -369,15 +393,13 @@
                 }
               ]
             }
-          ],
-          "links": [
-            {
-              "label": "Compare The Lord’s Prayer",
-              "path": "/compare/lords-prayer"
-            }
           ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "The Lord’s Prayer",
+        "path": "/compare/lords-prayer"
+      }
     }
   ]
 }

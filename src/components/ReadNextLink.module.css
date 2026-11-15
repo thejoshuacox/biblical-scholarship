@@ -1,0 +1,42 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 5.5rem;
+  max-width: 53rem;
+  margin-block: 2rem;
+  padding: 1.1rem clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid var(--control-line);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 4px;
+  background: var(--wash);
+  color: var(--ink);
+  text-decoration: none;
+}
+.card:hover {
+  background: var(--highlight);
+}
+.card:hover .title,
+.card:focus-visible .title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+.text {
+  display: grid;
+  gap: 0.25rem;
+}
+.label,
+.arrow {
+  color: var(--accent);
+}
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.title {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.4vw, 1.85rem);
+  line-height: 1.2;
+}
