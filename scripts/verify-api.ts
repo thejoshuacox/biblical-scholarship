@@ -1,15 +1,17 @@
 import { HelloAoProvider } from '../src/bible/helloao';
-import { storm } from '../src/content';
+import { library } from '../src/content';
 import { formatReference } from '../src/content/schema';
 const provider = new HelloAoProvider();
-for (const column of storm.columns) {
-  const passage = await provider.getPassage(column.reference);
-  console.log(
-    formatReference(column.reference),
-    passage.translation.id,
-    passage.verses.length,
-    'verses; verified live',
-  );
+for (const { columns } of library.comparisons) {
+  for (const { reference } of columns) {
+    const passage = await provider.getPassage(reference);
+    console.log(
+      formatReference(reference),
+      passage.translation.id,
+      passage.verses.length,
+      'verses; verified live',
+    );
+  }
 }
 const cross = await provider.getPassage({
   book: 'MRK',

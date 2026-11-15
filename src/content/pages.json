@@ -95,23 +95,16 @@
         "title": "What’s available so far",
         "paragraphs": [
           {
-            "text": "You can read the first Gospel comparison and see what’s planned for the Torah studies. The Library lists the available topics and resources. You don’t need an account. Saved reading progress hasn’t been added."
+            "text": "You can read Gospel comparisons and guides to Matthew, Mark, and Luke, and see what’s planned for the Torah studies. The Library lists the available topics and resources. You don’t need an account. Saved reading progress hasn’t been added."
           }
         ]
       }
     ]
   },
   "comparison": {
-    "intro": "Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25. Read the accounts together, or switch to whole passages to follow each one on its own.",
-    "help": "The groups below connect related parts of the story. They aren’t word-for-word alignments. Each account stays in its original verse order.",
+    "intro": "Read related parts of the accounts side by side, or switch to whole passages to follow each Gospel on its own.",
+    "help": "The groups pair related parts of the passages while keeping each Gospel’s verse order.",
     "caution": "English wording helps us compare this translation. It cannot, on its own, establish relationships between the Greek texts or prove a particular source theory."
-  },
-  "topics": {
-    "synoptic": {
-      "title": "What does “Synoptic” mean?",
-      "text": "Here, “Synoptic” is a convenient label for reading Matthew, Mark, and Luke together. You can compare the accounts without first choosing a theory about their relationship.",
-      "planned": "I plan to add more comparisons, including places where the accounts differ in length or one Gospel has no parallel, along with notes on how scholars investigate those differences."
-    }
   },
   "preview": {
     "other": {

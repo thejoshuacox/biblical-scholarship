@@ -20,7 +20,139 @@
       "url": "https://oyc.yale.edu/religious-studies/rlst-152/lecture-7",
       "type": "academic-lecture",
       "verified": "2026-09-29",
-      "details": "Chapter 5 (35:44 onward), definition of redaction criticism. Its worked example concerns Matthew 14, not the passage displayed here."
+      "details": "Chapter 1 (00:00), Matthew’s teaching discourses. Chapter 5 (35:44), a worked comparison of Matthew 14 and Mark 6."
+    },
+    {
+      "id": "goodacre-maze",
+      "author": "Mark Goodacre",
+      "title": "The Synoptic Problem: A Way Through the Maze",
+      "publisher": "Sheffield Academic Press",
+      "date": "2001",
+      "url": "https://www.markgoodacre.org/maze/index.htm",
+      "type": "book",
+      "verified": "2026-11-15",
+      "details": "Chapters 1–2 introduce the Gospel parallels and the patterns a theory needs to explain. The author’s site links to the full book."
+    },
+    {
+      "id": "goodacre-double-tradition",
+      "author": "Mark Goodacre",
+      "title": "The Synoptic Problem III: Double Tradition and Q",
+      "publisher": "Duke University, REL 102",
+      "date": "2010",
+      "url": "https://www.markgoodacre.org/podcasts/Lecture7.pdf",
+      "type": "academic-lecture",
+      "verified": "2026-11-15",
+      "details": "Lecture handout, especially §§1–4 on shared material, Q, and Luke’s possible use of Matthew."
+    },
+    {
+      "id": "kloppenborg-synoptic-problem",
+      "author": "John S. Kloppenborg",
+      "title": "Synoptic Problem",
+      "publisher": "Oxford Bibliographies in Biblical Studies, Oxford University Press",
+      "date": "2010",
+      "url": "https://doi.org/10.1093/obo/9780195393361-0120",
+      "type": "reference",
+      "verified": "2026-11-15",
+      "details": "The open introduction explains the term Synoptic and the evidence of shared material, wording, and sequence."
+    },
+    {
+      "id": "streeter-four-gospels",
+      "author": "B. H. Streeter",
+      "title": "The Four Gospels: A Study of Origins",
+      "publisher": "Macmillan",
+      "date": "1924",
+      "url": "https://katapi.org.uk/4Gospels/Ch10.htm",
+      "type": "book",
+      "verified": "2026-11-15",
+      "details": "Chapter 10 discusses Matthew’s and Luke’s arrangement of shared sayings, including a separate treatment of the Lord’s Prayer."
+    },
+    {
+      "id": "farrer-dispensing-with-q",
+      "author": "Austin Farrer",
+      "title": "On Dispensing with Q",
+      "publisher": "In D. E. Nineham (ed.), Studies in the Gospels, Blackwell, pp. 55–88",
+      "date": "1955",
+      "url": "https://www.markgoodacre.org/Q/farrer.htm",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Farrer develops a case for Luke’s use of Matthew. The online text indicates the original page numbers."
+    },
+    {
+      "id": "kloppenborg-relation",
+      "author": "John S. Kloppenborg",
+      "title": "On Dispensing with Q? Goodacre on the Relation of Luke to Matthew",
+      "publisher": "New Testament Studies 49 (2), pp. 210–236",
+      "date": "2003",
+      "url": "https://doi.org/10.1017/S0028688503000110",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Kloppenborg evaluates Goodacre’s account of how and why Luke might have reordered material from Matthew."
+    },
+    {
+      "id": "watson-q",
+      "author": "Francis Watson",
+      "title": "Q as Hypothesis: A Study in Methodology",
+      "publisher": "New Testament Studies 55 (4), pp. 397–415",
+      "date": "2009",
+      "url": "https://durham-repository.worktribe.com/preview/1521769/6857.pdf",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Watson sets out how to test Q against an account of Luke’s use of Matthew. The full article is available from Durham University."
+    },
+    {
+      "id": "andrejevs-prayer",
+      "author": "Olegs Andrejevs",
+      "title": "A Source-critical Analysis of the Lord’s Prayer: Multiple Autonomous Recensions or Q?",
+      "publisher": "Ephemerides Theologicae Lovanienses 96 (4), pp. 661–679",
+      "date": "2020",
+      "url": "https://doi.org/10.2143/ETL.96.4.3288794",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Compares transmission through Q with the proposal that the prayer circulated independently in worship."
+    },
+    {
+      "id": "tuckett-griesbach",
+      "author": "Christopher M. Tuckett",
+      "title": "The Revival of the Griesbach Hypothesis: An Analysis and Appraisal",
+      "publisher": "Cambridge University Press",
+      "date": "1983",
+      "url": "https://assets.cambridge.org/97805210/18760/excerpt/9780521018760_excerpt.pdf",
+      "type": "book",
+      "verified": "2026-11-15",
+      "details": "The publisher’s excerpt includes the introduction, which defines the hypothesis and describes William R. Farmer’s role in reviving it."
+    },
+    {
+      "id": "klinghardt-oldest-gospel",
+      "author": "Matthias Klinghardt",
+      "title": "The Oldest Gospel and the Formation of the Canonical Gospels",
+      "publisher": "Peeters, Biblical Tools and Studies 41",
+      "date": "2021",
+      "url": "https://www.jstor.org/stable/j.ctv1q26qbc",
+      "type": "book",
+      "verified": "2026-11-15",
+      "details": "Part I, §§3 and 10, covers the ancient testimony for the gospel in Marcion’s collection and the implications of its proposed priority."
+    },
+    {
+      "id": "roth-klinghardt",
+      "author": "Dieter T. Roth",
+      "title": "Review of Matthias Klinghardt, Das älteste Evangelium und die Entstehung der kanonischen Evangelien",
+      "publisher": "TC: A Journal of Biblical Textual Criticism 27, pp. 93–103",
+      "date": "2022",
+      "url": "https://jbtc.org/v27/TC-2022-Klinghardt-Roth.pdf",
+      "type": "article",
+      "verified": "2026-11-15",
+      "details": "Roth discusses how to weigh the testimony of ancient writers when reconstructing Marcion’s Gospel."
+    },
+    {
+      "id": "alexander-luke-preface",
+      "author": "Loveday Alexander",
+      "title": "The Preface to Luke’s Gospel: Literary Convention and Social Context in Luke 1.1–4 and Acts 1.1",
+      "publisher": "Cambridge University Press",
+      "date": "1993",
+      "url": "https://www.cambridge.org/core/books/preface-to-lukes-gospel/6B7EC0CF114661D732EBA49224D99962",
+      "type": "book",
+      "verified": "2026-11-15",
+      "details": "Chapter 6 and appendix A compare Luke’s first four verses with the prefaces of ancient technical writings."
     }
   ],
   "hypotheses": [],
@@ -315,6 +447,249 @@
             }
           ],
           "references": []
+        }
+      ]
+    },
+    {
+      "id": "lords-prayer",
+      "title": "The Lord’s Prayer",
+      "subtitle": "A shared prayer in two settings",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 6,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 13
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 11,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 11,
+              "verse": 4
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "setting",
+          "title": "How Jesus introduces the prayer",
+          "explanation": "In Matthew, the prayer follows teaching about how to pray. In Luke, a disciple asks Jesus to teach the group to pray.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 8
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 1
+              }
+            }
+          }
+        },
+        {
+          "id": "opening",
+          "title": "The address and opening requests",
+          "explanation": "Both prayers address God as Father and ask for his name to be honored and his kingdom to come. Matthew also asks for God’s will to be done on earth as in heaven.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 10
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "bread",
+          "title": "Bread for the day",
+          "explanation": "Compare the timing of the request for bread. Matthew says “today” and Luke says “each day.”",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 11
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 11
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 3
+              }
+            }
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Forgiveness and temptation",
+          "explanation": "Both versions connect receiving forgiveness with forgiving others. Matthew closes with an additional request for deliverance from the evil one.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 13
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 4
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 4
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "prayer-settings",
+          "kind": "editorial",
+          "title": "Two settings for a shared prayer",
+          "text": "Matthew gives the prayer during the Sermon on the Mount. Luke introduces it with a disciple’s request after Jesus finishes praying. Read the verses before the prayer and notice how each Gospel gives the teaching a different introduction.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 9
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 2
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "prayer-source",
+          "kind": "scholarly",
+          "title": "How might the prayer have reached both Gospels?",
+          "text": "Mark Goodacre uses the Lord’s Prayer as an example of material shared by Matthew and Luke outside Mark. A common written source (Q) and Luke’s use of Matthew offer two possible explanations for that broader pattern. Olegs Andrejevs also examines a proposal that the prayer circulated in worship apart from Q. The two versions give us a place to test these explanations alongside other parallels.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 6,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 13
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 11,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 4
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "goodacre-double-tradition",
+              "locator": "§§2 and 4"
+            },
+            {
+              "sourceId": "andrejevs-prayer",
+              "locator": "Abstract"
+            }
+          ]
         }
       ]
     }

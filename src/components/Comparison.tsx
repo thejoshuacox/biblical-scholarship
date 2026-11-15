@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, type CSSProperties, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, RotateCcw } from 'lucide-react';
-import type { Library } from '../content/schema';
+import { formatReference, type Library } from '../content/schema';
 import { libraryPath, type TopicEntry } from '../pageCatalog';
 import { PassageDisplay, usePassages } from './PassageDisplay';
 import { Annotation, Bibliography } from './Editorial';
@@ -11,22 +11,37 @@ export function Comparison({
   comparison,
   copy,
   topic,
+  breadcrumb,
+  related,
 }: {
   comparison: Library['comparisons'][number];
   copy: { intro: string; help: string; caution: string };
   topic?: Pick<TopicEntry, 'path' | 'title'>;
+  breadcrumb?: ReactNode;
+  related?: ReactNode;
 }) {
   const [aligned, setAligned] = useState(true),
     [notes, setNotes] = useState(true);
   const state = usePassages(comparison.columns.map((c) => c.reference));
   return (
-    <div className={`page-shell ${styles.comparisonPage}`}>
-      <Link className="breadcrumb" to={topic?.path ?? libraryPath}>
-        {topic?.title ?? 'Library'}
-      </Link>
+    <div
+      className={`page-shell ${styles.comparisonPage}`}
+      style={
+        { '--passage-columns': comparison.columns.length } as CSSProperties
+      }
+    >
+      {breadcrumb ?? (
+        <Link className="breadcrumb" to={topic?.path ?? libraryPath}>
+          {topic?.title ?? 'Library'}
+        </Link>
+      )}
       <section className="page-intro">
-        <span className="eyebrow">Synoptic Gospel comparison</span>
         <h1>{comparison.title}</h1>
+        <p className={styles.references}>
+          {comparison.columns
+            .map(({ reference }) => formatReference(reference))
+            .join(' · ')}
+        </p>
         <p className="lead">{copy.intro}</p>
       </section>
       <div className={styles.comparisonToolbar}>
@@ -146,6 +161,7 @@ export function Comparison({
           <p className={styles.methodFootnote}>{copy.caution}</p>
         </section>
       )}
+      {related}
       <Bibliography
         ids={[
           ...new Set(

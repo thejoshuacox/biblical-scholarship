@@ -1,0 +1,240 @@
+.theme {
+  --ink: #23333f;
+  --accent: #2e536b;
+  --accent-hover: #244356;
+  --on-accent: #fffaf2;
+  --muted: #4f626d;
+  --line: #c6d0d1;
+  --control-line: #74858e;
+  --paper: #faf7ef;
+  --surface: #fffdf7;
+  --wash: #edf1ef;
+  --intro: #e8eef0;
+  --highlight: #e1e9eb;
+  --error: #f9ece4;
+  background: linear-gradient(var(--intro), var(--paper) 27rem);
+  color: var(--ink);
+}
+:global(html[data-theme='dark']) .theme {
+  --ink: #eef0eb;
+  --accent: #adcddd;
+  --accent-hover: #c7e0ec;
+  --on-accent: #182630;
+  --muted: #bdcace;
+  --line: #435660;
+  --control-line: #82949c;
+  --paper: #151e24;
+  --surface: #202c34;
+  --wash: #273640;
+  --intro: #23343e;
+  --highlight: #334c59;
+  --error: #3c2b2a;
+}
+.readingShell {
+  --page-max-width: 53rem;
+}
+.breadcrumbs ol,
+.references,
+.resources,
+.diagram ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.breadcrumbs ol,
+.breadcrumbs li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.breadcrumbs ol {
+  flex-wrap: wrap;
+}
+.breadcrumbs svg {
+  color: var(--muted);
+}
+.masthead {
+  margin: 2.45rem 0 2rem;
+}
+.masthead h1 {
+  font-size: clamp(3rem, 6.6vw, 5.6rem);
+  margin-bottom: 0.6rem;
+}
+.masthead p {
+  margin-bottom: 0;
+}
+.definition {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.9fr) minmax(0, 1.7fr);
+  align-items: baseline;
+  gap: 0.75rem 2.5rem;
+  padding: 1.5rem 0 1.65rem;
+  border-block: 1px solid var(--line);
+}
+.definition h2 {
+  font-size: clamp(1.8rem, 3vw, 2.25rem);
+  margin-bottom: 0;
+}
+.definition .paragraph {
+  max-width: 39rem;
+}
+.paragraph + .paragraph {
+  margin-top: 1.35rem;
+}
+.paragraph > p {
+  margin-bottom: 0;
+}
+.paragraph .source {
+  margin-top: 0.35rem;
+  line-height: 1.55;
+}
+.references {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0.55rem 0;
+  font-size: 0.87rem;
+}
+.references,
+.referenceLine {
+  font-variant-numeric: tabular-nums;
+}
+.resourceSection {
+  margin-top: 2.2rem;
+}
+.resourceSection > h2 {
+  margin-bottom: 1rem;
+}
+.resourceColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
+}
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  align-items: stretch;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.featured img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 18rem;
+  object-fit: cover;
+  object-position: center;
+}
+.featuredText {
+  align-self: center;
+  padding: clamp(1rem, 2.4vw, 1.75rem);
+}
+.featured h3 {
+  margin-bottom: 0.5rem;
+  font: 400 clamp(1.65rem, 3vw, 2.15rem) / 1.1 var(--serif);
+}
+.featured p {
+  margin-bottom: 0;
+}
+.featured .referenceLine {
+  margin-bottom: 0.65rem;
+}
+.referenceLine {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.collectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  margin-top: 0.45rem;
+  font-weight: 600;
+}
+.guideLinks > h3 {
+  font: 400 1.65rem / 1.2 var(--serif);
+  margin-bottom: 0.6rem;
+}
+.resources > li {
+  border-top: 1px solid var(--line);
+  padding: 0.85rem 0 1rem;
+}
+.resources > li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.resources a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0;
+}
+.resources p {
+  color: var(--muted);
+  margin: 0.2rem 1.6rem 0 0;
+}
+.guideSection {
+  border-top: 1px solid var(--line);
+  padding-top: 1.55rem;
+  margin-top: 1.9rem;
+}
+.guideSection h2 {
+  font-size: clamp(1.85rem, 4vw, 2.25rem);
+  margin-bottom: 0.8rem;
+}
+.readingLink {
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 0.85rem;
+  padding: 0.3rem 0;
+}
+.diagram {
+  margin: 1rem 0 1.25rem;
+  background: var(--wash);
+  border: 1px solid var(--line);
+  padding: clamp(0.75rem, 3vw, 1.2rem);
+}
+.diagram ul {
+  display: grid;
+  gap: 0.5rem;
+}
+.diagram li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 0.4rem;
+}
+.diagramLabel,
+.proposed {
+  padding: 0.5rem;
+  border: 1px solid var(--control-line);
+  text-align: center;
+  background: var(--surface);
+  font-size: 0.9rem;
+}
+.proposed {
+  border-style: dashed;
+}
+.diagramArrow {
+  text-align: center;
+  color: var(--accent);
+}
+@media (max-width: 900px) {
+  .resourceColumns {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 650px) {
+  .masthead {
+    margin-top: 1.85rem;
+  }
+  .definition,
+  .featured {
+    grid-template-columns: 1fr;
+  }
+  .featured img {
+    max-height: 11rem;
+  }
+}

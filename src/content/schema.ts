@@ -17,14 +17,17 @@ export const referenceSchema = z
     'Passage end precedes start',
   );
 export type PassageReference = z.infer<typeof referenceSchema>;
-const citation = z.object({ sourceId: z.string(), locator: z.string().min(1) });
+export const citationSchema = z.object({
+  sourceId: z.string(),
+  locator: z.string().min(1),
+});
 const note = z
   .object({
     id: z.string(),
     kind: z.enum(['editorial', 'scholarly']),
     title: z.string(),
     text: z.string(),
-    citations: z.array(citation),
+    citations: z.array(citationSchema),
     references: z.array(referenceSchema).default([]),
   })
   .refine(
@@ -51,7 +54,7 @@ export const librarySchema = z.object({
       name: z.string(),
       attributedTo: z.string(),
       description: z.string(),
-      citations: z.array(citation).min(1),
+      citations: z.array(citationSchema).min(1),
       alternatives: z.array(z.string()),
     }),
   ),
@@ -61,7 +64,7 @@ export const librarySchema = z.object({
       modelId: z.string(),
       sourceLabel: z.string(),
       rationale: z.string(),
-      citations: z.array(citation).min(1),
+      citations: z.array(citationSchema).min(1),
     }),
   ),
   modules: z.array(
@@ -124,7 +127,7 @@ export function validateLibrary(input: unknown): Library {
       key,
     );
   const sources = new Set(data.sources.map((s) => s.id));
-  const checkCitations = (items: z.infer<typeof citation>[]) =>
+  const checkCitations = (items: z.infer<typeof citationSchema>[]) =>
     items.forEach((c) => {
       if (!sources.has(c.sourceId))
         throw new Error('Unknown source: ' + c.sourceId);

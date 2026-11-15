@@ -1,6 +1,8 @@
 import { createElement, type ComponentType } from 'react';
 import type { ModulePageProps } from './components/ModulePreview';
-import { library, storm } from './content';
+import { library, lordsPrayer, storm } from './content';
+import type { Library } from './content/schema';
+import { synoptic } from './content/synoptic';
 import { formatReference } from './content/schema';
 
 export const libraryPath = '/library';
@@ -20,7 +22,8 @@ type CatalogPage = {
 export type TopicEntry = CatalogPage & { kind: 'topic' };
 type ResourceEntry = CatalogPage & {
   kind: 'resource';
-  resourceType: 'Article' | 'Passage comparison' | 'Tool' | 'Game';
+  resourceType:
+    'Article' | 'Collection' | 'Passage comparison' | 'Tool' | 'Game';
   topicId?: string;
   preview?: boolean;
 };
@@ -101,25 +104,87 @@ const moduleEntries = library.modules.map<ResourceEntry>((module) => ({
   },
 }));
 
-export const pageCatalog: readonly PageEntry[] = [
-  synopticTopic,
-  torahTopic,
-  {
+export const synopticComparisonCollection: ResourceEntry = {
+  kind: 'resource',
+  resourceType: 'Collection',
+  topicId: synopticTopic.id,
+  id: 'synoptic-comparisons',
+  path: '/explore/synoptic/comparisons',
+  title: 'Side-by-side comparisons',
+  description: 'Choose a story or a teaching to read across the Gospels.',
+  thumbnail: '/images/storm-cover.jpg',
+  load: () =>
+    import('./pages/synoptic/SynopticComparisonsPage').then((page) => ({
+      default: page.SynopticComparisonsPage,
+    })),
+};
+
+function synopticComparisonEntry(
+  comparison: Library['comparisons'][number],
+  description: string,
+  thumbnail?: string,
+): ResourceEntry & { references: string } {
+  const references = comparison.columns.map(({ reference }) =>
+    formatReference(reference),
+  );
+  return {
     kind: 'resource',
     resourceType: 'Passage comparison',
     topicId: synopticTopic.id,
-    id: storm.id,
-    path: stormPath,
-    title: storm.title,
-    description:
-      'Compare the accounts in Matthew, Mark, and Luke with notes on what each writer emphasizes.',
-    thumbnail: '/images/storm-cover.jpg',
-    keywords: storm.columns.map(({ reference }) => formatReference(reference)),
-    load: () =>
-      import('./pages/synoptic/StormComparisonPage').then((page) => ({
-        default: page.StormComparisonPage,
-      })),
-  },
+    id: comparison.id,
+    path: `/compare/${comparison.id}`,
+    title: comparison.title,
+    description,
+    thumbnail,
+    keywords: references,
+    references: references.join(' · '),
+    async load() {
+      const { SynopticComparisonPage } =
+        await import('./pages/synoptic/SynopticComparisonPage');
+      return {
+        default: () => createElement(SynopticComparisonPage, { comparison }),
+      };
+    },
+  };
+}
+
+export const stormComparisonEntry = synopticComparisonEntry(
+  storm,
+  'Compare the accounts in Matthew, Mark, and Luke with notes on what each writer emphasizes.',
+  '/images/storm-cover.jpg',
+);
+
+export const synopticComparisonEntries = [
+  stormComparisonEntry,
+  synopticComparisonEntry(
+    lordsPrayer,
+    'Read the prayer in Matthew and Luke and see how each Gospel introduces it.',
+  ),
+];
+
+export const synopticGuideEntries = synoptic.guides.map<ResourceEntry>(
+  (guide) => ({
+    kind: 'resource',
+    resourceType: 'Article',
+    topicId: synopticTopic.id,
+    id: guide.id,
+    path: `/explore/synoptic/${guide.id}`,
+    title: guide.title,
+    description: guide.description,
+    async load() {
+      const { SynopticGuidePage } =
+        await import('./pages/synoptic/SynopticGuidePage');
+      return { default: () => createElement(SynopticGuidePage, { guide }) };
+    },
+  }),
+);
+
+export const pageCatalog: readonly PageEntry[] = [
+  synopticTopic,
+  torahTopic,
+  ...synopticComparisonEntries,
+  synopticComparisonCollection,
+  ...synopticGuideEntries,
   ...moduleEntries,
   {
     kind: 'site',

@@ -8,6 +8,12 @@
 .comparisonPage :global(.page-intro) h1 {
   font-size: 3.35rem;
 }
+.references {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 9px;
+}
 .comparisonToolbar {
   display: flex;
   align-items: center;
@@ -100,7 +106,7 @@
 }
 .passageGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--passage-columns), minmax(0, 1fr));
   border-radius: inherit;
   background: var(--surface);
 }

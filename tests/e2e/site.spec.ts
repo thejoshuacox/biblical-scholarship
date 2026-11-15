@@ -186,6 +186,86 @@ test('API failure shows explicit error and retry recovers', async ({
     page.getByRole('article', { name: 'Mark 4:35–36', exact: true }),
   ).toBeVisible({ timeout: 30000 });
 });
+test('Synoptic overview leads with the definition and offers one featured study', async ({
+  page,
+}) => {
+  await page.goto('/explore/synoptic');
+  const main = page.getByRole('main');
+  await expect(main.getByRole('heading', { level: 2 })).toHaveText([
+    'What does “Synoptic” mean?',
+    'Resources',
+  ]);
+  await expect(
+    main.getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toHaveAttribute('href', '/compare/calming-the-storm');
+  await expect(
+    main.getByRole('link', { name: 'The Lord’s Prayer', exact: true }),
+  ).toHaveCount(0);
+  await main
+    .getByRole('link', { name: 'What is the Synoptic Problem?' })
+    .click();
+  await expect(
+    main.getByRole('heading', { name: 'The Two-Source hypothesis' }),
+  ).toBeVisible();
+  await expect(
+    main.getByRole('heading', { name: 'The Farrer hypothesis' }),
+  ).toBeVisible();
+  await main
+    .getByRole('link', { name: /John S. Kloppenborg, On Dispensing/ })
+    .click();
+  await expect(page).toHaveURL(/#source-kloppenborg-relation$/);
+  await expect(main.locator('#source-kloppenborg-relation')).toBeVisible();
+});
+
+test('comparison collection opens a two-Gospel reading in either layout', async ({
+  page,
+}, info) => {
+  await page.goto('/explore/synoptic');
+  const main = page.getByRole('main');
+  await main.getByRole('link', { name: 'Side-by-side comparisons' }).click();
+  await expect(
+    main.getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toBeVisible();
+  await main.getByRole('link', { name: 'The Lord’s Prayer' }).click();
+  await expect(
+    main.getByRole('article', { name: 'Luke 11:1', exact: true }),
+  ).toBeVisible({
+    timeout: 30000,
+  });
+  await main
+    .getByRole('button', { name: 'Whole passages', exact: true })
+    .click();
+  const matthew = main.getByRole('article', {
+    name: 'Matthew 6:7–13',
+    exact: true,
+  });
+  await expect(matthew).toBeVisible();
+  await expect(
+    main.getByRole('article', { name: 'Luke 11:1–4', exact: true }),
+  ).toBeVisible();
+  expect(
+    await matthew.evaluate(
+      (article) =>
+        getComputedStyle(article.parentElement!).gridTemplateColumns.split(' ')
+          .length,
+    ),
+  ).toBe(info.project.name === 'mobile' ? 1 : 2);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  const results = await new AxeBuilder({ page }).analyze();
+  expect(results.violations).toEqual([]);
+  await main
+    .getByRole('navigation', { name: 'Breadcrumb' })
+    .getByRole('link', { name: 'Side-by-side comparisons' })
+    .click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Side-by-side comparisons',
+  );
+});
+
 for (const route of [
   '/',
   '/library',
@@ -193,6 +273,10 @@ for (const route of [
   '/explore/torah',
   '/explore/torah-law',
   '/explore/synoptic',
+  '/explore/synoptic/comparisons',
+  '/explore/synoptic/how-to-compare',
+  '/explore/synoptic/synoptic-problem',
+  '/explore/synoptic/gospel-guide',
   '/explore/torah-sources',
   '/missing',
 ]) {

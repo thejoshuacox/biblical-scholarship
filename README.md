@@ -9,12 +9,12 @@ The [design and voice notes](docs/DESIGN.md) explain the visual direction and th
 ## Included
 
 - Homepage, searchable Library, two topic pages, About & Methods, and two clearly marked tool previews.
-- A working three-column comparison of **Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25**.
+- A Synoptic Gospels topic with three cited guides and side-by-side readings of **Jesus calms the storm** and **The Lord’s Prayer**.
 - Aligned thematic groups or whole passages; reading-note controls; responsive layout; keyboard navigation.
 - Live Berean Standard Bible passages through AO Lab, with loading, failure, timeout, and retry states.
 - Validated JSON content, reusable display components, and an interchangeable Bible-provider interface.
 
-The full Torah law tool, identification game, Torah source explorer, and expanded Synoptic library are intentionally future work. There are no accounts, database, CMS, analytics, or runtime AI.
+The full Torah law tool, identification game, Torah source explorer, and further Synoptic comparisons are planned. There are no accounts, database, CMS, analytics, or runtime AI.
 
 ## Local development
 

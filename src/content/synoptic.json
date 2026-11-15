@@ -1,0 +1,383 @@
+{
+  "definition": {
+    "title": "What does “Synoptic” mean?",
+    "paragraph": {
+      "text": "“Synoptic” means “seen together.” The name fits Matthew, Mark, and Luke because they share many stories and teachings, often in a similar order or in similar words.",
+      "citations": [
+        {
+          "sourceId": "kloppenborg-synoptic-problem",
+          "locator": "Introduction"
+        }
+      ]
+    }
+  },
+  "guides": [
+    {
+      "id": "how-to-compare",
+      "title": "How to read a Gospel comparison",
+      "description": "Use the storm story to practice spotting differences and reading them in context.",
+      "intro": "Pick one detail in a scene, trace it in each Gospel, and then see how it fits into the whole passage.",
+      "sections": [
+        {
+          "title": "Start with one question",
+          "paragraphs": [
+            {
+              "text": "In the storm story, when does Jesus question the disciples? Matthew places his question before he rebukes the wind and the sea. In Mark and Luke, Jesus questions the disciples after the storm has subsided.",
+              "readings": [
+                {
+                  "label": "Matthew 8:26",
+                  "url": "https://biblehub.com/bsb/matthew/8.htm"
+                },
+                {
+                  "label": "Mark 4:39–40",
+                  "url": "https://biblehub.com/bsb/mark/4.htm"
+                },
+                {
+                  "label": "Luke 8:24–25",
+                  "url": "https://biblehub.com/bsb/luke/8.htm"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Open Jesus calms the storm",
+              "path": "/compare/calming-the-storm"
+            }
+          ]
+        },
+        {
+          "title": "Read each account on its own",
+          "paragraphs": [
+            {
+              "text": "Use Aligned groups to find related moments in the story. Try Whole passages to see how each Gospel gets from the disciples’ appeal for help to their reaction afterward. You can hide the reading notes while you look for a detail of your own."
+            }
+          ]
+        },
+        {
+          "title": "Follow an interpretation back to the text",
+          "paragraphs": [
+            {
+              "text": "Mark ends the scene with the disciples asking who Jesus is. Dale B. Martin reads their question as part of a pattern in which they keep struggling to understand Jesus. Try his reading against another scene on the water in Mark 6:45–52. What does Mark say the disciples have failed to understand there?",
+              "citations": [
+                {
+                  "sourceId": "martin-mark",
+                  "locator": "Chapter 2, discussion of Mark 4:41 and 6:52"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Mark 4:41",
+                  "url": "https://biblehub.com/bsb/mark/4.htm"
+                },
+                {
+                  "label": "Mark 6:45–52",
+                  "url": "https://biblehub.com/bsb/mark/6.htm"
+                }
+              ]
+            },
+            {
+              "text": "Questions about how the Gospels were composed draw on patterns across many passages. Goodacre looks at agreements in the Greek wording and in the order of stories. That takes the investigation beyond what you can see in any one English comparison.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-maze",
+                  "locator": "Chapter 2, “Exploring the Maze: the Data”"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Read about the Synoptic Problem",
+              "path": "/explore/synoptic/synoptic-problem"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "synoptic-problem",
+      "title": "What is the Synoptic Problem?",
+      "description": "See why scholars propose different sources for the agreements among Matthew, Mark, and Luke.",
+      "intro": "How did Matthew, Mark, and Luke come to share so many details? Scholars use patterns of agreement and difference to test proposals about how the three Gospels were written.",
+      "sections": [
+        {
+          "title": "The patterns a hypothesis has to explain",
+          "paragraphs": [
+            {
+              "text": "Scholars call material found in all three Gospels the triple tradition. The storm story is one example. The double tradition is material Matthew and Luke share with each other that has no parallel in Mark. Both patterns matter because an explanation for the three-way agreements may leave the two-way agreements open.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-double-tradition",
+                  "locator": "§§1–2"
+                }
+              ]
+            },
+            {
+              "text": "The Two-Source and Farrer hypotheses both put Mark first and treat it as a source for Matthew and Luke. That proposal is called Markan priority. The two hypotheses differ over how to explain what Matthew and Luke share beyond Mark.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-double-tradition",
+                  "locator": "§§1–2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "The Two-Source hypothesis",
+          "paragraphs": [
+            {
+              "text": "On this hypothesis, Matthew and Luke both used Mark and a second written source known as Q. Each used those sources independently of the other. Scholars infer Q from Matthew and Luke and reconstruct its possible contents from those two Gospels.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-double-tradition",
+                  "locator": "§§2–3"
+                }
+              ]
+            },
+            {
+              "text": "On this view, the two writers could place a saying from Q in different settings within their Gospels. In his response to Goodacre’s alternative, John S. Kloppenborg questions some of the assumptions needed to explain why Luke would rearrange material if he took it directly from Matthew.",
+              "citations": [
+                {
+                  "sourceId": "streeter-four-gospels",
+                  "locator": "Chapter 10, “The Order of the Q Material”"
+                },
+                {
+                  "sourceId": "kloppenborg-relation",
+                  "locator": "Abstract, on Luke’s arrangement of shared material"
+                }
+              ]
+            }
+          ],
+          "diagram": [
+            {
+              "from": "Mark",
+              "to": "Matthew and Luke"
+            },
+            {
+              "from": "Q (proposed)",
+              "to": "Matthew and Luke",
+              "hypothetical": true
+            }
+          ]
+        },
+        {
+          "title": "The Farrer hypothesis",
+          "paragraphs": [
+            {
+              "text": "Austin Farrer proposed that Matthew used Mark and Luke used both Mark and Matthew. In this model, Luke’s use of Matthew explains the two-way agreements and removes the need to posit Q for that material.",
+              "citations": [
+                {
+                  "sourceId": "farrer-dispensing-with-q",
+                  "locator": "pp. 55–56, 64–67"
+                },
+                {
+                  "sourceId": "goodacre-double-tradition",
+                  "locator": "§§2 and 4"
+                }
+              ]
+            },
+            {
+              "text": "Farrer argued that Luke could have chosen to break up Matthew’s long speeches and place sayings in new settings. Francis Watson proposes testing such accounts against the Q model by working through the editorial choices each explanation requires, passage by passage.",
+              "citations": [
+                {
+                  "sourceId": "farrer-dispensing-with-q",
+                  "locator": "pp. 65–67"
+                },
+                {
+                  "sourceId": "watson-q",
+                  "locator": "p. 397 and pp. 410–415"
+                }
+              ]
+            }
+          ],
+          "diagram": [
+            {
+              "from": "Mark",
+              "to": "Matthew"
+            },
+            {
+              "from": "Mark and Matthew",
+              "to": "Luke"
+            }
+          ]
+        },
+        {
+          "title": "Try the question on a passage",
+          "paragraphs": [
+            {
+              "text": "Matthew puts the Lord’s Prayer in the Sermon on the Mount. Luke introduces it with a disciple’s request for instruction. Those settings are visible in the text. To ask where the prayer came from, scholars weigh that evidence alongside other parallels and consider how the prayer might have circulated. Olegs Andrejevs examines both transmission through Q and transmission through an independent tradition of worship.",
+              "citations": [
+                {
+                  "sourceId": "andrejevs-prayer",
+                  "locator": "Abstract"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Matthew 6:7–13",
+                  "url": "https://biblehub.com/bsb/matthew/6.htm"
+                },
+                {
+                  "label": "Luke 11:1–4",
+                  "url": "https://biblehub.com/bsb/luke/11.htm"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Compare The Lord’s Prayer",
+              "path": "/compare/lords-prayer"
+            }
+          ]
+        },
+        {
+          "title": "Other proposals",
+          "paragraphs": [
+            {
+              "text": "The Griesbach or Two-Gospel hypothesis puts Matthew first, has Luke use Matthew, and has Mark draw on both. Christopher M. Tuckett traces the modern revival of this hypothesis to the work of William R. Farmer.",
+              "citations": [
+                {
+                  "sourceId": "tuckett-griesbach",
+                  "locator": "Introduction, p. 1"
+                }
+              ]
+            },
+            {
+              "text": "In one Marcionite-priority proposal, Matthias Klinghardt places the gospel in Marcion’s collection before canonical Luke and makes it a source in the formation of the canonical Gospels. The gospel has to be reconstructed from evidence such as quotations and reports by ancient writers. Dieter T. Roth questions how Klinghardt weighs some of that testimony.",
+              "citations": [
+                {
+                  "sourceId": "klinghardt-oldest-gospel",
+                  "locator": "Part I, §§3 and 10"
+                },
+                {
+                  "sourceId": "roth-klinghardt",
+                  "locator": "pp. 100–102"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gospel-guide",
+      "title": "A short guide to Matthew, Mark, and Luke",
+      "description": "See how each Gospel opens and where a comparison passage fits in its story.",
+      "intro": "Read the opening of each Gospel, then follow a familiar passage back into its own setting.",
+      "sections": [
+        {
+          "title": "Matthew",
+          "paragraphs": [
+            {
+              "text": "Matthew opens with a genealogy that links Jesus to David and Abraham, then tells of his birth. The Lord’s Prayer appears later in the Sermon on the Mount, amid instructions about giving, prayer, and fasting.",
+              "readings": [
+                {
+                  "label": "Matthew 1:1–25",
+                  "url": "https://biblehub.com/bsb/matthew/1.htm"
+                },
+                {
+                  "label": "Matthew 6:1–18",
+                  "url": "https://biblehub.com/bsb/matthew/6.htm"
+                }
+              ]
+            },
+            {
+              "text": "Dale B. Martin points out that Matthew gathers much of Jesus’ teaching into five long speeches. The Sermon on the Mount is the first. Read the prayer alongside the rest of Matthew 6 and notice what kind of audience the teaching assumes.",
+              "citations": [
+                {
+                  "sourceId": "martin-matthew",
+                  "locator": "Chapter 1, on Matthew’s five speeches"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Compare The Lord’s Prayer",
+              "path": "/compare/lords-prayer"
+            }
+          ]
+        },
+        {
+          "title": "Mark",
+          "paragraphs": [
+            {
+              "text": "Mark moves quickly from John baptizing in the wilderness to Jesus’ baptism and his preaching in Galilee. The storm comes later, immediately after a series of parables told by the lake. When the boat arrives at the other side, Jesus encounters a man among the tombs.",
+              "readings": [
+                {
+                  "label": "Mark 1:1–15",
+                  "url": "https://biblehub.com/bsb/mark/1.htm"
+                },
+                {
+                  "label": "Mark 4",
+                  "url": "https://biblehub.com/bsb/mark/4.htm"
+                },
+                {
+                  "label": "Mark 5:1–20",
+                  "url": "https://biblehub.com/bsb/mark/5.htm"
+                }
+              ]
+            },
+            {
+              "text": "Dale B. Martin connects the disciples’ question after the storm to a wider pattern of people recognizing or failing to recognize Jesus. Try following that question from the storm to the confession in Mark 8:27–30.",
+              "citations": [
+                {
+                  "sourceId": "martin-mark",
+                  "locator": "Chapter 2, on Mark 4:41 and the disciples’ understanding"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Mark 8:27–30",
+                  "url": "https://biblehub.com/bsb/mark/8.htm"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Compare Jesus calms the storm",
+              "path": "/compare/calming-the-storm"
+            }
+          ]
+        },
+        {
+          "title": "Luke",
+          "paragraphs": [
+            {
+              "text": "Luke opens with a preface addressed to Theophilus. The writer says that earlier accounts exist and describes his own aim in writing. Later, Luke sets the Lord’s Prayer in a longer sequence about prayer that includes a story about a friend arriving at midnight.",
+              "readings": [
+                {
+                  "label": "Luke 1:1–4",
+                  "url": "https://biblehub.com/bsb/luke/1.htm"
+                },
+                {
+                  "label": "Luke 11:1–13",
+                  "url": "https://biblehub.com/bsb/luke/11.htm"
+                }
+              ]
+            },
+            {
+              "text": "Loveday Alexander compares Luke’s formal opening with prefaces to ancient technical works. She sees parallels in the way Luke addresses a reader and describes his project. Read the first four verses before the story begins and notice what expectations they set.",
+              "citations": [
+                {
+                  "sourceId": "alexander-luke-preface",
+                  "locator": "Chapter 6 and appendix A"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Compare The Lord’s Prayer",
+              "path": "/compare/lords-prayer"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

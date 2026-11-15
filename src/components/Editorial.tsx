@@ -5,15 +5,20 @@ import styles from './Editorial.module.css';
 export function Citation({
   sourceId,
   locator,
+  direct = false,
 }: {
   sourceId: string;
   locator: string;
+  direct?: boolean;
 }) {
   const source = library.sources.find((s) => s.id === sourceId)!;
   return (
-    <a className={styles.citation} href={'#source-' + sourceId} title={locator}>
+    <a
+      className={styles.citation}
+      href={direct ? source.url : '#source-' + sourceId}
+    >
       {source.author}, {source.title.replace('Lecture ', 'lecture ')}
-      <span className="sr-only">, {locator}</span>
+      <span> ({locator})</span>
     </a>
   );
 }
@@ -59,8 +64,7 @@ export function Bibliography({ ids }: { ids?: string[] }) {
                 {s.publisher}. {s.date}.
               </p>
               <p className={styles.small}>
-                {s.details} Full transcript and recording available. Checked{' '}
-                {s.verified}.
+                {s.details} Checked {s.verified}.
               </p>
             </li>
           ))}
