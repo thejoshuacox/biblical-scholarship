@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { pages } from '../content/pages';
-import { pagesPath, stormPath } from '../pageCatalog';
+import { libraryPath, stormPath } from '../pageCatalog';
 import styles from './HomePage.module.css';
 
 export function HomePage() {
@@ -15,8 +15,8 @@ export function HomePage() {
           <h1>{title}</h1>
           <p className={styles.introCopy}>{intro}</p>
           <p className={styles.introNote}>{note}</p>
-          <Link className="button primary" to={pagesPath}>
-            Browse pages <ArrowRight size={16} aria-hidden />
+          <Link className="button primary" to={libraryPath}>
+            Browse the Library <ArrowRight size={16} aria-hidden />
           </Link>
         </div>
         <img

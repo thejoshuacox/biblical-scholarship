@@ -1,24 +1,19 @@
-import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { pages } from '../content/pages';
 import type { Library } from '../content/schema';
-import { pagesPath, stormPath } from '../pageCatalog';
+import { findTopic, libraryPath } from '../pageCatalog';
 import styles from './ModulePreview.module.css';
 
 export type ModulePageProps = { module: Library['modules'][number] };
 
-export function ModulePreview({
-  module,
-  method = pages.preview.other,
-  children,
-}: ModulePageProps & {
-  method?: { title: string; text: string };
-  children?: ReactNode;
-}) {
+export function ModulePreview({ module }: ModulePageProps) {
+  const topic = findTopic(module.topicId);
+  const method = pages.preview.other;
+
   return (
     <div className="page-shell">
-      <Link className="breadcrumb" to={pagesPath}>
-        All pages
+      <Link className="breadcrumb" to={topic?.path ?? libraryPath}>
+        {topic?.title ?? 'Library'}
       </Link>
       <section className="page-intro">
         <span className="badge">Tool preview</span>
@@ -37,17 +32,10 @@ export function ModulePreview({
               <li key={p}>{p}</li>
             ))}
           </ul>
-          {children ?? (
-            <>
-              <p className="muted">
-                This is a preview. The interactive tool and its dataset haven’t
-                been built yet.
-              </p>
-              <Link className="button secondary" to={stormPath}>
-                Try the Gospel comparison
-              </Link>
-            </>
-          )}
+          <p className="muted">
+            This is a preview. The interactive tool and its dataset haven’t been
+            built yet.
+          </p>
         </section>
       </div>
       <section className={styles.methodCallout}>

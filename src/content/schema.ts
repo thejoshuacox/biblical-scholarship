@@ -74,6 +74,7 @@ export const librarySchema = z.object({
       question: z.string(),
       planned: z.array(z.string()),
       thumbnail: z.string().startsWith('/').optional(),
+      topicId: z.string().min(1).optional(),
       status: z.literal('preview'),
     }),
   ),

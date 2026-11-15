@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, RotateCcw } from 'lucide-react';
 import type { Library } from '../content/schema';
+import { libraryPath, type TopicEntry } from '../pageCatalog';
 import { PassageDisplay, usePassages } from './PassageDisplay';
 import { Annotation, Bibliography } from './Editorial';
 import styles from './Comparison.module.css';
@@ -9,17 +10,19 @@ import styles from './Comparison.module.css';
 export function Comparison({
   comparison,
   copy,
+  topic,
 }: {
   comparison: Library['comparisons'][number];
   copy: { intro: string; help: string; caution: string };
+  topic?: Pick<TopicEntry, 'path' | 'title'>;
 }) {
   const [aligned, setAligned] = useState(true),
     [notes, setNotes] = useState(true);
   const state = usePassages(comparison.columns.map((c) => c.reference));
   return (
     <div className={`page-shell ${styles.comparisonPage}`}>
-      <Link className="breadcrumb" to="/explore/synoptic">
-        Explore / Synoptic Gospels
+      <Link className="breadcrumb" to={topic?.path ?? libraryPath}>
+        {topic?.title ?? 'Library'}
       </Link>
       <section className="page-intro">
         <span className="eyebrow">Synoptic Gospel comparison</span>

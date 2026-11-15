@@ -1,10 +1,10 @@
 import { Component, lazy, Suspense, useEffect, type ReactNode } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { SiteLayout } from './layout/SiteLayout';
-import { pageCatalog, pagesPath } from './pageCatalog';
+import { legacyLibraryPath, libraryPath, pageCatalog } from './pageCatalog';
 import { HomePage } from './pages/HomePage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { PagesDirectory } from './pages/PagesDirectory';
+import { LibraryPage } from './pages/LibraryPage';
 
 const catalogRoutes = pageCatalog.map(({ load, ...entry }) => ({
   ...entry,
@@ -70,6 +70,11 @@ function Page({
   );
 }
 
+function LegacyLibraryRedirect() {
+  const { search, hash } = useLocation();
+  return <Navigate to={{ pathname: libraryPath, search, hash }} replace />;
+}
+
 export default function App() {
   return (
     <Routes>
@@ -83,13 +88,14 @@ export default function App() {
           }
         />
         <Route
-          path={pagesPath}
+          path={libraryPath}
           element={
-            <Page id="pages" title="Pages">
-              <PagesDirectory />
+            <Page id="library" title="Library">
+              <LibraryPage />
             </Page>
           }
         />
+        <Route path={legacyLibraryPath} element={<LegacyLibraryRedirect />} />
         {catalogRoutes.map(({ id, title, path, Component }) => (
           <Route
             key={id}

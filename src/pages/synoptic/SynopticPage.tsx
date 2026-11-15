@@ -1,27 +1,26 @@
 import { Link } from 'react-router-dom';
-import { Comparison } from '../../components/Comparison';
-import {
-  ModulePreview,
-  type ModulePageProps,
-} from '../../components/ModulePreview';
-import { storm } from '../../content';
+import { TopicResources } from '../../components/TopicResources';
 import { pages } from '../../content/pages';
-import { stormPath } from '../../pageCatalog';
+import { libraryPath, synopticTopic } from '../../pageCatalog';
 
-export function SynopticPage({ module }: ModulePageProps) {
+export function SynopticPage() {
+  const { title, text, planned } = pages.topics.synoptic;
+
   return (
-    <ModulePreview module={module} method={pages.preview.synoptic}>
-      <p className="muted">
-        This is a preview. One comparison is available. More passages will be
-        added later.
-      </p>
-      <Link className="button primary" to={stormPath}>
-        Compare the calming of the storm
+    <div className="page-shell">
+      <Link className="breadcrumb" to={libraryPath}>
+        Library
       </Link>
-    </ModulePreview>
+      <header className="page-intro">
+        <h1>{synopticTopic.title}</h1>
+        <p className="lead">{synopticTopic.description}</p>
+      </header>
+      <TopicResources topicId={synopticTopic.id} />
+      <section className="page-intro">
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <p>{planned}</p>
+      </section>
+    </div>
   );
-}
-
-export function StormComparisonPage() {
-  return <Comparison comparison={storm} copy={pages.comparison} />;
 }

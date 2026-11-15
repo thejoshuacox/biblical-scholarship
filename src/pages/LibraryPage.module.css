@@ -1,0 +1,85 @@
+.intro:global(.page-intro) {
+  margin: 22px 0 24px;
+}
+.intro p {
+  margin-bottom: 0;
+}
+.search {
+  max-width: 660px;
+  margin-bottom: 36px;
+}
+.search label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 49px;
+  padding: 0 11px 0 15px;
+  border: 1px solid var(--control-line);
+  border-radius: 4px;
+  color: var(--muted);
+  background: var(--surface);
+}
+.searchField:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.searchField input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 0;
+  color: var(--ink);
+  font: inherit;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.searchField input::placeholder {
+  color: var(--muted);
+}
+.searchField input::-webkit-search-cancel-button {
+  appearance: none;
+}
+.searchField button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 5px;
+  border: 0;
+  color: var(--accent);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.searchField button:focus-visible {
+  outline-offset: 0;
+}
+.resultCount {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.section {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.section + .section {
+  margin-top: 36px;
+}
+.section h2 {
+  margin-bottom: 16px;
+}
+@media (max-width: 540px) {
+  .intro:global(.page-intro) {
+    margin-top: 12px;
+  }
+  .search {
+    margin-bottom: 28px;
+  }
+  .section + .section {
+    margin-top: 28px;
+  }
+}

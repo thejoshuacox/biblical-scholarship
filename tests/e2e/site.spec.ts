@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-test('Pages link opens the directory, with custom thumbnails and logo fallbacks', async ({
+test('Library puts topics first and links a topic to its resources', async ({
   page,
 }, info) => {
   await page.goto('/');
@@ -14,52 +14,63 @@ test('Pages link opens the directory, with custom thumbnails and logo fallbacks'
   if (info.project.name === 'mobile')
     await page.getByRole('button', { name: 'Open menu' }).click();
   const nav = page.getByRole('navigation', { name: 'Main navigation' });
-  await nav.getByRole('link', { name: 'Pages', exact: true }).click();
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Pages');
-  const directory = page.getByRole('main');
-  const about = directory.getByRole('link', { name: 'About & Methods' });
-  const torah = directory.getByRole('link', { name: 'Torah Sources' });
-  await expect(about.locator('img')).toHaveAttribute(
+  await nav.getByRole('link', { name: 'Library', exact: true }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Library');
+  const main = page.getByRole('main');
+  await expect(main.getByRole('heading', { level: 2 })).toHaveText([
+    'Topics',
+    'Resources',
+  ]);
+  const topics = main.getByRole('region', { name: 'Topics' });
+  const torah = topics.getByRole('link', { name: 'The Torah' });
+  const synoptic = topics.getByRole('link', { name: 'The Synoptic Gospels' });
+  const resources = main.getByRole('region', { name: 'Resources' });
+  await expect(
+    resources
+      .getByRole('link', { name: 'Jesus calms the storm' })
+      .locator('img'),
+  ).toHaveAttribute('src', '/images/storm-cover.jpg');
+  await expect(torah.locator('img')).toHaveAttribute('src', '/favicon.svg');
+  await expect(synoptic.locator('img')).toHaveAttribute(
     'src',
     '/images/open-books.jpg',
   );
-  await expect(torah.locator('img')).toHaveAttribute('src', '/favicon.svg');
-  await about.scrollIntoViewIfNeeded();
-  await expect(about.locator('img')).toHaveJSProperty('complete', true);
-  await expect
-    .poll(() =>
-      about
-        .locator('img')
-        .evaluate((img: HTMLImageElement) => img.naturalWidth),
-    )
-    .toBeGreaterThan(0);
   await torah.click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText('The Torah');
+  await expect(
+    resources.getByRole('link', { name: 'Torah Law Comparisons' }),
+  ).toBeVisible();
+  await resources.getByRole('link', { name: 'Torah Sources' }).click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'Torah Sources',
   );
   await expect(page.getByText('Tool preview', { exact: true })).toBeVisible();
+  await expect(main.getByRole('link', { name: 'The Torah' })).toHaveAttribute(
+    'href',
+    '/explore/torah',
+  );
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth,
     ),
   ).toBe(true);
 });
-test('Pages dropdown supports hover, keyboard dismissal, and touch', async ({
+test('Library topic dropdown supports hover, keyboard dismissal, and touch', async ({
   page,
 }, info) => {
   await page.goto('/');
   if (info.project.name === 'mobile')
     await page.getByRole('button', { name: 'Open menu' }).tap();
   const nav = page.getByRole('navigation', { name: 'Main navigation' });
-  const toggle = nav.getByRole('button', { name: 'Page links' });
-  const first = nav.getByRole('link', { name: 'Jesus calms the storm' });
-  const torah = nav.getByRole('link', { name: 'Torah Law Comparisons' });
+  const toggle = nav.getByRole('button', { name: 'Topic links' });
+  const first = nav.getByRole('link', { name: 'The Synoptic Gospels' });
+  const torah = nav.getByRole('link', { name: 'The Torah' });
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
 
   if (info.project.name === 'mobile') {
     await toggle.tap();
   } else {
-    await nav.getByRole('link', { name: 'Pages', exact: true }).hover();
+    await nav.getByRole('link', { name: 'Library', exact: true }).hover();
     await torah.hover();
     await expect(torah).toBeVisible();
     await page.keyboard.press('Escape');
@@ -76,11 +87,38 @@ test('Pages dropdown supports hover, keyboard dismissal, and touch', async ({
   }
 
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
-  await torah.click();
+  await first.click();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
-    'Torah Law Comparisons',
+    'The Synoptic Gospels',
   );
-  await expect(torah).toBeHidden();
+  await expect(first).toBeHidden();
+  await expect(
+    page.getByRole('main').getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toHaveAttribute('href', '/compare/calming-the-storm');
+});
+test('Library search finds a listed passage and preserves old directory links', async ({
+  page,
+}) => {
+  await page.goto('/pages?q=Mark+4%3A35');
+  await expect(page).toHaveURL(/\/library\?q=/);
+  const search = page.getByRole('searchbox', { name: 'Search the Library' });
+  const main = page.getByRole('main');
+  const results = page.getByRole('search').getByRole('status');
+  await expect(search).toHaveValue('Mark 4:35');
+  await expect(results).toHaveText('1 result');
+  await expect(
+    main.getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toBeVisible();
+  await search.fill('about methods');
+  await expect(
+    main.getByRole('link', { name: 'About & Methods' }),
+  ).toBeVisible();
+  await search.fill('unmatched term');
+  await expect(results).toHaveText('0 results');
+  await page.getByRole('button', { name: 'Clear' }).click();
+  await expect(search).toBeFocused();
+  await expect(search).toHaveValue('');
+  await expect(main.getByRole('region', { name: 'Topics' })).toBeVisible();
 });
 test('theme follows the device until the reader chooses a mode', async ({
   page,
@@ -150,8 +188,9 @@ test('API failure shows explicit error and retry recovers', async ({
 });
 for (const route of [
   '/',
-  '/pages',
+  '/library',
   '/about',
+  '/explore/torah',
   '/explore/torah-law',
   '/explore/synoptic',
   '/explore/torah-sources',

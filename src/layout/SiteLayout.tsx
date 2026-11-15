@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from '../components/ThemeToggle';
-import { PagesMenu } from './PagesMenu';
+import { LibraryMenu } from './LibraryMenu';
 import styles from './SiteLayout.module.css';
 
 export function SiteLayout() {
@@ -51,7 +51,7 @@ export function SiteLayout() {
             <NavLink to="/" end>
               Home
             </NavLink>
-            <PagesMenu key={location.pathname} />
+            <LibraryMenu key={location.pathname} />
           </nav>
           <ThemeToggle />
         </div>

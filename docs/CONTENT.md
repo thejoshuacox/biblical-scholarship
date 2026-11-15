@@ -1,26 +1,31 @@
 # Editing and extending the content
 
-## A module
+## A tool preview
 
-Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. This adds an `/explore/{id}` route and an entry in the Pages dropdown and directory. Include an optional `thumbnail` URL for an image in `public/`.
+Add an entry to `src/content/library.json → modules` with a stable `id`, title, short title, eyebrow, description, guiding question, planned capabilities, and `status: "preview"`. This adds an `/explore/{id}` route and a Library resource card. Set `topicId` to the ID of an existing topic to list the preview there as well. Include an optional `thumbnail` URL for an image in `public/`.
 
 When a study section needs its own layout, add a component under `src/pages/` and register its loader in `moduleLoaders` in `src/pageCatalog.ts`. See the [section design guide](DESIGN.md#designing-a-section).
 
-## Adding a standalone page
+## Adding a topic or resource
 
-Create the page component in `src/pages/` and add one entry to `pageCatalog` in `src/pageCatalog.ts`. For a component with a default export, the entry looks like this:
+Create the page component in `src/pages/` and add an entry to `pageCatalog` in `src/pageCatalog.ts`. A `topic` entry appears in the Library’s Topics section and navigation dropdown. Its component can use `TopicResources` to list entries with the corresponding `topicId`. Keep the layout in the topic’s own component and stylesheet. A `site` entry, such as About & Methods, appears in matching searches.
+
+Use `resource` for an individual article, comparison, tool, or game. For example, an article with a default-exported component can use this entry:
 
 ```ts
 {
+  kind: 'resource',
+  resourceType: 'Article',
   id: 'reading-guide',
   path: '/guides/reading',
   title: 'Reading guide',
   description: 'How to read the passages and notes on this site.',
+  topicId: 'synoptic',
   load: () => import('./pages/ReadingGuide'),
 },
 ```
 
-Use a unique ID and URL. URL segments use lowercase letters, numbers, and hyphens. The route, dropdown link, directory card, and static entry file all come from that entry. The page’s component and CSS load when a reader opens it.
+Use a unique ID and URL. URL segments use lowercase letters, numbers, and hyphens. The same entry supplies the route, Library listing, topic listing when applicable, and static entry file. The page’s component and CSS load when a reader opens it. Library search uses the title, description, resource type, topic title, and optional `keywords`. Use `keywords` for alternate titles, terminology, and passage references.
 
 For a custom thumbnail, put a square image in `public/images/` and add `thumbnail: '/images/reading-guide.webp'` to the entry. Omit `thumbnail` to use the site’s book logo. Run `npm run build` to check the registration and referenced image.
 
@@ -33,7 +38,7 @@ Keep “preview” visible until the tool is real. Avoid adding unverified histo
 3. Add a comparison with a stable ID, title, subtitle, `translation: "BSB"`, columns, reading groups, and notes.
 4. Each column has a stable ID and a full passage reference. Each reading group must explicitly include **every** column ID. A cell is a reference or `null` for an absent parallel.
 5. Label notes `editorial` or `scholarly`. Scholarly notes must include citations; textual observations should include primary passage references. Cite the source that supports the actual claim.
-6. Register the page in `src/pageCatalog.ts`. Use the reusable comparison component with the chosen record and description.
+6. Register the page in `src/pageCatalog.ts` as a `Passage comparison` resource. Use the reusable comparison component with the chosen record and description.
 7. Run `npm test`, `npm run build`, and `npm run verify:api` after updating that script to include the new passages. Check the new comparison on a narrow screen.
 
 A reference is provider-neutral except for its standard book identifier:

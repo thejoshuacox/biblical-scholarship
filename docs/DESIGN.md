@@ -14,7 +14,7 @@ GOV.UK's content guidance starts with the reader's task and recommends clear, us
 
 ## Applying this to the site
 
-- Use a simple masthead and readable text. Home introduces the project and suggests a reading. The Pages directory lists the study sections and other pages.
+- Use a simple masthead and readable text. Home introduces the project and suggests a reading. The Library puts broad topics first, followed by the individual resources readers can also find by searching.
 - Keep the locally hosted serif and sans-serif fonts. The typography should establish hierarchy without decorative icons, excessive labels, or repeated marketing blocks.
 - Use descriptive headings: “Jesus calms the storm” and “Reading notes” replace “One storm. Three tellings.” and “Notice first. Then interpret.”
 - Keep the distinction between the biblical text, editorial observations, and cited scholarship. Plain language must not erase qualifications or disagreement.
@@ -30,13 +30,13 @@ Future edits should preserve that direction without turning these notes into ano
 
 ## Designing a section
 
-The Synoptic Gospels, Torah Law Comparisons, and Torah Sources entry components live in their own folders under `src/pages/`. Start a redesign in that section’s folder. Replace its `ModulePreview` with the section’s own layout when the tool is ready. Existing URLs, navigation, and the saved light or dark preference come from the shared app and layout.
+The Synoptic Gospels and The Torah have their own page components under `src/pages/`. Start a topic redesign in its folder. Torah Law Comparisons and Torah Sources have separate resource components. Replace a tool’s `ModulePreview` when the tool is ready. Existing URLs, navigation, and the saved light or dark preference come from the shared app and layout.
 
 Put the section’s styles in a colocated `.module.css` file and apply a local class to its outer element. Give that element its own layout, typography, and color variables as needed. Variables such as `--ink`, `--accent`, `--surface`, and `--serif` can be overridden on the section’s root. Add dark palette overrides with `:global(html[data-theme='dark']) .root`, where `.root` is that stylesheet’s local root class. The surrounding header and footer use the site palette. Use `background: var(--paper)` and `color: var(--ink)` on the section root if it overrides those colors.
 
-The shared `page-shell`, `page-intro`, and button styles are available for pages that use the current layout. A new section can compose its own layout and still reuse passages, citations, or bibliographies from `src/components/`. Each registered page gets a main landmark with `data-page` set to its catalog ID. Add public routes in [the page catalog](../src/pageCatalog.ts). See the [content guide](CONTENT.md#adding-a-standalone-page) for an example.
+The shared `page-shell`, `page-intro`, and button styles are available for pages that use the current layout. A new section can compose its own layout and still reuse passages, citations, or bibliographies from `src/components/`. Each registered page gets a main landmark with `data-page` set to its catalog ID. Add public routes in [the page catalog](../src/pageCatalog.ts). See the [content guide](CONTENT.md#adding-a-topic-or-resource) for an example.
 
-The Home illustration (`public/images/open-books.jpg`) and the Gospel comparison thumbnail (`public/images/storm-cover.jpg`) were made with the built-in ImageGen tool. The Home illustration also appears on the About & Methods card.
+The Home illustration (`public/images/open-books.jpg`) and the Gospel comparison thumbnail (`public/images/storm-cover.jpg`) were made with the built-in ImageGen tool. The Home illustration also appears on the Synoptic Gospels and About & Methods cards.
 
 <details>
 <summary>ImageGen prompts</summary>

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { pageCatalog, pagesPath } from '../pageCatalog';
+import { libraryPath, topics } from '../pageCatalog';
 import styles from './SiteLayout.module.css';
 
-export function PagesMenu() {
+export function LibraryMenu() {
   const [open, setOpen] = useState(false);
   const group = useRef<HTMLDivElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -56,15 +56,15 @@ export function PagesMenu() {
         if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
       }}
     >
-      <NavLink to={pagesPath} end onClick={() => setOpen(false)}>
-        Pages
+      <NavLink to={libraryPath} end onClick={() => setOpen(false)}>
+        Library
       </NavLink>
       <button
         ref={toggle}
         className={styles.pagesToggle}
         type="button"
-        aria-label="Page links"
-        aria-controls="page-links"
+        aria-label="Topic links"
+        aria-controls="topic-links"
         aria-expanded={open}
         onClick={() => setOpen(!open)}
       >
@@ -72,11 +72,11 @@ export function PagesMenu() {
       </button>
       <ul
         className={styles.pageLinks}
-        id="page-links"
+        id="topic-links"
         ref={list}
         hidden={!open}
       >
-        {pageCatalog.map((entry) => (
+        {topics.map((entry) => (
           <li key={entry.id}>
             <NavLink to={entry.path} end onClick={() => setOpen(false)}>
               {entry.title}

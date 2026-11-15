@@ -1,11 +1,17 @@
 import { constants } from 'node:fs';
 import { access, copyFile, mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { pageCatalog, pagesPath } from '../src/pageCatalog';
+import {
+  findTopic,
+  legacyLibraryPath,
+  libraryPath,
+  pageCatalog,
+} from '../src/pageCatalog';
 
-const paths = new Set<string>([pagesPath]);
-const ids = new Set(['home', 'pages', 'not-found']);
-for (const { id, path, thumbnail } of pageCatalog) {
+const paths = new Set<string>([libraryPath, legacyLibraryPath]);
+const ids = new Set(['home', 'library', 'pages', 'not-found']);
+for (const entry of pageCatalog) {
+  const { id, path, thumbnail } = entry;
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id)) {
     throw new Error(`Invalid, duplicate, or reserved page ID: ${id}`);
   }
@@ -16,6 +22,9 @@ for (const { id, path, thumbnail } of pageCatalog) {
   }
   if (paths.has(path))
     throw new Error(`Duplicate or reserved page URL: ${path}`);
+  if (entry.kind === 'resource' && entry.topicId && !findTopic(entry.topicId)) {
+    throw new Error(`Unknown topic for ${path}: ${entry.topicId}`);
+  }
   if (thumbnail) {
     if (
       !/^\/(?:[\w-]+\/)*[\w-]+\.(avif|gif|jpe?g|png|svg|webp)$/i.test(thumbnail)

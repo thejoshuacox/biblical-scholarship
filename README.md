@@ -8,7 +8,7 @@ The [design and voice notes](docs/DESIGN.md) explain the visual direction and th
 
 ## Included
 
-- Homepage, Pages dropdown and directory, About & Methods, and three clearly marked module previews.
+- Homepage, searchable Library, two topic pages, About & Methods, and two clearly marked tool previews.
 - A working three-column comparison of **Matthew 8:23–27, Mark 4:35–41, and Luke 8:22–25**.
 - Aligned thematic groups or whole passages; reading-note controls; responsive layout; keyboard navigation.
 - Live Berean Standard Bible passages through AO Lab, with loading, failure, timeout, and retry states.
@@ -50,7 +50,7 @@ Browser tests use Microsoft Edge on Windows by default. On another platform inst
 | `src/bible/helloao.ts`              | AO Lab requests, validation, normalization, bounded chapter cache                      |
 | `src/components/`                   | Passage display, citations, bibliography, scholarly annotations                        |
 | `src/App.tsx`                       | Shared route rendering and page landmarks                                              |
-| `src/pageCatalog.ts`                | Page registration for routes, navigation, and the directory                            |
+| `src/pageCatalog.ts`                | Routes, topic and resource registration, and Library search                            |
 | `src/pages/`                        | Homepage, methods, and independent section entry components                            |
 | `src/layout/`                       | Shared navigation, footer, and focus handling                                          |
 | `src/styles.css`                    | Light and dark palettes, base typography, and shared controls                          |
@@ -84,7 +84,7 @@ Create a **Static Site**, not a Web Service. Use:
 | Start command                     | None                                                       |
 | Optional rewrite                  | Source `/*`, destination `/index.html`, action **Rewrite** |
 
-The production build writes an `index.html` entry for the Pages directory and each catalog route so direct links and refreshes can load on a static host. The optional rewrite serves the app’s “Page not found” screen for unmatched paths, with HTTP 200.
+The production build writes an `index.html` entry for the Library, its former `/pages` URL, and each catalog route so direct links and refreshes can load on a static host. The app redirects `/pages` to `/library`. The optional Render rewrite serves the app’s “Page not found” screen for unmatched paths, with HTTP 200.
 
 You can alternatively connect the repository as a Blueprint using `render.yaml`; connecting a Blueprint triggers deployment. The owner has connected the GitHub repository to the live Render site linked above.
 

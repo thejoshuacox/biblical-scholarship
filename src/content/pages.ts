@@ -41,8 +41,14 @@ const pageSchema = z.object({
     help: z.string(),
     caution: z.string(),
   }),
+  topics: z.object({
+    synoptic: z.object({
+      title: z.string(),
+      text: z.string(),
+      planned: z.string(),
+    }),
+  }),
   preview: z.object({
-    synoptic: z.object({ title: z.string(), text: z.string() }),
     other: z.object({ title: z.string(), text: z.string() }),
   }),
 });

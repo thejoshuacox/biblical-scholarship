@@ -95,7 +95,7 @@
         "title": "What’s available so far",
         "paragraphs": [
           {
-            "text": "There’s one Gospel comparison to read and three pages outlining the planned tools. You don’t need an account. Saved reading progress hasn’t been added."
+            "text": "You can read the first Gospel comparison and see what’s planned for the Torah studies. The Library lists the available topics and resources. You don’t need an account. Saved reading progress hasn’t been added."
           }
         ]
       }
@@ -106,11 +106,14 @@
     "help": "The groups below connect related parts of the story. They aren’t word-for-word alignments. Each account stays in its original verse order.",
     "caution": "English wording helps us compare this translation. It cannot, on its own, establish relationships between the Greek texts or prove a particular source theory."
   },
-  "preview": {
+  "topics": {
     "synoptic": {
       "title": "What does “Synoptic” mean?",
-      "text": "Here, “Synoptic” is a convenient label for reading Matthew, Mark, and Luke together. You can compare the accounts without first choosing a theory about their relationship."
-    },
+      "text": "Here, “Synoptic” is a convenient label for reading Matthew, Mark, and Luke together. You can compare the accounts without first choosing a theory about their relationship.",
+      "planned": "I plan to add more comparisons, including places where the accounts differ in length or one Gospel has no parallel, along with notes on how scholars investigate those differences."
+    }
+  },
+  "preview": {
     "other": {
       "title": "How the explanations will be sourced",
       "text": "The notes will distinguish observations about a passage from a scholar’s interpretation. Each substantive claim will point to a source you can check."

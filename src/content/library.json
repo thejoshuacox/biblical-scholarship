@@ -28,6 +28,7 @@
   "modules": [
     {
       "id": "torah-law",
+      "topicId": "torah",
       "title": "Torah Law Comparisons",
       "shortTitle": "Torah laws",
       "eyebrow": "LAW & SOCIETY",
@@ -41,21 +42,8 @@
       "status": "preview"
     },
     {
-      "id": "synoptic",
-      "title": "Synoptic Gospel Comparisons",
-      "shortTitle": "Synoptic Gospels",
-      "eyebrow": "PARALLELS & PERSPECTIVES",
-      "description": "Read related passages in Matthew, Mark, and Luke side by side, with notes on the differences.",
-      "question": "How does each Gospel tell the same story?",
-      "planned": [
-        "Aligned passages with room for unequal lengths and absent parallels",
-        "Explanations of how scholars investigate the evangelists’ use of material",
-        "More cited comparisons beyond the first demonstration"
-      ],
-      "status": "preview"
-    },
-    {
       "id": "torah-sources",
+      "topicId": "torah",
       "title": "Torah Sources",
       "shortTitle": "Torah sources",
       "eyebrow": "COMPOSITION & MODELS",
