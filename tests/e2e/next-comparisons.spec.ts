@@ -93,4 +93,52 @@ test('comparison choices work for the visit when browser storage is blocked', as
   await expect(
     chooser.getByRole('link', { name: 'The Lord’s Prayer' }),
   ).toHaveAccessibleDescription(/Previously opened/);
+  const main = page.getByRole('main');
+  await main
+    .getByRole('navigation', { name: 'Breadcrumb' })
+    .getByRole('link', { name: 'Side-by-side comparisons' })
+    .click();
+  await expect(
+    main.getByText('Previously opened', { exact: true }),
+  ).toHaveCount(2);
+  await expect(
+    main.getByRole('link', { name: 'The Lord’s Prayer' }),
+  ).toHaveAccessibleDescription('Previously opened');
+});
+
+test('the comparison collection labels opened passages in catalog order', async ({
+  page,
+  context,
+}) => {
+  await page.goto('/explore/synoptic/comparisons');
+  const main = page.getByRole('main');
+  const links = main.locator('a[href^="/compare/"]');
+  const notes = main.getByText('Previously opened', { exact: true });
+  const prayer = main.getByRole('link', {
+    name: 'The Lord’s Prayer',
+    exact: true,
+  });
+  const beatitudes = main.getByRole('link', {
+    name: 'The Beatitudes',
+    exact: true,
+  });
+
+  await expect(prayer).toBeVisible();
+  const catalogOrder = await links.allTextContents();
+  await expect(notes).toHaveCount(0);
+  await prayer.click();
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'The Lord’s Prayer',
+  );
+  await page.goBack();
+  await expect(prayer).toHaveAccessibleDescription('Previously opened');
+  await expect(notes).toBeVisible();
+
+  await page.reload();
+  await expect(prayer).toHaveAccessibleDescription('Previously opened');
+  const otherTab = await context.newPage();
+  await otherTab.goto('/compare/beatitudes');
+  await expect(beatitudes).toHaveAccessibleDescription('Previously opened');
+  await expect(notes).toHaveCount(2);
+  await expect(links).toHaveText(catalogOrder);
 });

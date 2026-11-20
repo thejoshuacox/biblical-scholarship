@@ -175,6 +175,20 @@
   color: var(--muted);
   margin: 0.2rem 1.6rem 0 0;
 }
+.resources .referenceLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.75rem;
+}
+.openedNote {
+  padding-inline: 0.45rem;
+  border-radius: 3px;
+  background: var(--wash);
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
 .guideSection {
   border-top: 1px solid var(--line);
   padding-top: 1.55rem;

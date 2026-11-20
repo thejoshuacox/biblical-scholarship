@@ -6,7 +6,12 @@ import type { SynopticParagraph } from '../../content/synoptic';
 import { libraryPath, synopticTopic, type PageEntry } from '../../pageCatalog';
 import styles from './Synoptic.module.css';
 
-type PageLink = Pick<PageEntry, 'path' | 'title'>;
+type ResourceListEntry = Pick<
+  PageEntry,
+  'id' | 'path' | 'title' | 'description'
+> & {
+  references?: string;
+};
 const libraryLink = { path: libraryPath, title: 'Library' };
 
 export function SynopticBreadcrumbs({
@@ -81,21 +86,35 @@ export function SynopticText({
 
 export function SynopticResourceList({
   entries,
+  openedIds,
 }: {
-  entries: readonly (PageLink & { description: string; references?: string })[];
+  entries: readonly ResourceListEntry[];
+  openedIds?: ReadonlySet<string>;
 }) {
   return (
     <ul className={styles.resources} role="list">
-      {entries.map(({ path, title, description, references }) => (
-        <li key={path}>
-          <Link to={path}>
-            <span>{title}</span>
-            <ChevronRight size={18} aria-hidden />
-          </Link>
-          {references && <p className={styles.referenceLine}>{references}</p>}
-          <p>{description}</p>
-        </li>
-      ))}
+      {entries.map(({ id, path, title, description, references }) => {
+        const noteId = openedIds?.has(id) ? 'opened-' + id : undefined;
+        return (
+          <li key={id}>
+            <Link to={path} aria-describedby={noteId}>
+              <span>{title}</span>
+              <ChevronRight size={18} aria-hidden />
+            </Link>
+            {(references || noteId) && (
+              <p className={styles.referenceLine}>
+                {references && <span>{references}</span>}
+                {noteId && (
+                  <span className={styles.openedNote} id={noteId}>
+                    Previously opened
+                  </span>
+                )}
+              </p>
+            )}
+            <p>{description}</p>
+          </li>
+        );
+      })}
     </ul>
   );
 }
