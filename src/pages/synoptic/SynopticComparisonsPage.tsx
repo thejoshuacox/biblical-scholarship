@@ -12,7 +12,10 @@ export function SynopticComparisonsPage() {
     <SynopticLayout readingWidth>
       <header className="page-intro">
         <h1>{synopticComparisonCollection.title}</h1>
-        <p className="lead">{synopticComparisonCollection.description}</p>
+        <p className="lead">
+          {synopticComparisonCollection.description} An “Unread” tag marks a
+          comparison you haven’t opened in this browser.
+        </p>
       </header>
       <SynopticResourceList
         entries={synopticComparisonEntries}

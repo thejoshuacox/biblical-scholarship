@@ -219,6 +219,61 @@
       "type": "article",
       "verified": "2026-11-15",
       "details": "The author’s manuscript is available online. See the section “A. The Beatitudes” for the connection between Luke’s blessings and Mary’s song."
+    },
+    {
+      "id": "shedd-john-death",
+      "author": "Nathan L. Shedd",
+      "title": "The Beheading of John the Baptist in the First Three Centuries: Memory, Violence, and Reception",
+      "publisher": "PhD thesis, St Mary’s University and Liverpool Hope University",
+      "date": "2019",
+      "url": "https://research.stmarys.ac.uk/id/eprint/3503/",
+      "type": "reference",
+      "verified": "2026-11-20",
+      "details": "The university archive provides the full thesis. Pages 167–168 connect Herod’s question in Luke 9 with his later meeting with Jesus."
+    },
+    {
+      "id": "brown-matthew-temptation",
+      "author": "Jeannine K. Brown",
+      "title": "Commentary on Matthew 4:1–17",
+      "publisher": "Working Preacher, Luther Seminary",
+      "date": "January 20, 2019",
+      "url": "https://www.workingpreacher.org/commentaries/narrative-lectionary/tempted-in-the-wilderness-2/commentary-on-matthew-41-17-2",
+      "type": "article",
+      "verified": "2026-11-20",
+      "details": "Brown discusses the three replies from Deuteronomy and how they connect Matthew’s wilderness scene with Israel’s story."
+    },
+    {
+      "id": "hultgren-luke-temptation",
+      "author": "Arland J. Hultgren",
+      "title": "Commentary on Luke 4:1–13",
+      "publisher": "Working Preacher, Luther Seminary",
+      "date": "February 21, 2010",
+      "url": "https://www.workingpreacher.org/commentaries/revised-common-lectionary/first-sunday-in-lent-3/commentary-on-luke-41-13-2",
+      "type": "article",
+      "verified": "2026-11-20",
+      "details": "Hultgren sets each of Jesus’ replies beside the passage in Deuteronomy from which it comes."
+    },
+    {
+      "id": "miller-women-at-tomb",
+      "author": "Susan Miller",
+      "title": "‘They Said Nothing to Anyone’: The Fear and Silence of the Women at the Empty Tomb (Mk 16.1–8)",
+      "publisher": "Feminist Theology 13, no. 1, pp. 77–90",
+      "date": "2004",
+      "url": "https://doi.org/10.1177/096673500401300106",
+      "type": "article",
+      "verified": "2026-11-20",
+      "details": "The public abstract explains Miller’s reading of the women’s loyalty, fear, and silence at the tomb."
+    },
+    {
+      "id": "houghton-ending-mark",
+      "author": "H. A. G. Houghton",
+      "title": "Unfinished Business: The Ending of Mark in Two Catena Manuscripts",
+      "publisher": "New Testament Studies 69, no. 1, pp. 35–42",
+      "date": "2023",
+      "url": "https://doi.org/10.1017/S0028688522000224",
+      "type": "article",
+      "verified": "2026-11-20",
+      "details": "Section 1 identifies two fourth-century Greek manuscripts that end at Mark 16:8. The article is open access."
     }
   ],
   "hypotheses": [],
@@ -1503,6 +1558,1002 @@
             {
               "sourceId": "matson-beatitudes",
               "locator": "“A. The Beatitudes”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "death-of-john-the-baptist",
+      "title": "The death of John the Baptist",
+      "subtitle": "What does Herod say when he hears about Jesus?",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 14,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 12
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 6,
+              "verse": 14
+            },
+            "end": {
+              "chapter": 6,
+              "verse": 29
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 9,
+              "verse": 7
+            },
+            "end": {
+              "chapter": 9,
+              "verse": 9
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "herod-hears",
+          "title": "Herod hears about Jesus",
+          "explanation": "In Matthew and Mark, Herod thinks Jesus is John raised from the dead. In Luke he acknowledges John’s execution and asks who Jesus could be. Luke closes the episode with Herod hoping to meet him.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 2
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 14
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 16
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 9,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 9
+              }
+            }
+          }
+        },
+        {
+          "id": "john-in-prison",
+          "title": "Why John is in prison",
+          "explanation": "Matthew and Mark now look back to John’s arrest. Notice who wants John dead and what holds that person back.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 5
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 17
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 20
+              }
+            },
+            "luke": null
+          }
+        },
+        {
+          "id": "birthday-promise",
+          "title": "A birthday promise",
+          "explanation": "Both accounts trace the request to Herodias, the girl’s mother. Mark lets readers hear the conversation between mother and daughter.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 8
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 21
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 25
+              }
+            },
+            "luke": null
+          }
+        },
+        {
+          "id": "johns-disciples",
+          "title": "Herod gives the order",
+          "explanation": "Herod’s guests have heard his promise. Follow the story through John’s burial and notice where each writer ends it.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 12
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 26
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 29
+              }
+            },
+            "luke": null
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "john-news",
+          "kind": "editorial",
+          "title": "Who gets the news?",
+          "text": "Matthew begins with Herod hearing about Jesus. By the end, the news travels in the other direction. John’s disciples bury their teacher and go to tell Jesus what happened. Mark ends with the disciples laying John in a tomb.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 2
+              }
+            },
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 12
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 29
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 29
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "john-herod-grief",
+          "kind": "scholarly",
+          "title": "Why is Herod grieving?",
+          "text": "Mark says Herod had been protecting John. Matthew says Herod wanted John dead, yet he too grieves when the request comes. Mark Goodacre argues that Matthew kept the grief from Mark while changing Herod’s earlier motive. For Goodacre, this is one clue that Matthew used Mark’s account.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 5
+              }
+            },
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 14,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 9
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 19
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 20
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 6,
+                "verse": 26
+              },
+              "end": {
+                "chapter": 6,
+                "verse": 26
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "goodacre-fatigue",
+              "locator": "pp. 46–47, on Herod’s grief"
+            }
+          ]
+        },
+        {
+          "id": "john-luke-meeting",
+          "kind": "scholarly",
+          "title": "What becomes of Herod’s question in Luke?",
+          "text": "Luke has already told readers how John came to be in prison. Here Herod mentions the execution and wants to see Jesus. Nathan L. Shedd connects that wish with a later scene. When Pilate sends Jesus to Herod, Luke says Herod has long hoped to see him perform a miracle.",
+          "references": [
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 3,
+                "verse": 19
+              },
+              "end": {
+                "chapter": 3,
+                "verse": 20
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 9,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 9,
+                "verse": 9
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 23,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 23,
+                "verse": 9
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "shedd-john-death",
+              "locator": "pp. 167–168, on Luke 9:7–9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "temptation-of-jesus",
+      "title": "Jesus is tempted in the wilderness",
+      "subtitle": "Which test comes last?",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 4,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 11
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 1,
+              "verse": 12
+            },
+            "end": {
+              "chapter": 1,
+              "verse": 13
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 4,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 13
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "forty-days",
+          "title": "Forty days in the wilderness",
+          "explanation": "The Spirit brings Jesus into the wilderness in all three accounts. Mark tells the whole episode in two verses, including the wild animals and the angels.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 2
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 1,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 1,
+                "verse": 13
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "bread",
+          "title": "The challenge about bread",
+          "explanation": "Matthew and Luke open the dialogue with Jesus hungry. Notice how the devil addresses him before mentioning bread.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 4
+              }
+            },
+            "mark": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 4
+              }
+            }
+          }
+        },
+        {
+          "id": "temple-and-kingdoms",
+          "title": "The temple and the kingdoms",
+          "explanation": "These two tests change places. Follow Matthew’s sequence and then Luke’s. Where does the devil take Jesus last in each account?",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 10
+              }
+            },
+            "mark": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 12
+              }
+            }
+          }
+        },
+        {
+          "id": "devil-leaves",
+          "title": "The devil leaves",
+          "explanation": "Matthew closes with angels caring for Jesus, a detail Mark includes in the first group. Luke leaves open when the devil will return.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 11
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 11
+              }
+            },
+            "mark": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 13
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 13
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "temptation-order",
+          "kind": "editorial",
+          "title": "Which reply gets the last word?",
+          "text": "Matthew puts the temple second and the mountain last. His final exchange is about worship. Luke puts the kingdoms second and the Jerusalem temple last. His final exchange is about whether to put God to the test.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 10
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 12
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "temptation-deuteronomy",
+          "kind": "scholarly",
+          "title": "What does bread have to do with the wilderness?",
+          "text": "Jeannine K. Brown reads Matthew’s three replies from Deuteronomy as a link to Israel’s wilderness journey. Arland J. Hultgren traces the first reply in Luke to the same story. Moses recalls a time when the people went hungry and God fed them manna. Jesus answers the challenge about bread with words from that speech.",
+          "references": [
+            {
+              "book": "DEU",
+              "bookName": "Deuteronomy",
+              "start": {
+                "chapter": 8,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 3
+              }
+            },
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 4,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 4
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 4,
+                "verse": 3
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 4
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "brown-matthew-temptation",
+              "locator": "discussion of Matthew 4:1–11 and Deuteronomy 6–8"
+            },
+            {
+              "sourceId": "hultgren-luke-temptation",
+              "locator": "“Temptation One” and its context in Deuteronomy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "women-at-the-empty-tomb",
+      "title": "The women at the empty tomb",
+      "subtitle": "What do the women hear, and whom do they tell?",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 28,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 28,
+              "verse": 10
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 16,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 16,
+              "verse": 8
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 24,
+              "verse": 1
+            },
+            "end": {
+              "chapter": 24,
+              "verse": 12
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "stone",
+          "title": "The women arrive at the tomb",
+          "explanation": "Mark gives the women a question about the stone as they approach. Matthew describes an angel moving it. Luke begins with the women finding it already rolled away.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 28,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 4
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 4
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 24,
+                "verse": 1
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 3
+              }
+            }
+          }
+        },
+        {
+          "id": "message",
+          "title": "The message at the tomb",
+          "explanation": "Look at who speaks to the women. Matthew describes an angel, Mark a young man dressed in white, and Luke two men in shining clothes.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 28,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 7
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 5
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 7
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 24,
+                "verse": 4
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 8
+              }
+            }
+          }
+        },
+        {
+          "id": "women-respond",
+          "title": "How the women respond",
+          "explanation": "Matthew’s women run to tell the disciples. Mark’s women flee in fear and silence. Luke tells readers how the apostles receive the women’s news.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 28,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 8
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 8
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 24,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 11
+              }
+            }
+          }
+        },
+        {
+          "id": "after-the-tomb",
+          "title": "After the women leave",
+          "explanation": "Matthew follows the women as Jesus meets them on their way. Luke follows Peter as he runs to the tomb to look for himself.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 28,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 10
+              }
+            },
+            "mark": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 24,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 12
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "tomb-galilee",
+          "kind": "editorial",
+          "title": "Listen for the name Galilee",
+          "text": "In Matthew and Mark, the disciples are to hear that they will see Jesus in Galilee. In Luke, the women are asked to remember what Jesus said while he was in Galilee. One place name points ahead to a meeting in two accounts and back to a conversation in the third.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 28,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 28,
+                "verse": 7
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 7
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 24,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 24,
+                "verse": 8
+              }
+            }
+          ],
+          "citations": []
+        },
+        {
+          "id": "tomb-women-silence",
+          "kind": "scholarly",
+          "title": "What makes the silence striking?",
+          "text": "Susan Miller sets the women’s silence beside an earlier scene in Mark. A woman Jesus has healed trembles and tells him what happened. At the tomb, women who stayed to watch the crucifixion are also trembling. This time fear keeps them from speaking.",
+          "references": [
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 15,
+                "verse": 40
+              },
+              "end": {
+                "chapter": 15,
+                "verse": 41
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 5,
+                "verse": 29
+              },
+              "end": {
+                "chapter": 5,
+                "verse": 34
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 8
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "miller-women-at-tomb",
+              "locator": "abstract, on fear and speaking"
+            }
+          ]
+        },
+        {
+          "id": "tomb-mark-ending",
+          "kind": "scholarly",
+          "title": "Why stop at Mark 16:8?",
+          "text": "H. A. G. Houghton identifies two fourth-century Greek copies of Mark, called Sinaiticus and Vaticanus, that end with the women leaving the tomb. This comparison follows that ending. Other copies continue with verses 9–20, where Jesus appears to Mary Magdalene.",
+          "references": [
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 8
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 16,
+                "verse": 9
+              },
+              "end": {
+                "chapter": 16,
+                "verse": 20
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "houghton-ending-mark",
+              "locator": "§1, Introduction"
             }
           ]
         }

@@ -9,7 +9,7 @@ The [design and voice notes](docs/DESIGN.md) explain the visual direction and th
 ## Included
 
 - Homepage, searchable Library, two topic pages, About & Methods, and two clearly marked tool previews.
-- A Synoptic Gospels topic with three cited guides and five side-by-side comparisons.
+- A Synoptic Gospels topic with three cited guides and eight side-by-side comparisons.
 - Aligned thematic groups or whole passages; reading-note controls; responsive layout; keyboard navigation.
 - Live Berean Standard Bible passages through AO Lab, with loading, failure, timeout, and retry states.
 - Validated JSON content, reusable display components, and an interchangeable Bible-provider interface.

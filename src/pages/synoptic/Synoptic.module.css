@@ -181,13 +181,13 @@
   align-items: baseline;
   gap: 0.2rem 0.75rem;
 }
-.openedNote {
+.unreadNote {
   padding-inline: 0.45rem;
   border-radius: 3px;
-  background: var(--wash);
-  color: var(--muted);
+  background: var(--highlight);
+  color: var(--accent);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 .guideSection {
   border-top: 1px solid var(--line);

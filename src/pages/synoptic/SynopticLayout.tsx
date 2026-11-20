@@ -94,19 +94,20 @@ export function SynopticResourceList({
   return (
     <ul className={styles.resources} role="list">
       {entries.map(({ id, path, title, description, references }) => {
-        const noteId = openedIds?.has(id) ? 'opened-' + id : undefined;
+        const unreadId =
+          openedIds && !openedIds.has(id) ? 'unread-' + id : undefined;
         return (
           <li key={id}>
-            <Link to={path} aria-describedby={noteId}>
+            <Link to={path} aria-describedby={unreadId}>
               <span>{title}</span>
               <ChevronRight size={18} aria-hidden />
             </Link>
-            {(references || noteId) && (
+            {(references || unreadId) && (
               <p className={styles.referenceLine}>
                 {references && <span>{references}</span>}
-                {noteId && (
-                  <span className={styles.openedNote} id={noteId}>
-                    Previously opened
+                {unreadId && (
+                  <span className={styles.unreadNote} id={unreadId}>
+                    Unread
                   </span>
                 )}
               </p>

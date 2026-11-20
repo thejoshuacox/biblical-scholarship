@@ -5,8 +5,13 @@ const chooserName = 'Choose your next comparison';
 test('readers can choose any other comparison, with unopened and related passages first', async ({
   page,
 }) => {
-  await page.goto('/compare/calming-the-storm#next-comparisons');
+  await page.goto('/explore/synoptic/comparisons');
   const main = page.getByRole('main');
+  const collectionLinks = main.locator('a[href^="/compare/"]');
+  await expect(collectionLinks.first()).toBeVisible();
+  const comparisonCount = await collectionLinks.count();
+
+  await page.goto('/compare/calming-the-storm#next-comparisons');
   const chooser = main.getByRole('navigation', { name: chooserName });
   const cards = chooser.getByRole('link');
 
@@ -34,7 +39,7 @@ test('readers can choose any other comparison, with unopened and related passage
   await expect(cards.first()).toHaveAccessibleName('The baptism of Jesus');
   await chooser.locator('summary').focus();
   await page.keyboard.press('Space');
-  await expect(cards).toHaveCount(4);
+  await expect(cards).toHaveCount(comparisonCount - 1);
   await expect(
     chooser.getByRole('link', { name: 'Jesus heals a paralyzed man' }),
   ).toHaveCount(0);
@@ -43,9 +48,13 @@ test('readers can choose any other comparison, with unopened and related passage
 
   await chooser.getByRole('link', { name: 'The Lord’s Prayer' }).click();
   await expect(cards.first()).toHaveAccessibleName('The Beatitudes');
-  await cards.first().click();
-  await expect(cards.first()).toHaveAccessibleName('The baptism of Jesus');
-  await cards.first().click();
+  for (let visited = 3; visited < comparisonCount; visited++) {
+    const next = cards.first();
+    await expect(next).not.toHaveAccessibleDescription(/Previously opened/);
+    const title = await next.locator('[id^="next-title-"]').innerText();
+    await next.click();
+    await expect(main.getByRole('heading', { level: 1 })).toHaveText(title);
+  }
   await expect(chooser).toContainText('You’ve opened every comparison');
   await chooser.locator('summary').click();
   for (const card of await cards.all()) {
@@ -98,47 +107,60 @@ test('comparison choices work for the visit when browser storage is blocked', as
     .getByRole('navigation', { name: 'Breadcrumb' })
     .getByRole('link', { name: 'Side-by-side comparisons' })
     .click();
-  await expect(
-    main.getByText('Previously opened', { exact: true }),
-  ).toHaveCount(2);
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Side-by-side comparisons',
+  );
+  const collectionSize = await main.locator('a[href^="/compare/"]').count();
+  await expect(main.getByText('Unread', { exact: true })).toHaveCount(
+    collectionSize - 2,
+  );
   await expect(
     main.getByRole('link', { name: 'The Lord’s Prayer' }),
-  ).toHaveAccessibleDescription('Previously opened');
+  ).toHaveAccessibleDescription('');
+  await expect(
+    main.getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toHaveAccessibleDescription('Unread');
 });
 
-test('the comparison collection labels opened passages in catalog order', async ({
+test('the collection labels unread comparisons until they are opened in this browser', async ({
   page,
   context,
 }) => {
   await page.goto('/explore/synoptic/comparisons');
   const main = page.getByRole('main');
   const links = main.locator('a[href^="/compare/"]');
-  const notes = main.getByText('Previously opened', { exact: true });
-  const prayer = main.getByRole('link', {
-    name: 'The Lord’s Prayer',
+  const tags = main.getByText('Unread', { exact: true });
+  const john = main.getByRole('link', {
+    name: 'The death of John the Baptist',
     exact: true,
   });
-  const beatitudes = main.getByRole('link', {
-    name: 'The Beatitudes',
+  const tomb = main.getByRole('link', {
+    name: 'The women at the empty tomb',
     exact: true,
   });
 
-  await expect(prayer).toBeVisible();
+  await expect(john).toHaveAccessibleDescription('Unread');
   const catalogOrder = await links.allTextContents();
-  await expect(notes).toHaveCount(0);
-  await prayer.click();
-  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
-    'The Lord’s Prayer',
-  );
+  await expect(tags).toHaveCount(catalogOrder.length);
+  await john.click();
+  await expect(
+    main.getByRole('article', { name: 'Luke 9:7–9', exact: true }),
+  ).toBeVisible({ timeout: 30000 });
+  await expect(
+    main.getByText('No parallel assigned in this reading group.', {
+      exact: true,
+    }),
+  ).toHaveCount(3);
   await page.goBack();
-  await expect(prayer).toHaveAccessibleDescription('Previously opened');
-  await expect(notes).toBeVisible();
+  await expect(john).toHaveAccessibleDescription('');
+  await expect(tags).toHaveCount(catalogOrder.length - 1);
 
   await page.reload();
-  await expect(prayer).toHaveAccessibleDescription('Previously opened');
+  await expect(john).toHaveAccessibleDescription('');
+  await expect(tomb).toHaveAccessibleDescription('Unread');
   const otherTab = await context.newPage();
-  await otherTab.goto('/compare/beatitudes');
-  await expect(beatitudes).toHaveAccessibleDescription('Previously opened');
-  await expect(notes).toHaveCount(2);
+  await otherTab.goto('/compare/women-at-the-empty-tomb');
+  await expect(tomb).toHaveAccessibleDescription('');
+  await expect(tags).toHaveCount(catalogOrder.length - 2);
   await expect(links).toHaveText(catalogOrder);
 });

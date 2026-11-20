@@ -167,7 +167,7 @@ export const synopticComparisonEntries = [
   synopticComparisonEntry(
     comparisonById('baptism-of-jesus'),
     'Hear what the voice from heaven says in Matthew, Mark, and Luke, and notice whom it addresses.',
-    ['Narrative', 'Prayer'],
+    ['Narrative', 'Prayer', 'John the Baptist', 'Son of God'],
   ),
   synopticComparisonEntry(
     comparisonById('healing-a-paralyzed-man'),
@@ -178,6 +178,21 @@ export const synopticComparisonEntries = [
     comparisonById('beatitudes'),
     'Compare Jesus’ opening blessings and the warnings that follow them in Luke.',
     ['Teaching', 'Sermon on the Mount'],
+  ),
+  synopticComparisonEntry(
+    comparisonById('death-of-john-the-baptist'),
+    'Follow the story of Herod’s birthday in Matthew and Mark, then read what Herod himself says about John in Luke.',
+    ['Narrative', 'John the Baptist', 'Burial'],
+  ),
+  synopticComparisonEntry(
+    comparisonById('temptation-of-jesus'),
+    'Compare Mark’s two verses with Matthew and Luke’s three tests. Which test comes last in each account?',
+    ['Narrative', 'Son of God', 'Scripture'],
+  ),
+  synopticComparisonEntry(
+    comparisonById('women-at-the-empty-tomb'),
+    'Follow the women to the tomb and notice what each messenger says about Galilee.',
+    ['Narrative', 'Burial', 'Resurrection'],
   ),
 ];
 
