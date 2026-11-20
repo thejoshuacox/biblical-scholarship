@@ -1,5 +1,4 @@
 import { Comparison } from '../../components/Comparison';
-import { ReadNextLink } from '../../components/ReadNextLink';
 import { pages } from '../../content/pages';
 import type { Library } from '../../content/schema';
 import {
@@ -7,6 +6,7 @@ import {
   synopticGuideEntries,
   synopticTopic,
 } from '../../pageCatalog';
+import { NextComparisons } from './NextComparisons';
 import { SynopticBreadcrumbs } from './SynopticLayout';
 import styles from './Synoptic.module.css';
 
@@ -29,11 +29,8 @@ export function SynopticComparisonPage({
             links={[synopticTopic, synopticComparisonCollection]}
           />
         }
-        related={
-          readingGuide && (
-            <ReadNextLink path={readingGuide.path} label={readingGuide.title} />
-          )
-        }
+        readingGuide={readingGuide}
+        related={<NextComparisons currentId={comparison.id} />}
       />
     </div>
   );

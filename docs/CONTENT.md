@@ -38,7 +38,7 @@ Keep “preview” visible until the tool is real. Avoid adding unverified histo
 3. Add a comparison with a stable ID, title, subtitle, `translation: "BSB"`, columns, reading groups, and notes.
 4. Each column has a stable ID and a full passage reference. Each reading group must explicitly include **every** column ID. A cell is a reference or `null` for an absent parallel.
 5. Label notes `editorial` or `scholarly`. Scholarly notes must include citations; textual observations should include primary passage references. Cite the source that supports the actual claim.
-6. Register the page in `src/pageCatalog.ts` as a `Passage comparison` resource. Use the reusable comparison component with the chosen record and description.
+6. Register the page in `src/pageCatalog.ts` as a `Passage comparison` resource. Supply the comparison record, a short description, and themes in `synopticComparisonEntry`. Reuse theme names for related passages so the chooser can suggest them together.
 7. Run `npm test`, `npm run build`, and `npm run verify:api` to check the registered comparisons. Check the new comparison on a narrow screen.
 
 A reference is provider-neutral except for its standard book identifier:

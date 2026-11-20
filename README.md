@@ -57,7 +57,9 @@ Browser tests use Microsoft Edge on Windows by default. On another platform inst
 | `tests/`                            | Provider/content tests and browser verification                                        |
 | `render.yaml`                       | Optional Render Blueprint equivalent to the manual settings                            |
 
-Chapter promises are shared across concurrent requests and retained in memory for 30 minutes, with a maximum of 100 entries. Failed requests are evicted for retry; requests time out after 12 seconds. Cross-chapter passages fetch at most four chapters at a time. The cache resets on reload; no reading history is persisted. The browser can also use normal HTTP caching.
+Chapter promises are shared across concurrent requests and retained in memory for 30 minutes, with a maximum of 100 entries. Failed requests are evicted for retry; requests time out after 12 seconds. Cross-chapter passages fetch at most four chapters at a time. Reloading clears the in-memory cache. The browser can also use normal HTTP caching.
+
+The Synoptic comparison chooser stores a flag in this browser for each comparison opened. It puts unopened comparisons first and ranks each group by shared themes from the page catalog.
 
 The provider checks the returned translation, book, and chapter. It supports structured book identifiers and inclusive chapter/verse endpoints, including cross-chapter ranges. It retains translation headings, paragraphs, poetry indentation, inline breaks, subtitles, and translator notes. Missing requested endpoints and unsupported translations are errors. There is no fallback to another translation.
 

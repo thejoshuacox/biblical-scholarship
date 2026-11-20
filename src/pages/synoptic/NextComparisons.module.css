@@ -1,0 +1,82 @@
+.chooser {
+  max-width: 59rem;
+  scroll-margin-block-start: 1rem;
+  margin-block-start: clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(1rem, 3vw, 1.75rem);
+  background: var(--wash);
+  border-block-start: 3px solid var(--accent);
+  border-radius: 4px;
+}
+.chooser:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.chooser h2 {
+  margin: 0;
+  font-size: clamp(1.85rem, 4vw, 2.25rem);
+}
+.intro {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0.35rem 0 1.1rem;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.card {
+  display: block;
+  height: 100%;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--control-line);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+.card:hover,
+.card:focus-visible {
+  background: var(--highlight);
+  border-color: var(--accent);
+}
+.title {
+  display: block;
+  color: var(--accent);
+  font: 400 clamp(1.5rem, 3vw, 1.8rem) / 1.2 var(--serif);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  text-decoration-thickness: 1px;
+}
+.description {
+  display: block;
+  margin-top: 0.5rem;
+  line-height: 1.55;
+}
+.opened {
+  display: block;
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.more {
+  margin-top: 0.5rem;
+}
+.more summary {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 0.65rem;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+.more summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.more[open] .cards {
+  margin-top: 0.35rem;
+}

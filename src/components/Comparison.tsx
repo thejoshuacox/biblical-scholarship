@@ -12,12 +12,14 @@ export function Comparison({
   copy,
   topic,
   breadcrumb,
+  readingGuide,
   related,
 }: {
   comparison: Library['comparisons'][number];
   copy: { intro: string; help: string; caution: string };
   topic?: Pick<TopicEntry, 'path' | 'title'>;
   breadcrumb?: ReactNode;
+  readingGuide?: Pick<TopicEntry, 'path' | 'title'>;
   related?: ReactNode;
 }) {
   const [aligned, setAligned] = useState(true),
@@ -73,7 +75,12 @@ export function Comparison({
           </button>
         </div>
       </div>
-      <p className={styles.comparisonHelp}>{copy.help}</p>
+      <p className={styles.comparisonHelp}>
+        {copy.help}{' '}
+        {readingGuide && (
+          <Link to={readingGuide.path}>{readingGuide.title}</Link>
+        )}
+      </p>
       {state.status === 'loading' && (
         <div className={styles.loadPanel} role="status">
           <span className={styles.loadingBar} />
@@ -161,7 +168,6 @@ export function Comparison({
           <p className={styles.methodFootnote}>{copy.caution}</p>
         </section>
       )}
-      {related}
       <Bibliography
         ids={[
           ...new Set(
@@ -169,6 +175,7 @@ export function Comparison({
           ),
         ]}
       />
+      {related}
     </div>
   );
 }

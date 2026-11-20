@@ -122,8 +122,9 @@ export const synopticComparisonCollection: ResourceEntry = {
 function synopticComparisonEntry(
   comparison: Library['comparisons'][number],
   description: string,
+  themes: readonly string[],
   thumbnail?: string,
-): ResourceEntry & { references: string } {
+): ResourceEntry & { references: string; themes: readonly string[] } {
   const references = comparison.columns.map(({ reference }) =>
     formatReference(reference),
   );
@@ -135,6 +136,7 @@ function synopticComparisonEntry(
     path: `/compare/${comparison.id}`,
     title: comparison.title,
     description,
+    themes,
     thumbnail,
     keywords: references,
     references: references.join(' · '),
@@ -150,7 +152,8 @@ function synopticComparisonEntry(
 
 export const stormComparisonEntry = synopticComparisonEntry(
   storm,
-  'Compare the accounts in Matthew, Mark, and Luke with notes on what each writer emphasizes.',
+  'Notice when Jesus asks the disciples about their fear or faith in each telling.',
+  ['Narrative', 'Miracle'],
   '/images/storm-cover.jpg',
 );
 
@@ -159,18 +162,22 @@ export const synopticComparisonEntries = [
   synopticComparisonEntry(
     lordsPrayer,
     'Read the prayer in Matthew and Luke and see how each Gospel introduces it.',
+    ['Teaching', 'Sermon on the Mount', 'Prayer'],
   ),
   synopticComparisonEntry(
     comparisonById('baptism-of-jesus'),
     'Hear what the voice from heaven says in Matthew, Mark, and Luke, and notice whom it addresses.',
+    ['Narrative', 'Prayer'],
   ),
   synopticComparisonEntry(
     comparisonById('healing-a-paralyzed-man'),
     'See how the man reaches Jesus in each telling and what happens when Jesus forgives him.',
+    ['Narrative', 'Miracle'],
   ),
   synopticComparisonEntry(
     comparisonById('beatitudes'),
     'Compare Jesus’ opening blessings and the warnings that follow them in Luke.',
+    ['Teaching', 'Sermon on the Mount'],
   ),
 ];
 
