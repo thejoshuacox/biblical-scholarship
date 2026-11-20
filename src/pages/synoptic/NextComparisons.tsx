@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { synopticComparisonEntries } from '../../pageCatalog';
+import {
+  synopticComparisonCollection,
+  synopticComparisonEntries,
+} from '../../pageCatalog';
 import { useOpenedComparisons } from './useOpenedComparisons';
 import styles from './NextComparisons.module.css';
+import synopticStyles from './Synoptic.module.css';
 
 function focusLinkedChooser(chooser: HTMLElement | null) {
   if (chooser && window.location.hash === '#' + chooser.id) {
@@ -30,7 +34,7 @@ export function NextComparisons({ currentId }: { currentId: string }) {
 
   if (!choices.length) return null;
   const allOpened = choices.every(({ previouslyOpened }) => previouslyOpened);
-  const cards = choices.map(({ entry, previouslyOpened }) => (
+  const cards = choices.slice(0, 2).map(({ entry, previouslyOpened }) => (
     <li key={entry.id}>
       <Link
         to={entry.path}
@@ -53,7 +57,6 @@ export function NextComparisons({ currentId }: { currentId: string }) {
       </Link>
     </li>
   ));
-  const more = cards.slice(2);
 
   return (
     <nav
@@ -70,16 +73,14 @@ export function NextComparisons({ currentId }: { currentId: string }) {
           : 'Passages you haven’t opened in this browser come first, starting with related readings.'}
       </p>
       <ul className={styles.cards} role="list">
-        {cards.slice(0, 2)}
+        {cards}
       </ul>
-      {more.length > 0 && (
-        <details className={styles.more}>
-          <summary>More comparisons ({more.length})</summary>
-          <ul className={styles.cards} role="list">
-            {more}
-          </ul>
-        </details>
-      )}
+      <Link
+        to={synopticComparisonCollection.path}
+        className={synopticStyles.collectionLink}
+      >
+        View all side-by-side comparisons
+      </Link>
     </nav>
   );
 }

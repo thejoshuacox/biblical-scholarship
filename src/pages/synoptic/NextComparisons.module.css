@@ -62,21 +62,3 @@
   color: var(--muted);
   font-size: 0.875rem;
 }
-.more {
-  margin-top: 0.5rem;
-}
-.more summary {
-  width: fit-content;
-  min-height: 44px;
-  padding-block: 0.65rem;
-  color: var(--accent);
-  font-weight: 600;
-  cursor: pointer;
-}
-.more summary:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-.more[open] .cards {
-  margin-top: 0.35rem;
-}

@@ -1,19 +1,18 @@
 import { expect, test } from '@playwright/test';
 
 const chooserName = 'Choose your next comparison';
+const collectionLinkName = 'View all side-by-side comparisons';
 
-test('readers can choose any other comparison, with unopened and related passages first', async ({
+test('the chooser suggests two readings and links to the full collection', async ({
   page,
 }) => {
-  await page.goto('/explore/synoptic/comparisons');
-  const main = page.getByRole('main');
-  const collectionLinks = main.locator('a[href^="/compare/"]');
-  await expect(collectionLinks.first()).toBeVisible();
-  const comparisonCount = await collectionLinks.count();
-
   await page.goto('/compare/calming-the-storm#next-comparisons');
+  const main = page.getByRole('main');
   const chooser = main.getByRole('navigation', { name: chooserName });
-  const cards = chooser.getByRole('link');
+  const cards = chooser.getByRole('list').getByRole('link');
+  const collectionLink = chooser.getByRole('link', {
+    name: collectionLinkName,
+  });
 
   await expect(
     chooser.getByRole('heading', { name: chooserName }),
@@ -25,6 +24,11 @@ test('readers can choose any other comparison, with unopened and related passage
     main.getByRole('link', { name: 'How to read a Gospel comparison' }),
   ).toHaveAttribute('href', '/explore/synoptic/how-to-compare');
   await expect(cards).toHaveCount(2);
+  await expect(chooser.getByRole('link')).toHaveCount(3);
+  await expect(collectionLink).toHaveAttribute(
+    'href',
+    '/explore/synoptic/comparisons',
+  );
   await expect(cards.first()).toHaveAccessibleName(
     'Jesus heals a paralyzed man',
   );
@@ -37,16 +41,19 @@ test('readers can choose any other comparison, with unopened and related passage
   );
   await page.reload();
   await expect(cards.first()).toHaveAccessibleName('The baptism of Jesus');
-  await chooser.locator('summary').focus();
-  await page.keyboard.press('Space');
-  await expect(cards).toHaveCount(comparisonCount - 1);
+  await cards.last().focus();
+  await page.keyboard.press('Tab');
+  await expect(collectionLink).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL(/\/explore\/synoptic\/comparisons$/);
+  await expect(main.getByRole('heading', { level: 1 })).toHaveText(
+    'Side-by-side comparisons',
+  );
+  const comparisonCount = await main.locator('a[href^="/compare/"]').count();
   await expect(
-    chooser.getByRole('link', { name: 'Jesus heals a paralyzed man' }),
-  ).toHaveCount(0);
-  await expect(cards.last()).toHaveAccessibleName('Jesus calms the storm');
-  await expect(cards.last()).toHaveAccessibleDescription(/Previously opened/);
-
-  await chooser.getByRole('link', { name: 'The Lord’s Prayer' }).click();
+    main.getByRole('link', { name: 'Jesus calms the storm' }),
+  ).toHaveAccessibleDescription('');
+  await main.getByRole('link', { name: 'The Lord’s Prayer' }).click();
   await expect(cards.first()).toHaveAccessibleName('The Beatitudes');
   for (let visited = 3; visited < comparisonCount; visited++) {
     const next = cards.first();
@@ -56,7 +63,7 @@ test('readers can choose any other comparison, with unopened and related passage
     await expect(main.getByRole('heading', { level: 1 })).toHaveText(title);
   }
   await expect(chooser).toContainText('You’ve opened every comparison');
-  await chooser.locator('summary').click();
+  await expect(collectionLink).toBeVisible();
   for (const card of await cards.all()) {
     await expect(card).toHaveAccessibleDescription(/Previously opened/);
   }
@@ -76,10 +83,13 @@ test('a comparison opened in another tab is recognized by the chooser', async ({
   await expect(chooser.getByRole('link').first()).toHaveAccessibleName(
     'The baptism of Jesus',
   );
-  await chooser.locator('summary').click();
   await expect(
     chooser.getByRole('link', { name: 'The Beatitudes' }),
-  ).toHaveAccessibleDescription(/Previously opened/);
+  ).toHaveCount(0);
+  await chooser.getByRole('link', { name: collectionLinkName }).click();
+  await expect(
+    page.getByRole('main').getByRole('link', { name: 'The Beatitudes' }),
+  ).toHaveAccessibleDescription('');
 });
 
 test('comparison choices work for the visit when browser storage is blocked', async ({
@@ -98,15 +108,8 @@ test('comparison choices work for the visit when browser storage is blocked', as
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(
     'The Beatitudes',
   );
-  await chooser.locator('summary').click();
-  await expect(
-    chooser.getByRole('link', { name: 'The Lord’s Prayer' }),
-  ).toHaveAccessibleDescription(/Previously opened/);
+  await chooser.getByRole('link', { name: collectionLinkName }).click();
   const main = page.getByRole('main');
-  await main
-    .getByRole('navigation', { name: 'Breadcrumb' })
-    .getByRole('link', { name: 'Side-by-side comparisons' })
-    .click();
   await expect(main.getByRole('heading', { level: 1 })).toHaveText(
     'Side-by-side comparisons',
   );
