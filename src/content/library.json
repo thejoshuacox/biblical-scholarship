@@ -195,8 +195,8 @@
       "date": "2011",
       "url": "https://markgoodacre.org/AttridgeFS.pdf",
       "type": "article",
-      "verified": "2026-11-15",
-      "details": "Pages 182–183 compare Matthew’s dialogue at the baptism with Luke’s placement of the scene after John’s imprisonment."
+      "verified": "2026-11-24",
+      "details": "Page 180 compares a shared interruption in the healing story. Pages 182–183 discuss John’s role at Jesus’ baptism."
     },
     {
       "id": "koenig-mark-authority",
@@ -274,6 +274,83 @@
       "type": "article",
       "verified": "2026-11-20",
       "details": "Section 1 identifies two fourth-century Greek manuscripts that end at Mark 16:8. The article is open access."
+    },
+    {
+      "id": "crook-parables",
+      "author": "Zeba Antonin Crook",
+      "title": "The Synoptic Parables of the Mustard Seed and the Leaven: A Test-Case for the Two-Document, Two-Gospel, and Farrer-Goulder Hypotheses",
+      "publisher": "Journal for the Study of the New Testament 22 (78)",
+      "date": "2000",
+      "url": "https://doi.org/10.1177/0142064X0002207802",
+      "type": "article",
+      "verified": "2026-11-24",
+      "details": "Crook compares three explanations for this pair of parables. The abstract gives his conclusion and note 5 discusses their order."
+    },
+    {
+      "id": "green-nazareth",
+      "author": "Joel B. Green",
+      "title": "“To proclaim good news to the poor”: Mission and salvation",
+      "publisher": "The Theology of the Gospel of Luke, Cambridge University Press, pp. 76–101",
+      "date": "1995",
+      "url": "https://www.cambridge.org/core/books/abs/theology-of-the-gospel-of-luke/to-proclaim-good-news-to-the-poor-mission-and-salvation/A2E247C860C319062658ADAA8A36E282",
+      "type": "book",
+      "verified": "2026-11-24",
+      "details": "Green opens the chapter by comparing the placement of the hometown scene in the three Gospels."
+    },
+    {
+      "id": "streeter-minor-agreements",
+      "author": "B. H. Streeter",
+      "title": "The Four Gospels: A Study of Origins, chapter 11",
+      "publisher": "Macmillan",
+      "date": "1924",
+      "url": "https://katapi.org.uk/4Gospels/Ch11.htm",
+      "type": "book",
+      "verified": "2026-11-24",
+      "details": "Near the end of the chapter Streeter explains his conjecture about the wording of Matthew 26:68."
+    },
+    {
+      "id": "strutwolf-original-text",
+      "author": "Holger Strutwolf",
+      "title": "Original Text and Textual History",
+      "publisher": "In Klaus Wachtel and Michael W. Holmes (eds.), The Textual History of the Greek New Testament, Society of Biblical Literature",
+      "date": "2011",
+      "url": "https://www.sbl-site.org/wp-content/uploads/2024/11/Wachtel-Holmes.pdf",
+      "type": "article",
+      "verified": "2026-11-24",
+      "details": "The section on the Lord’s Prayer compares surviving Greek copies of Luke and the wording of Matthew 6."
+    },
+    {
+      "id": "macewen-matthean-posteriority",
+      "author": "Robert K. MacEwen",
+      "title": "Matthean Posteriority: An Exploration of Matthew’s Use of Mark and Luke as a Solution to the Synoptic Problem",
+      "publisher": "Bloomsbury T&T Clark",
+      "date": "2015",
+      "url": "https://tyndale-europe.edu/academics/faculty-publications/matthean-posteriority",
+      "type": "book",
+      "verified": "2026-11-24",
+      "details": "MacEwen tests whether Luke used Mark and Matthew later drew on both Gospels."
+    },
+    {
+      "id": "goodacre-matthews-use",
+      "author": "Mark Goodacre",
+      "title": "Why Not Matthew’s Use of Luke?",
+      "publisher": "In Gospel Reading and Reception in Early Christian Literature, Cambridge University Press, pp. 71–93",
+      "date": "2022",
+      "url": "https://scholars.duke.edu/publication/1699263",
+      "type": "article",
+      "verified": "2026-11-24",
+      "details": "The author’s university summary sets out his reasons for favoring Luke’s use of Matthew."
+    },
+    {
+      "id": "didache-prayer",
+      "author": "Didache, translated by Kirsopp Lake",
+      "title": "The Teaching of the Twelve Apostles",
+      "publisher": "The Apostolic Fathers, Loeb Classical Library",
+      "date": "1912",
+      "url": "https://earlychristianwritings.com/text/didache-lake.html",
+      "type": "book",
+      "verified": "2026-11-24",
+      "details": "Chapter 8 gives a form of the Lord’s Prayer and instructions for using it."
     }
   ],
   "hypotheses": [],
@@ -812,7 +889,11 @@
             }
           ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "The Lord’s Prayer in two copies of Luke",
+        "path": "/explore/synoptic/lords-prayer-manuscripts"
+      }
     },
     {
       "id": "baptism-of-jesus",
@@ -1313,7 +1394,11 @@
             }
           ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "How can you tell who used whom?",
+        "path": "/explore/synoptic/who-used-whom"
+      }
     },
     {
       "id": "beatitudes",
@@ -1917,7 +2002,11 @@
             }
           ]
         }
-      ]
+      ],
+      "readNext": {
+        "label": "How can you tell who used whom?",
+        "path": "/explore/synoptic/who-used-whom"
+      }
     },
     {
       "id": "temptation-of-jesus",
@@ -2558,6 +2647,571 @@
           ]
         }
       ]
+    },
+    {
+      "id": "mustard-seed-and-yeast",
+      "title": "The mustard seed and the yeast",
+      "subtitle": "Two parables about the kingdom",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 13,
+              "verse": 31
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 33
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 4,
+              "verse": 30
+            },
+            "end": {
+              "chapter": 4,
+              "verse": 32
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 13,
+              "verse": 18
+            },
+            "end": {
+              "chapter": 13,
+              "verse": 21
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "seed",
+          "title": "A seed takes root",
+          "explanation": "Where does the seed grow? Look for what the birds do once the plant is grown.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 31
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 32
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 30
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 32
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 19
+              }
+            }
+          }
+        },
+        {
+          "id": "yeast",
+          "title": "What comes next?",
+          "explanation": "Leaven is a starter that makes dough rise. Look for a woman mixing it into flour.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 33
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 33
+              }
+            },
+            "mark": null,
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 20
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 21
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "parable-two-source",
+          "kind": "scholarly",
+          "title": "The Two-Source hypothesis",
+          "text": "Picture Matthew and Luke each reading Mark and a second, proposed source called Q. If Q paired the seed with the yeast, both writers could preserve that order independently. Look again at the planting. Matthew gives the man a field and Luke gives him a garden. How much of their wording would you feel able to reconstruct?",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 31
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 32
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 19
+              }
+            },
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 33
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 33
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 20
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 21
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "crook-parables",
+              "locator": "abstract and note 5"
+            },
+            {
+              "sourceId": "kloppenborg-q",
+              "locator": "introduction, on reconstructing Q from Matthew and Luke"
+            }
+          ]
+        },
+        {
+          "id": "parable-farrer",
+          "kind": "scholarly",
+          "title": "The Farrer hypothesis",
+          "text": "Picture Luke reading both Mark and Matthew. The seed and the yeast are already neighbors in Matthew. Luke could keep them together while giving each a question about the kingdom of God. Compare Luke’s two opening questions with the way Mark introduces the seed.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 31
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 33
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 30
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 32
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 21
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "farrer-dispensing-with-q",
+              "locator": "pp. 55–56, 64–67, on Luke’s use and arrangement of Matthew"
+            },
+            {
+              "sourceId": "crook-parables",
+              "locator": "abstract, on applying the Farrer-Goulder hypothesis to these parables"
+            }
+          ]
+        },
+        {
+          "id": "parable-verdict",
+          "kind": "scholarly",
+          "title": "How does Crook weigh the evidence?",
+          "text": "Zeba Crook tested three proposals on these passages, including the Two-Gospel view that Mark used Matthew and Luke. He judged that the Two-Source explanation faced the fewest difficulties here. The pairing helps that explanation, but Luke could also have kept a pair he found in Matthew. Which detail besides the order would you want each account to explain?",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 13,
+                "verse": 31
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 33
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 4,
+                "verse": 30
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 32
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 13,
+                "verse": 18
+              },
+              "end": {
+                "chapter": 13,
+                "verse": 21
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "crook-parables",
+              "locator": "abstract and note 5"
+            }
+          ]
+        }
+      ],
+      "readNext": {
+        "label": "What is the Synoptic Problem?",
+        "path": "/explore/synoptic/synoptic-problem"
+      },
+      "introduction": "Which Gospels tell these two parables together? Read the passages, then try two explanations for the pairing."
+    },
+    {
+      "id": "mocking-of-jesus",
+      "title": "The mocking of Jesus",
+      "subtitle": "A minor agreement in the Passion narrative",
+      "translation": "BSB",
+      "columns": [
+        {
+          "id": "matthew",
+          "title": "Matthew",
+          "reference": {
+            "book": "MAT",
+            "bookName": "Matthew",
+            "start": {
+              "chapter": 26,
+              "verse": 67
+            },
+            "end": {
+              "chapter": 26,
+              "verse": 68
+            }
+          }
+        },
+        {
+          "id": "mark",
+          "title": "Mark",
+          "reference": {
+            "book": "MRK",
+            "bookName": "Mark",
+            "start": {
+              "chapter": 14,
+              "verse": 65
+            },
+            "end": {
+              "chapter": 14,
+              "verse": 65
+            }
+          }
+        },
+        {
+          "id": "luke",
+          "title": "Luke",
+          "reference": {
+            "book": "LUK",
+            "bookName": "Luke",
+            "start": {
+              "chapter": 22,
+              "verse": 63
+            },
+            "end": {
+              "chapter": 22,
+              "verse": 65
+            }
+          }
+        }
+      ],
+      "groups": [
+        {
+          "id": "demand",
+          "title": "What do the mockers ask?",
+          "explanation": "Follow the words spoken to Jesus. Then look back to see which accounts mention a blindfold.",
+          "cells": {
+            "matthew": {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 26,
+                "verse": 67
+              },
+              "end": {
+                "chapter": 26,
+                "verse": 68
+              }
+            },
+            "mark": {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 14,
+                "verse": 65
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 65
+              }
+            },
+            "luke": {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 22,
+                "verse": 63
+              },
+              "end": {
+                "chapter": 22,
+                "verse": 65
+              }
+            }
+          }
+        }
+      ],
+      "notes": [
+        {
+          "id": "shared-question",
+          "kind": "editorial",
+          "title": "Five words in common",
+          "text": "All three accounts include the command to prophesy. Matthew and Luke also give the mockers the same question, rendered “Who hit You?” in the BSB. Mark’s account moves directly from the command to further blows.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 26,
+                "verse": 67
+              },
+              "end": {
+                "chapter": 26,
+                "verse": 68
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 14,
+                "verse": 65
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 65
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 22,
+                "verse": 63
+              },
+              "end": {
+                "chapter": 22,
+                "verse": 65
+              }
+            }
+          ],
+          "citations": [],
+          "greek": {
+            "text": "τίς ἐστιν ὁ παίσας σε;",
+            "gloss": "Who is it that struck you?",
+            "readings": [
+              {
+                "label": "Matthew 26:68 in Greek",
+                "url": "https://ccel.org/w/westcott/gnt/matthew/matthew_26.htm"
+              },
+              {
+                "label": "Luke 22:64 in Greek",
+                "url": "https://ccel.org/w/westcott/gnt/luke/luke_22.htm"
+              }
+            ]
+          }
+        },
+        {
+          "id": "minor-agreement",
+          "kind": "scholarly",
+          "title": "What makes this a minor agreement?",
+          "text": "Scholars use this term for a small point where Matthew and Luke agree with each other while differing from Mark inside a story that all three tell. On Austin Farrer’s proposal, Luke could draw on Mark for a scene and remember a detail from Matthew. This gives the shared question a possible route from one Gospel to the other.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 26,
+                "verse": 67
+              },
+              "end": {
+                "chapter": 26,
+                "verse": 68
+              }
+            },
+            {
+              "book": "MRK",
+              "bookName": "Mark",
+              "start": {
+                "chapter": 14,
+                "verse": 65
+              },
+              "end": {
+                "chapter": 14,
+                "verse": 65
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 22,
+                "verse": 63
+              },
+              "end": {
+                "chapter": 22,
+                "verse": 65
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "farrer-dispensing-with-q",
+              "locator": "pp. 60–62, on Matthew and Luke agreeing against Mark"
+            }
+          ]
+        },
+        {
+          "id": "scribal-conjecture",
+          "kind": "scholarly",
+          "title": "Could a copyist have brought the accounts closer?",
+          "text": "B. H. Streeter proposed that the question first stood in Luke and that an early copyist added it to Matthew. His proposal makes Matthew and Luke independent at the time of composition. The wording he proposed for Matthew is conjectural. The surviving copies he discusses already have the question.",
+          "references": [
+            {
+              "book": "MAT",
+              "bookName": "Matthew",
+              "start": {
+                "chapter": 26,
+                "verse": 68
+              },
+              "end": {
+                "chapter": 26,
+                "verse": 68
+              }
+            },
+            {
+              "book": "LUK",
+              "bookName": "Luke",
+              "start": {
+                "chapter": 22,
+                "verse": 64
+              },
+              "end": {
+                "chapter": 22,
+                "verse": 64
+              }
+            }
+          ],
+          "citations": [
+            {
+              "sourceId": "streeter-minor-agreements",
+              "locator": "chapter 11, discussion of Matthew 26:68 and Luke 22:64"
+            }
+          ]
+        }
+      ],
+      "readNext": {
+        "label": "The Lord’s Prayer in two copies of Luke",
+        "path": "/explore/synoptic/lords-prayer-manuscripts"
+      },
+      "introduction": "Listen to the demand to prophesy. Which Gospel writers give the mockers a question as well?"
     }
   ]
 }

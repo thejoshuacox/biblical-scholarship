@@ -85,6 +85,12 @@
                 }
               ]
             }
+          ],
+          "links": [
+            {
+              "label": "Try the mustard seed and yeast exercise",
+              "path": "/compare/mustard-seed-and-yeast"
+            }
           ]
         }
       ],
@@ -147,6 +153,12 @@
                   "locator": "Introduction, pp. 13–14"
                 }
               ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Try the exercise on who used whom",
+              "path": "/explore/synoptic/who-used-whom"
             }
           ]
         },
@@ -216,6 +228,15 @@
                   "locator": "p. 397 and pp. 410–415"
                 }
               ]
+            },
+            {
+              "text": "The question also arises within stories found in all three Gospels. In the mocking of Jesus, Matthew and Luke share a question that Mark’s account leaves out. Such details are called minor agreements. Farrer argued that they make sense if Luke had read Matthew.",
+              "citations": [
+                {
+                  "sourceId": "farrer-dispensing-with-q",
+                  "locator": "pp. 60–62, on Matthew and Luke agreeing against Mark"
+                }
+              ]
             }
           ],
           "diagram": [
@@ -226,6 +247,12 @@
             {
               "from": "Mark and Matthew",
               "to": "Luke"
+            }
+          ],
+          "links": [
+            {
+              "label": "Compare the mocking of Jesus",
+              "path": "/compare/mocking-of-jesus"
             }
           ]
         },
@@ -238,6 +265,19 @@
                 {
                   "sourceId": "tuckett-griesbach",
                   "locator": "Introduction, p. 1"
+                }
+              ]
+            },
+            {
+              "text": "Could Matthew have read Luke instead? On the proposal called Matthean posteriority, Luke used Mark, and Matthew later used both Mark and Luke. Robert K. MacEwen studies stretches of identical wording and asks whether Matthew knew parts of Luke beyond their shared sayings. Mark Goodacre argues that Luke used Matthew, pointing to turns of phrase characteristic of Matthew in passages they share.",
+              "citations": [
+                {
+                  "sourceId": "macewen-matthean-posteriority",
+                  "locator": "introduction and chapters 2–3"
+                },
+                {
+                  "sourceId": "goodacre-matthews-use",
+                  "locator": "summary and pp. 71–93"
                 }
               ]
             },
@@ -393,7 +433,212 @@
                 }
               ]
             }
+          ],
+          "links": [
+            {
+              "label": "Read the Lord’s Prayer in context",
+              "path": "/compare/lords-prayer"
+            }
           ]
+        }
+      ],
+      "readNext": {
+        "label": "Where does the story come in each Gospel?",
+        "path": "/explore/synoptic/gospel-story-order"
+      }
+    },
+    {
+      "id": "who-used-whom",
+      "resourceType": "Tool",
+      "title": "How can you tell who used whom?",
+      "description": "Mark a narrator’s interruption, then follow Herod’s title to test a claim about which Gospel was written first.",
+      "intro": "An unusual turn of phrase can suggest that two writers shared a text. To work out who might have read whom, try two different questions.",
+      "sections": [
+        {
+          "title": "Where does the narrator step in?",
+          "activity": "narrator",
+          "paragraphs": [
+            {
+              "text": "In all three accounts, Jesus starts to explain his authority to forgive sins. The narrator cuts in to tell us whom Jesus addresses, and then Jesus gives the command to get up. Mark Goodacre points to that shared interruption in the Greek as a clue to a written connection. The three writers have more in common here than a memory of the same saying.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-baptism",
+                  "locator": "p. 180, on Matthew 9:6, Mark 2:10–11 and Luke 5:24"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Read the full healing accounts",
+              "path": "/compare/healing-a-paralyzed-man"
+            }
+          ]
+        },
+        {
+          "title": "Follow Herod’s title",
+          "activity": "herod",
+          "paragraphs": [
+            {
+              "text": "A tetrarch was a regional ruler. Goodacre suggests that Matthew began by giving Herod his more precise title, then slipped back into the wording of Mark’s story. Goodacre calls this kind of pattern “editorial fatigue.” On that reading, Mark supplies a reason for Matthew’s change of title halfway through the scene.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-fatigue",
+                  "locator": "pp. 46–47, on Herod’s title and his grief"
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "label": "Read the accounts of John’s death",
+              "path": "/compare/death-of-john-the-baptist"
+            }
+          ]
+        },
+        {
+          "title": "Which question did each clue answer?",
+          "paragraphs": [
+            {
+              "text": "The interruption makes a case for shared writing. The change of title gives Goodacre a reason to argue that Matthew used Mark specifically. Both the Two-Source and Farrer hypotheses can accept that direction. They part company over how Matthew and Luke came to share material outside Mark. Try that question on two short parables.",
+              "citations": [
+                {
+                  "sourceId": "goodacre-baptism",
+                  "locator": "p. 180, on Matthew 9:6, Mark 2:10–11 and Luke 5:24"
+                },
+                {
+                  "sourceId": "goodacre-fatigue",
+                  "locator": "pp. 46–47, on Herod’s title and his grief"
+                },
+                {
+                  "sourceId": "goodacre-double-tradition",
+                  "locator": "§§1–2, on Mark and the double tradition"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "readNext": {
+        "label": "The mustard seed and the yeast",
+        "path": "/compare/mustard-seed-and-yeast"
+      }
+    },
+    {
+      "id": "gospel-story-order",
+      "resourceType": "Tool",
+      "title": "Where does the story come in each Gospel?",
+      "description": "Trace the baptism, a healing and the hometown synagogue through three Gospel sequences.",
+      "intro": "Choose a scene to follow it across Matthew, Mark, and Luke. Follow each Gospel’s sequence to see what its readers have already encountered.",
+      "sections": [
+        {
+          "title": "Trace three scenes",
+          "activity": "sequence",
+          "paragraphs": [
+            {
+              "text": "In Matthew and Mark, readers have already seen Jesus forgive and heal the paralyzed man when his hometown questions him. In Luke, readers encounter the hometown synagogue first. The map follows the order of these selected scenes in each book.",
+              "readings": [
+                {
+                  "label": "Matthew 9:1–8",
+                  "url": "https://biblehub.com/bsb/matthew/9.htm"
+                },
+                {
+                  "label": "Mark 2:1–12",
+                  "url": "https://biblehub.com/bsb/mark/2.htm"
+                },
+                {
+                  "label": "Luke 4:16–30",
+                  "url": "https://biblehub.com/bsb/luke/4.htm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "What do you expect Jesus to do next?",
+          "paragraphs": [
+            {
+              "text": "In Luke’s synagogue scene, Jesus reads about bringing good news to the poor and release to captives, then says the scripture is being fulfilled. Joel B. Green reads the scene as an introduction to Jesus’ mission. When the paralyzed man is brought to Jesus one chapter later, how does that earlier promise shape your reading of the healing?",
+              "citations": [
+                {
+                  "sourceId": "green-nazareth",
+                  "locator": "chapter 4, opening discussion of Luke 4:16–30"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Luke 4:16–21",
+                  "url": "https://biblehub.com/bsb/luke/4.htm"
+                },
+                {
+                  "label": "Luke 5:17–26",
+                  "url": "https://biblehub.com/bsb/luke/5.htm"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "readNext": {
+        "label": "Jesus heals a paralyzed man",
+        "path": "/compare/healing-a-paralyzed-man"
+      }
+    },
+    {
+      "id": "lords-prayer-manuscripts",
+      "resourceType": "Tool",
+      "title": "The Lord’s Prayer in two copies of Luke",
+      "description": "Switch between the opening words in two Greek manuscripts of Luke 11:2 and explore how the prayer circulated.",
+      "intro": "Two people reading Luke could begin the same prayer with different words. Compare the opening address preserved in two handwritten copies.",
+      "sections": [
+        {
+          "title": "How does Luke 11:2 begin?",
+          "activity": "manuscripts",
+          "paragraphs": [
+            {
+              "text": "Holger Strutwolf identifies the short address in Papyrus 75 and the longer one in Codex Alexandrinus. He understands the longer reading as an instance of copying that brought Luke closer to the familiar wording of Matthew 6:9. Comparing copies of one Gospel lets us see variation within its own history.",
+              "citations": [
+                {
+                  "sourceId": "strutwolf-original-text",
+                  "locator": "pp. 25–27, on the address and petitions in Luke 11"
+                }
+              ],
+              "readings": [
+                {
+                  "label": "Matthew 6:9",
+                  "url": "https://biblehub.com/bsb/matthew/6.htm"
+                },
+                {
+                  "label": "Luke 11:2",
+                  "url": "https://biblehub.com/bsb/luke/11.htm"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Could worship have shaped the prayer?",
+          "paragraphs": [
+            {
+              "text": "The Didache, an early Christian teaching text, gives a version of the prayer close to Matthew’s and tells readers to use it three times a day. That instruction is direct evidence that a community was taught to pray these words regularly.",
+              "citations": [
+                {
+                  "sourceId": "didache-prayer",
+                  "locator": "8.2–3"
+                }
+              ]
+            },
+            {
+              "text": "How did the prayer reach Matthew and Luke in the first place? Olegs Andrejevs examines a proposed tradition of worship alongside the possibility that both writers used Q. A copy of Luke can tell us how someone wrote the prayer out. Reconstructing what the Gospel writers heard or read calls for a separate argument.",
+              "citations": [
+                {
+                  "sourceId": "andrejevs-prayer",
+                  "locator": "abstract, on Q and independent transmission in worship"
+                }
+              ]
+            }
+          ],
+          "activity": "prayer-evidence"
         }
       ],
       "readNext": {

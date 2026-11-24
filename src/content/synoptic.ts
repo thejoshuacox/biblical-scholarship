@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { library } from './index';
-import { citationSchema } from './schema';
+import { citationSchema, internalLinkSchema } from './schema';
 import raw from './synoptic.json';
 
 const paragraphSchema = z.object({
@@ -11,21 +11,26 @@ const paragraphSchema = z.object({
     .default([]),
 });
 
-const internalLinkSchema = z.object({
-  label: z.string().min(1),
-  path: z.string().regex(/^\/[a-z\d-]+(?:\/[a-z\d-]+)*$/),
-});
-
 const guideSchema = z.object({
   id: z.string().regex(/^[a-z]+(?:-[a-z]+)*$/),
   title: z.string().min(1),
   description: z.string().min(1),
   intro: z.string().min(1),
+  resourceType: z.enum(['Article', 'Tool']).default('Article'),
   sections: z
     .array(
       z.object({
         title: z.string().min(1),
         paragraphs: z.array(paragraphSchema).min(1),
+        activity: z
+          .enum([
+            'narrator',
+            'herod',
+            'sequence',
+            'manuscripts',
+            'prayer-evidence',
+          ])
+          .optional(),
         diagram: z
           .array(
             z.object({
@@ -45,6 +50,9 @@ const guideSchema = z.object({
 
 export type SynopticParagraph = z.infer<typeof paragraphSchema>;
 export type SynopticGuide = z.infer<typeof guideSchema>;
+export type GuideActivity = NonNullable<
+  SynopticGuide['sections'][number]['activity']
+>;
 
 export const synoptic = z
   .object({

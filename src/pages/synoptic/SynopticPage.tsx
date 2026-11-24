@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { synoptic } from '../../content/synoptic';
 import {
+  parablesComparisonEntry,
   stormComparisonEntry,
   synopticComparisonCollection,
   synopticGuideEntries,
@@ -16,6 +17,13 @@ import styles from './Synoptic.module.css';
 
 export function SynopticPage() {
   const featured = stormComparisonEntry;
+  const introductoryReadings = synopticGuideEntries
+    .filter(({ resourceType }) => resourceType === 'Article')
+    .flatMap((entry) =>
+      entry.id === 'how-to-compare'
+        ? [entry, parablesComparisonEntry]
+        : [entry],
+    );
 
   return (
     <SynopticLayout isTopic>
@@ -63,7 +71,7 @@ export function SynopticPage() {
           </div>
           <div className={styles.guideLinks}>
             <h3>Reading guides</h3>
-            <SynopticResourceList entries={synopticGuideEntries} />
+            <SynopticResourceList entries={introductoryReadings} />
           </div>
         </div>
       </section>

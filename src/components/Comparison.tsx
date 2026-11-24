@@ -5,6 +5,7 @@ import { formatReference, type Library } from '../content/schema';
 import { libraryPath, type TopicEntry } from '../pageCatalog';
 import { PassageDisplay, usePassages } from './PassageDisplay';
 import { Annotation, Bibliography } from './Editorial';
+import { ReadNextLink } from './ReadNextLink';
 import styles from './Comparison.module.css';
 
 export function Comparison({
@@ -13,6 +14,7 @@ export function Comparison({
   topic,
   breadcrumb,
   readingGuide,
+  notesContent,
   related,
 }: {
   comparison: Library['comparisons'][number];
@@ -20,6 +22,7 @@ export function Comparison({
   topic?: Pick<TopicEntry, 'path' | 'title'>;
   breadcrumb?: ReactNode;
   readingGuide?: Pick<TopicEntry, 'path' | 'title'>;
+  notesContent?: ReactNode;
   related?: ReactNode;
 }) {
   const [aligned, setAligned] = useState(true),
@@ -44,7 +47,7 @@ export function Comparison({
             .map(({ reference }) => formatReference(reference))
             .join(' · ')}
         </p>
-        <p className="lead">{copy.intro}</p>
+        <p className="lead">{comparison.introduction ?? copy.intro}</p>
       </section>
       <div className={styles.comparisonToolbar}>
         <div className={styles.translationLabel}>
@@ -59,7 +62,11 @@ export function Comparison({
             role="group"
             aria-label="Reading layout"
           >
-            <button aria-pressed={aligned} onClick={() => setAligned(true)}>
+            <button
+              id="comparison-passages"
+              aria-pressed={aligned}
+              onClick={() => setAligned(true)}
+            >
               Aligned groups
             </button>
             <button aria-pressed={!aligned} onClick={() => setAligned(false)}>
@@ -153,21 +160,22 @@ export function Comparison({
         . Section headings and translator notes belong to the translation;
         reading groups are editorial.
       </p>
-      {notes && (
-        <section className={styles.readingNotes}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <h2>Reading notes</h2>
-            </div>
+      <section className={styles.readingNotes} hidden={!notes}>
+        <div className={styles.sectionHeading}>
+          <div>
+            <h2>Reading notes</h2>
           </div>
+        </div>
+        {notesContent ?? (
           <div className={styles.annotationGrid}>
             {comparison.notes.map((note) => (
               <Annotation key={note.id} note={note} />
             ))}
           </div>
-          <p className={styles.methodFootnote}>{copy.caution}</p>
-        </section>
-      )}
+        )}
+        <p className={styles.methodFootnote}>{copy.caution}</p>
+      </section>
+      {comparison.readNext && <ReadNextLink {...comparison.readNext} />}
       <Bibliography
         ids={[
           ...new Set(

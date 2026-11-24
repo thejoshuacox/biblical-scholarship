@@ -21,6 +21,10 @@ export const citationSchema = z.object({
   sourceId: z.string(),
   locator: z.string().min(1),
 });
+export const internalLinkSchema = z.object({
+  label: z.string().min(1),
+  path: z.string().regex(/^\/[a-z\d-]+(?:\/[a-z\d-]+)*$/),
+});
 const note = z
   .object({
     id: z.string(),
@@ -29,6 +33,15 @@ const note = z
     text: z.string(),
     citations: z.array(citationSchema),
     references: z.array(referenceSchema).default([]),
+    greek: z
+      .object({
+        text: z.string().min(1),
+        gloss: z.string().min(1),
+        readings: z
+          .array(z.object({ label: z.string().min(1), url: z.string().url() }))
+          .min(1),
+      })
+      .optional(),
   })
   .refine(
     (n) => n.kind !== 'scholarly' || n.citations.length > 0,
@@ -86,6 +99,8 @@ export const librarySchema = z.object({
       id: z.string(),
       title: z.string(),
       subtitle: z.string(),
+      introduction: z.string().min(1).optional(),
+      readNext: internalLinkSchema.optional(),
       translation: z.literal('BSB'),
       columns: z
         .array(

@@ -7,6 +7,7 @@ import {
   synopticTopic,
 } from '../../pageCatalog';
 import { NextComparisons } from './NextComparisons';
+import { ParableExercise } from './ParableExercise';
 import { SynopticBreadcrumbs } from './SynopticLayout';
 import styles from './Synoptic.module.css';
 
@@ -30,6 +31,11 @@ export function SynopticComparisonPage({
           />
         }
         readingGuide={readingGuide}
+        notesContent={
+          comparison.id === 'mustard-seed-and-yeast' ? (
+            <ParableExercise notes={comparison.notes} />
+          ) : undefined
+        }
         related={<NextComparisons currentId={comparison.id} />}
       />
     </div>

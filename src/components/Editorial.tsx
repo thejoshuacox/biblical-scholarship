@@ -36,6 +36,19 @@ export function Annotation({
       </span>
       <h3>{note.title}</h3>
       <p>{note.text}</p>
+      {note.greek && (
+        <details className={styles.greekReading}>
+          <summary>Read the Greek question</summary>
+          <p>
+            <span lang="grc">{note.greek.text}</span> · {note.greek.gloss}
+          </p>
+          {note.greek.readings.map(({ label, url }) => (
+            <a key={url} href={url}>
+              {label}
+            </a>
+          ))}
+        </details>
+      )}
       {note.references.length > 0 && (
         <p className={styles.small}>
           Primary texts: {note.references.map(formatReference).join('; ')}{' '}

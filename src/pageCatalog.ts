@@ -157,6 +157,12 @@ export const stormComparisonEntry = synopticComparisonEntry(
   '/images/storm-cover.jpg',
 );
 
+export const parablesComparisonEntry = synopticComparisonEntry(
+  comparisonById('mustard-seed-and-yeast'),
+  'Find the pair of parables, then try the Two-Source and Farrer explanations.',
+  ['Teaching', 'Parable', 'Kingdom of God'],
+);
+
 export const synopticComparisonEntries = [
   stormComparisonEntry,
   synopticComparisonEntry(
@@ -194,12 +200,18 @@ export const synopticComparisonEntries = [
     'Follow the women to the tomb and notice what each messenger says about Galilee.',
     ['Narrative', 'Burial', 'Resurrection'],
   ),
+  parablesComparisonEntry,
+  synopticComparisonEntry(
+    comparisonById('mocking-of-jesus'),
+    'Compare the mockers’ question and explore why scholars call this a minor agreement.',
+    ['Narrative', 'Passion'],
+  ),
 ];
 
 export const synopticGuideEntries = synoptic.guides.map<ResourceEntry>(
   (guide) => ({
     kind: 'resource',
-    resourceType: 'Article',
+    resourceType: guide.resourceType,
     topicId: synopticTopic.id,
     id: guide.id,
     path: `/explore/synoptic/${guide.id}`,

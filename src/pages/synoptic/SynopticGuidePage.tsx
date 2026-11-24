@@ -3,6 +3,7 @@ import { Bibliography } from '../../components/Editorial';
 import { ReadNextLink } from '../../components/ReadNextLink';
 import type { SynopticGuide } from '../../content/synoptic';
 import { SynopticLayout, SynopticText } from './SynopticLayout';
+import { GuideExercise } from './GuideExercise';
 import styles from './Synoptic.module.css';
 
 export function SynopticGuidePage({ guide }: { guide: SynopticGuide }) {
@@ -22,7 +23,7 @@ export function SynopticGuidePage({ guide }: { guide: SynopticGuide }) {
         <h1>{guide.title}</h1>
         <p className="lead">{guide.intro}</p>
       </header>
-      {guide.sections.map(({ title, paragraphs, diagram, links }) => (
+      {guide.sections.map(({ title, paragraphs, diagram, links, activity }) => (
         <section className={styles.guideSection} key={title}>
           <h2>{title}</h2>
           {diagram && (
@@ -50,6 +51,7 @@ export function SynopticGuidePage({ guide }: { guide: SynopticGuide }) {
               </ul>
             </figure>
           )}
+          {activity && <GuideExercise activity={activity} />}
           {paragraphs.map((paragraph) => (
             <SynopticText key={paragraph.text} paragraph={paragraph} />
           ))}
