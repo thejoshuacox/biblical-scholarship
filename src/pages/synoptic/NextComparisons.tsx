@@ -3,16 +3,10 @@ import {
   synopticComparisonCollection,
   synopticComparisonEntries,
 } from '../../pageCatalog';
+import { focusLinkedSection } from './SynopticLayout';
 import { useOpenedComparisons } from './useOpenedComparisons';
 import styles from './NextComparisons.module.css';
 import synopticStyles from './Synoptic.module.css';
-
-function focusLinkedChooser(chooser: HTMLElement | null) {
-  if (chooser && window.location.hash === '#' + chooser.id) {
-    chooser.focus({ preventScroll: true });
-    chooser.scrollIntoView();
-  }
-}
 
 export function NextComparisons({ currentId }: { currentId: string }) {
   const opened = useOpenedComparisons(currentId);
@@ -63,7 +57,7 @@ export function NextComparisons({ currentId }: { currentId: string }) {
       className={styles.chooser}
       id="next-comparisons"
       aria-labelledby="next-comparisons-heading"
-      ref={focusLinkedChooser}
+      ref={focusLinkedSection}
       tabIndex={-1}
     >
       <h2 id="next-comparisons-heading">Choose your next comparison</h2>

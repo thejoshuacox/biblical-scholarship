@@ -38,8 +38,8 @@ test('the featured parables activity lets a reader compare both explanations aft
   await expect(main.getByText(/Luke could keep them together/)).toBeVisible();
   await expect(main.getByText(/If Q paired the seed/)).toBeVisible();
   await expect(
-    main.getByRole('link', { name: /Crook/ }).first(),
-  ).toHaveAttribute('href', '#source-crook-parables');
+    main.getByRole('link', { name: /^Zeba Antonin Crook,/ }).first(),
+  ).toHaveAttribute('href', 'https://doi.org/10.1177/0142064X0002207802');
   await main.getByRole('link', { name: 'Return to the passages' }).click();
   await expect(
     main.getByRole('button', { name: 'Aligned groups' }),

@@ -186,7 +186,7 @@ test('API failure shows explicit error and retry recovers', async ({
     page.getByRole('article', { name: 'Mark 4:35–36', exact: true }),
   ).toBeVisible({ timeout: 30000 });
 });
-test('Synoptic overview leads with the definition and offers one featured study', async ({
+test('Synoptic overview links directly to its guides and all five hands-on studies', async ({
   page,
 }) => {
   await page.goto('/explore/synoptic');
@@ -194,6 +194,29 @@ test('Synoptic overview leads with the definition and offers one featured study'
   await expect(main.getByRole('heading', { level: 2 })).toHaveText([
     'What does “Synoptic” mean?',
     'Resources',
+    'Hands-on studies',
+  ]);
+  await main
+    .getByRole('navigation', { name: 'On this topic' })
+    .getByRole('link', { name: 'Hands-on studies' })
+    .click();
+  await expect(
+    main.getByRole('heading', { name: 'Hands-on studies' }),
+  ).toBeInViewport();
+  const studies = main
+    .getByRole('region', { name: 'Hands-on studies' })
+    .getByRole('link');
+  await expect(studies).toHaveCount(5);
+  expect(
+    await studies.evaluateAll((links) =>
+      links.map((link) => link.getAttribute('href')).sort(),
+    ),
+  ).toEqual([
+    '/compare/mocking-of-jesus',
+    '/compare/mustard-seed-and-yeast',
+    '/explore/synoptic/gospel-story-order',
+    '/explore/synoptic/lords-prayer-manuscripts',
+    '/explore/synoptic/who-used-whom',
   ]);
   await expect(
     main.getByRole('link', { name: 'Jesus calms the storm' }),
@@ -211,7 +234,9 @@ test('Synoptic overview leads with the definition and offers one featured study'
     main.getByRole('heading', { name: 'The Farrer hypothesis' }),
   ).toBeVisible();
   await main
-    .getByRole('link', { name: /John S. Kloppenborg, On Dispensing/ })
+    .getByRole('link', {
+      name: /^Source details for John S. Kloppenborg, On Dispensing/,
+    })
     .click();
   await expect(page).toHaveURL(/#source-kloppenborg-relation$/);
   await expect(main.locator('#source-kloppenborg-relation')).toBeVisible();

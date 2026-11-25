@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { ExternalReference } from '../../components/ExternalReference';
 import { Citation } from '../../components/Editorial';
 import type { SynopticParagraph } from '../../content/synoptic';
 import { libraryPath, synopticTopic, type PageEntry } from '../../pageCatalog';
@@ -13,6 +14,13 @@ type ResourceListEntry = Pick<
   references?: string;
 };
 const libraryLink = { path: libraryPath, title: 'Library' };
+
+export function focusLinkedSection(section: HTMLElement | null) {
+  if (section && window.location.hash === '#' + section.id) {
+    section.focus({ preventScroll: true });
+    section.scrollIntoView();
+  }
+}
 
 export function SynopticBreadcrumbs({
   links,
@@ -58,10 +66,10 @@ export function SynopticLayout({
 
 export function SynopticText({
   paragraph,
-  directCitations = false,
+  showSourceDetails = true,
 }: {
   paragraph: SynopticParagraph;
-  directCitations?: boolean;
+  showSourceDetails?: boolean;
 }) {
   return (
     <div className={styles.paragraph}>
@@ -70,14 +78,14 @@ export function SynopticText({
         <ul className={styles.references} aria-label="Passages" role="list">
           {paragraph.readings.map(({ label, url }) => (
             <li key={label}>
-              <a href={url}>{label}</a>
+              <ExternalReference href={url}>{label}</ExternalReference>
             </li>
           ))}
         </ul>
       )}
       {paragraph.citations.map((citation) => (
         <p className={styles.source} key={citation.sourceId}>
-          <Citation {...citation} direct={directCitations} />
+          <Citation {...citation} showDetails={showSourceDetails} />
         </p>
       ))}
     </div>

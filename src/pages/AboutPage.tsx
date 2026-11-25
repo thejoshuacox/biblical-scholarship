@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { pages } from '../content/pages';
+import { ExternalReference } from '../components/ExternalReference';
 import { Bibliography, Citation } from '../components/Editorial';
 import styles from './AboutPage.module.css';
 
@@ -49,7 +50,9 @@ export function AboutPage() {
                   {p.link && (
                     <>
                       {' '}
-                      <a href={p.link.url}>{p.link.label}</a>
+                      <ExternalReference href={p.link.url}>
+                        {p.link.label}
+                      </ExternalReference>
                     </>
                   )}
                 </p>

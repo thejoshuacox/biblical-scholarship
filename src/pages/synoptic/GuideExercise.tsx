@@ -1,3 +1,4 @@
+import { ExternalReference } from '../../components/ExternalReference';
 import { useId, useState } from 'react';
 import type { GuideActivity } from '../../content/synoptic';
 import {
@@ -41,7 +42,7 @@ function NarratorExercise() {
           {healingExcerpts.map(({ reference, greek, gloss, url }) => (
             <div key={reference}>
               <dt>
-                <a href={url}>{reference}</a>
+                <ExternalReference href={url}>{reference}</ExternalReference>
               </dt>
               <dd>
                 <span lang="grc">{greek}</span>
@@ -68,11 +69,15 @@ function HerodExercise() {
             <dl className={styles.excerpts}>
               <dt>When Herod hears about Jesus</dt>
               <dd>
-                “{row.opening}” <a href={row.url}>{row.first}</a>
+                “{row.opening}”{' '}
+                <ExternalReference href={row.url}>
+                  {row.first}
+                </ExternalReference>
               </dd>
               <dt>At the banquet</dt>
               <dd>
-                “{row.later}” <a href={row.url}>{row.last}</a>
+                “{row.later}”{' '}
+                <ExternalReference href={row.url}>{row.last}</ExternalReference>
               </dd>
             </dl>
           </div>
@@ -132,7 +137,9 @@ function StoryOrder() {
         >
           {readings.map((stop) => (
             <li key={stop.reference}>
-              <a href={stop.url}>{stop.reference}</a>
+              <ExternalReference href={stop.url}>
+                {stop.reference}
+              </ExternalReference>
             </li>
           ))}
         </ul>
@@ -179,9 +186,9 @@ function ManuscriptReading() {
             Matthew’s opening words stay here as you switch between the two
             copies of Luke.
           </p>
-          <a href="https://biblehub.com/bsb/matthew/6.htm">
+          <ExternalReference href="https://biblehub.com/bsb/matthew/6.htm">
             Read Matthew’s prayer (BSB)
-          </a>
+          </ExternalReference>
         </div>
       </div>
       <p className={styles.caption}>

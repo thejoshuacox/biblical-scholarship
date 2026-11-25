@@ -1,3 +1,4 @@
+import { ExternalReference } from './ExternalReference';
 import { library } from '../content';
 import { formatReference, type Library } from '../content/schema';
 import styles from './Editorial.module.css';
@@ -5,21 +6,34 @@ import styles from './Editorial.module.css';
 export function Citation({
   sourceId,
   locator,
-  direct = false,
+  showDetails = true,
 }: {
   sourceId: string;
   locator: string;
-  direct?: boolean;
+  showDetails?: boolean;
 }) {
   const source = library.sources.find((s) => s.id === sourceId)!;
   return (
-    <a
-      className={styles.citation}
-      href={direct ? source.url : '#source-' + sourceId}
-    >
-      {source.author}, {source.title.replace('Lecture ', 'lecture ')}
-      <span> ({locator})</span>
-    </a>
+    <>
+      <ExternalReference className={styles.citation} href={source.url}>
+        {source.author}, {source.title.replace('Lecture ', 'lecture ')}
+        <span> ({locator})</span>
+      </ExternalReference>
+      {showDetails && (
+        <>
+          {' '}
+          <a
+            className={styles.sourceDetails}
+            href={'#source-' + sourceId}
+            aria-label={
+              'Source details for ' + source.author + ', ' + source.title
+            }
+          >
+            Source details
+          </a>
+        </>
+      )}
+    </>
   );
 }
 export function Annotation({
@@ -43,9 +57,9 @@ export function Annotation({
             <span lang="grc">{note.greek.text}</span> · {note.greek.gloss}
           </p>
           {note.greek.readings.map(({ label, url }) => (
-            <a key={url} href={url}>
+            <ExternalReference key={url} href={url}>
               {label}
-            </a>
+            </ExternalReference>
           ))}
         </details>
       )}
@@ -73,7 +87,8 @@ export function Bibliography({ ids }: { ids?: string[] }) {
           .map((s) => (
             <li key={s.id} id={'source-' + s.id}>
               <p>
-                <strong>{s.author}.</strong> <a href={s.url}>{s.title}</a>.{' '}
+                <strong>{s.author}.</strong>{' '}
+                <ExternalReference href={s.url}>{s.title}</ExternalReference>.{' '}
                 {s.publisher}. {s.date}.
               </p>
               <p className={styles.small}>

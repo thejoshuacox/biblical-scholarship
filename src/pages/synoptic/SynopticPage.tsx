@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { synoptic } from '../../content/synoptic';
 import {
+  mockingComparisonEntry,
   parablesComparisonEntry,
   stormComparisonEntry,
   synopticComparisonCollection,
@@ -9,27 +10,35 @@ import {
   synopticTopic,
 } from '../../pageCatalog';
 import {
+  focusLinkedSection,
   SynopticLayout,
   SynopticResourceList,
   SynopticText,
 } from './SynopticLayout';
 import styles from './Synoptic.module.css';
 
+const introductoryReadings = synopticGuideEntries.filter(
+  ({ resourceType }) => resourceType === 'Article',
+);
+const handsOnStudies = [
+  parablesComparisonEntry,
+  ...synopticGuideEntries.filter(({ resourceType }) => resourceType === 'Tool'),
+  mockingComparisonEntry,
+];
+
 export function SynopticPage() {
   const featured = stormComparisonEntry;
-  const introductoryReadings = synopticGuideEntries
-    .filter(({ resourceType }) => resourceType === 'Article')
-    .flatMap((entry) =>
-      entry.id === 'how-to-compare'
-        ? [entry, parablesComparisonEntry]
-        : [entry],
-    );
 
   return (
     <SynopticLayout isTopic>
       <header className={styles.masthead}>
         <h1>{synopticTopic.title}</h1>
         <p className="lead">{synopticTopic.description}</p>
+        <nav className={styles.topicNav} aria-label="On this topic">
+          <a href="#hands-on-studies">Hands-on studies</a>
+          <a href="#reading-guides">Reading guides</a>
+          <Link to={synopticComparisonCollection.path}>Browse comparisons</Link>
+        </nav>
       </header>
       <section
         className={styles.definition}
@@ -38,7 +47,7 @@ export function SynopticPage() {
         <h2 id="synoptic-definition">{synoptic.definition.title}</h2>
         <SynopticText
           paragraph={synoptic.definition.paragraph}
-          directCitations
+          showSourceDetails={false}
         />
       </section>
       <section
@@ -70,10 +79,38 @@ export function SynopticPage() {
             </Link>
           </div>
           <div className={styles.guideLinks}>
-            <h3>Reading guides</h3>
+            <h3 id="reading-guides" ref={focusLinkedSection} tabIndex={-1}>
+              Reading guides
+            </h3>
             <SynopticResourceList entries={introductoryReadings} />
           </div>
         </div>
+      </section>
+      <section
+        className={styles.resourceSection}
+        aria-labelledby="hands-on-studies"
+      >
+        <h2 id="hands-on-studies" ref={focusLinkedSection} tabIndex={-1}>
+          Hands-on studies
+        </h2>
+        <ul className={styles.studyGrid} role="list">
+          {handsOnStudies.map(({ id, title, description, path }) => (
+            <li key={id}>
+              <Link
+                to={path}
+                aria-labelledby={'study-' + id}
+                aria-describedby={'summary-' + id}
+              >
+                <span className={styles.studyTitle} id={'study-' + id}>
+                  {title}
+                </span>
+                <span className={styles.studyDescription} id={'summary-' + id}>
+                  {description}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
     </SynopticLayout>
   );

@@ -1,7 +1,7 @@
 import { createElement, type ComponentType } from 'react';
 import type { ModulePageProps } from './components/ModulePreview';
 import { comparisonById, library, lordsPrayer, storm } from './content';
-import type { Library } from './content/schema';
+import type { Library, PassageReference } from './content/schema';
 import { synoptic } from './content/synoptic';
 import { formatReference } from './content/schema';
 
@@ -119,15 +119,20 @@ export const synopticComparisonCollection: ResourceEntry = {
     })),
 };
 
+export type SynopticComparisonEntry = ResourceEntry & {
+  references: string;
+  themes: readonly string[];
+  passages: readonly PassageReference[];
+};
+
 function synopticComparisonEntry(
   comparison: Library['comparisons'][number],
   description: string,
   themes: readonly string[],
   thumbnail?: string,
-): ResourceEntry & { references: string; themes: readonly string[] } {
-  const references = comparison.columns.map(({ reference }) =>
-    formatReference(reference),
-  );
+): SynopticComparisonEntry {
+  const passages = comparison.columns.map(({ reference }) => reference);
+  const references = passages.map(formatReference);
   return {
     kind: 'resource',
     resourceType: 'Passage comparison',
@@ -138,6 +143,7 @@ function synopticComparisonEntry(
     description,
     themes,
     thumbnail,
+    passages,
     keywords: references,
     references: references.join(' · '),
     async load() {
@@ -161,6 +167,12 @@ export const parablesComparisonEntry = synopticComparisonEntry(
   comparisonById('mustard-seed-and-yeast'),
   'Find the pair of parables, then try the Two-Source and Farrer explanations.',
   ['Teaching', 'Parable', 'Kingdom of God'],
+);
+
+export const mockingComparisonEntry = synopticComparisonEntry(
+  comparisonById('mocking-of-jesus'),
+  'Compare the mockers’ question and explore why scholars call this a minor agreement.',
+  ['Narrative', 'Passion'],
 );
 
 export const synopticComparisonEntries = [
@@ -201,11 +213,7 @@ export const synopticComparisonEntries = [
     ['Narrative', 'Burial', 'Resurrection'],
   ),
   parablesComparisonEntry,
-  synopticComparisonEntry(
-    comparisonById('mocking-of-jesus'),
-    'Compare the mockers’ question and explore why scholars call this a minor agreement.',
-    ['Narrative', 'Passion'],
-  ),
+  mockingComparisonEntry,
 ];
 
 export const synopticGuideEntries = synoptic.guides.map<ResourceEntry>(

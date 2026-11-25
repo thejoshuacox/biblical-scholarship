@@ -5,6 +5,7 @@ import { formatReference, type Library } from '../content/schema';
 import { libraryPath, type TopicEntry } from '../pageCatalog';
 import { PassageDisplay, usePassages } from './PassageDisplay';
 import { Annotation, Bibliography } from './Editorial';
+import { ExternalReference } from './ExternalReference';
 import { ReadNextLink } from './ReadNextLink';
 import styles from './Comparison.module.css';
 
@@ -14,6 +15,7 @@ export function Comparison({
   topic,
   breadcrumb,
   readingGuide,
+  sequenceNavigation,
   notesContent,
   related,
 }: {
@@ -22,6 +24,7 @@ export function Comparison({
   topic?: Pick<TopicEntry, 'path' | 'title'>;
   breadcrumb?: ReactNode;
   readingGuide?: Pick<TopicEntry, 'path' | 'title'>;
+  sequenceNavigation?: ReactNode;
   notesContent?: ReactNode;
   related?: ReactNode;
 }) {
@@ -49,6 +52,7 @@ export function Comparison({
         </p>
         <p className="lead">{comparison.introduction ?? copy.intro}</p>
       </section>
+      {sequenceNavigation}
       <div className={styles.comparisonToolbar}>
         <div className={styles.translationLabel}>
           <BookOpen size={18} />
@@ -150,13 +154,13 @@ export function Comparison({
       )}
       <p className={styles.attribution}>
         Scripture:{' '}
-        <a href="https://berean.bible/licensing.htm">
+        <ExternalReference href="https://berean.bible/licensing.htm">
           Berean Standard Bible (BSB), public domain
-        </a>
+        </ExternalReference>
         . Text supplied by{' '}
-        <a href="https://bible.helloao.org/docs/">
+        <ExternalReference href="https://bible.helloao.org/docs/">
           AO Lab’s Free Use Bible API
-        </a>
+        </ExternalReference>
         . Section headings and translator notes belong to the translation;
         reading groups are editorial.
       </p>

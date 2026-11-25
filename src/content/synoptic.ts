@@ -56,6 +56,7 @@ export type GuideActivity = NonNullable<
 
 export const synoptic = z
   .object({
+    readingOrderAfter: z.record(z.string().min(1).nullable()),
     definition: z.object({
       title: z.string().min(1),
       paragraph: paragraphSchema,

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { ExternalReference } from '../components/ExternalReference';
 import { ThemeToggle } from '../components/ThemeToggle';
 import { LibraryMenu } from './LibraryMenu';
 import styles from './SiteLayout.module.css';
@@ -66,7 +67,9 @@ export function SiteLayout() {
         </div>
         <div>
           <Link to="/about">About & methods</Link>
-          <a href="https://bible.helloao.org/docs/">Bible text provider</a>
+          <ExternalReference href="https://bible.helloao.org/docs/">
+            Bible text provider
+          </ExternalReference>
         </div>
       </footer>
     </>

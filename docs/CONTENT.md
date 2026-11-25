@@ -39,7 +39,8 @@ Keep “preview” visible until the tool is real. Avoid adding unverified histo
 4. Each column has a stable ID and a full passage reference. Each reading group must explicitly include **every** column ID. A cell is a reference or `null` for an absent parallel.
 5. Label notes `editorial` or `scholarly`. Scholarly notes must include citations; textual observations should include primary passage references. Cite the source that supports the actual claim.
 6. Register the page in `src/pageCatalog.ts` as a `Passage comparison` resource. Supply the comparison record, a short description, and themes in `synopticComparisonEntry`. Reuse theme names for related passages so the chooser can suggest them together.
-7. Run `npm test`, `npm run build`, and `npm run verify:api` to check the registered comparisons. Check the new comparison on a narrow screen.
+7. The collection and the reader’s next link use the opening verse in Mark for Gospel order. For a comparison with no Mark column, set its ID in `readingOrderAfter` in `src/content/synoptic.json` to the ID of the preceding Mark comparison, or to `null` for an opening reading. Readings at the same placement follow Matthew’s order and then Luke’s.
+8. Run `npm test`, `npm run build`, and `npm run verify:api` to check the registered comparisons. Check the new comparison on a narrow screen.
 
 A reference is provider-neutral except for its standard book identifier:
 
